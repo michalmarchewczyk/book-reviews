@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BookReviews
+namespace BookReviews.Books
 {
 
 
-    public partial class About
+    public partial class Default
     {
 
         /// <summary>

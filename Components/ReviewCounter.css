@@ -1,0 +1,21 @@
+.comp-ReviewCounter {
+    font-weight: 600;
+    font-style: italic;
+}
+
+.comp-ReviewCounter span.counter {
+    font-weight: 800;
+    color: var(--bs-primary);
+    position: relative;
+}
+
+.comp-ReviewCounter span.counter::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    height: 5px;
+    left: 0;
+    width: 100%;
+    background: var(--bs-primary);
+}

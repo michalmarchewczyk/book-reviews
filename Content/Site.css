@@ -1,4 +1,19 @@
-﻿/* Wrapping element */
+﻿body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+html, body {
+    font-size: 18px;
+}
+
+
+.lead {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
     margin-top: 15px;
