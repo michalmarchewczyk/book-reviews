@@ -132,6 +132,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Auth\Controls\VisibilityControl.ascx" />
     <Content Include="Auth\Login.aspx" />
     <Content Include="Auth\Logout.aspx" />
     <Content Include="Auth\Register.aspx" />
@@ -204,6 +205,13 @@
     <Compile Include="Auth\AppIdentityDbInitializer.cs" />
     <Compile Include="Auth\AppIdentityDbContext.cs" />
     <Compile Include="Auth\AppIdentityUser.cs" />
+    <Compile Include="Auth\Controls\VisibilityControl.ascx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>VisibilityControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Auth\Controls\VisibilityControl.ascx.designer.cs">
+      <DependentUpon>VisibilityControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Auth\Login.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Login.aspx</DependentUpon>

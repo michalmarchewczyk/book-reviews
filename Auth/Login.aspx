@@ -9,5 +9,5 @@
     <%-- <asp:TextBox ID="LastName" runat="server" CssClass="form-control" placeholder="Last Name" /> --%>
     <%-- <asp:TextBox ID="Email" runat="server" CssClass="form-control" placeholder="Email" /> --%>
     <asp:TextBox ID="Password" runat="server" CssClass="form-control" placeholder="Password" TextMode="Password" />
-    <asp:Button runat="server" CssClass="btn btn-primary" UseSubmitBehavior="False" Text="Register"/>
+    <asp:Button runat="server" CssClass="btn btn-primary" Text="Login"/>
 </asp:Content>

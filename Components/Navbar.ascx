@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" CodeBehind="Navbar.ascx.cs" Inherits="BookReviews.Components.Navbar" %>
 <%@ Register TagPrefix="comp" TagName="Logotype" Src="~/Components/Logotype.ascx" %>
+<%@ Register TagPrefix="auth" TagName="VisibilityControl" Src="~/Auth/Controls/VisibilityControl.ascx" %>
 
 <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
   <div class="container px-4">
@@ -19,8 +20,18 @@
           <a class="nav-link <%: Request.RawUrl == "/reviews/" ? "active" : "" %>" href="/reviews">Recenzje</a>
         </li>
       </ul>
-      <a href="/auth/register" class="btn btn-primary me-2">Dołącz</a>
-      <a href="/auth/login" class="btn btn-secondary">Zaloguj się</a>
+
+      <auth:VisibilityControl runat="server" Visibility="Authenticated">
+        <Content>
+          <a href="/auth/logout" class="btn btn-secondary">Wyloguj się</a>
+        </Content>
+      </auth:VisibilityControl>
+      <auth:VisibilityControl runat="server" Visibility="NotAuthenticated">
+        <Content>
+          <a href="/auth/register" class="btn btn-primary me-2">Dołącz</a>
+          <a href="/auth/login" class="btn btn-secondary">Zaloguj się</a>
+        </Content>
+      </auth:VisibilityControl>
       <%-- <form class="d-flex"> --%>
       <%--   <input class="form-control me-sm-2" type="search" placeholder="Search"> --%>
       <%--   <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button> --%>
