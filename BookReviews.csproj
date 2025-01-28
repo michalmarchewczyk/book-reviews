@@ -198,6 +198,7 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\PageBase.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Auth\AppIdentityDbInitializer.cs" />
@@ -224,6 +225,7 @@
     <Compile Include="Auth\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Auth\AuthenticatedAttribute.cs" />
     <Compile Include="Auth\Startup.cs" />
     <Compile Include="Books\Default.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>

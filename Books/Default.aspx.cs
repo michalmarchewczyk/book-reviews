@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Web.UI;
+using BookReviews.Auth;
 
 namespace BookReviews.Books
 {
-    public partial class Default : Page
+    [Authenticated]
+    public partial class Default : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
