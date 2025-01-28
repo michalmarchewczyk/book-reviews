@@ -1,5 +1,4 @@
 ﻿<%@ Control Language="C#" CodeBehind="ReviewCounter.ascx.cs" Inherits="BookReviews.Components.ReviewCounter" %>
-<%@ Import Namespace="System.Globalization" %>
 
 <div class="comp-ReviewCounter w-100 text-center display-6 py-5">
     <span>Mamy już ponad</span>

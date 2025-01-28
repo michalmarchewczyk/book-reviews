@@ -212,6 +212,7 @@
     <Compile Include="Auth\Controls\VisibilityControl.ascx.designer.cs">
       <DependentUpon>VisibilityControl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Auth\AuthHelper.cs" />
     <Compile Include="Auth\Login.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Login.aspx</DependentUpon>

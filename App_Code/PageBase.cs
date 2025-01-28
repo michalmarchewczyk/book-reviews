@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web.UI;
-using BookReviews.Auth;
 
 namespace BookReviews
 {

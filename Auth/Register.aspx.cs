@@ -25,7 +25,7 @@ namespace BookReviews.Auth
 
 
             var userStore = new UserStore<AppIdentityUser>(new AppIdentityDbContext());
-            var manager = new UserManager<AppIdentityUser>(userStore);
+            var userManager = new UserManager<AppIdentityUser>(userStore);
 
             var user = new AppIdentityUser()
             {
@@ -34,7 +34,7 @@ namespace BookReviews.Auth
                 LastName = lastName,
                 Email = email
             };
-            var result = manager.Create(user, password);
+            var result = userManager.Create(user, password);
 
             if (result.Succeeded)
             {

@@ -32,6 +32,16 @@
           <a href="/auth/login" class="btn btn-secondary">Zaloguj się</a>
         </Content>
       </auth:VisibilityControl>
+      <auth:VisibilityControl runat="server" Visibility="HasRole" Role="Admin">
+        <Content>
+          <span>ADMIN</span>
+        </Content>
+      </auth:VisibilityControl>
+      <auth:VisibilityControl runat="server" Visibility="HasRole" Role="User">
+        <Content>
+          <span>NORMAL USER</span>
+        </Content>
+      </auth:VisibilityControl>
       <%-- <form class="d-flex"> --%>
       <%--   <input class="form-control me-sm-2" type="search" placeholder="Search"> --%>
       <%--   <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button> --%>

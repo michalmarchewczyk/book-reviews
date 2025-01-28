@@ -1,12 +1,14 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 using System.Web.UI;
+using Microsoft.AspNet.Identity;
 
 namespace BookReviews.Auth.Controls
 {
     public partial class VisibilityControl : UserControl
     {
         public AuthVisibilityType? Visibility { get; set; } = null;
+
+        public string Role { get; set; }
 
         [TemplateInstance(TemplateInstance.Single)]
         public ITemplate Content { get; set; }
@@ -23,6 +25,9 @@ namespace BookReviews.Auth.Controls
                 case AuthVisibilityType.NotAuthenticated:
                     visible = !Request.IsAuthenticated;
                     break;
+                case AuthVisibilityType.HasRole:
+                    visible = AuthHelper.CheckRole(Page.User.Identity.GetUserId(), (AuthRole)Enum.Parse(typeof(AuthRole), Role));
+                    break;
                 default:
                     throw new ArgumentNullException(nameof (Visibility));
             }
@@ -37,6 +42,7 @@ namespace BookReviews.Auth.Controls
     public enum AuthVisibilityType
     {
         Authenticated,
-        NotAuthenticated
+        NotAuthenticated,
+        HasRole,
     }
 }
