@@ -132,6 +132,7 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Content Include="App_Data\schema.sql"/>
         <Content Include="Auth\AuthPage.master"/>
         <Content Include="Auth\Controls\VisibilityControl.ascx"/>
         <Content Include="Auth\Login.aspx"/>
@@ -328,9 +329,6 @@
             <DependentUpon>Site.Master</DependentUpon>
         </Compile>
         <Compile Include="Utils\ContentHelper.cs"/>
-    </ItemGroup>
-    <ItemGroup>
-        <Folder Include="App_Data\"/>
     </ItemGroup>
     <ItemGroup>
         <None Include="packages.config"/>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Web;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -16,6 +17,9 @@ namespace BookReviews
 
             var identityDbContext = new AppIdentityDbContext();
             identityDbContext.Database.Initialize(true);
+
+            var schemaSql = File.ReadAllText(Server.MapPath("~/App_Data/schema.sql"));
+            identityDbContext.Database.ExecuteSqlCommand(schemaSql);
         }
     }
 }
