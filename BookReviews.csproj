@@ -294,6 +294,7 @@
         <Compile Include="Components\ReviewCounter.ascx.designer.cs">
             <DependentUpon>ReviewCounter.ascx</DependentUpon>
         </Compile>
+        <Compile Include="Components\Validators\MinLengthValidator.cs"/>
         <Compile Include="Default.aspx.cs">
             <DependentUpon>Default.aspx</DependentUpon>
             <SubType>ASPXCodeBehind</SubType>

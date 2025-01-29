@@ -12,10 +12,12 @@ namespace BookReviews.Auth
 {
     public partial class Register : Page
     {
-        public static int PasswordMinLength = 8;
+        protected const int PasswordMinLength = 8;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            MinLengthValidator.MinLength = PasswordMinLength;
+
             if (Page.IsPostBack)
             {
                 Submit();

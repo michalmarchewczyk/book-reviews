@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Zarejestruj się" Language="C#" MasterPageFile="~/Auth/AuthPage.master" CodeBehind="Register.aspx.cs" Inherits="BookReviews.Auth.Register" %>
+<%@ Register TagPrefix="comp" Namespace="BookReviews.Components.Validators" Assembly="BookReviews" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <asp:Label runat="server" class="alert alert-danger" ID="UsernameUnavailableMessage" Visible="False">
@@ -40,6 +41,9 @@
     <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" EnableClientScript="False" CssClass="invalid-feedback" Display="Dynamic">
         Hasło jest wymagane.
     </asp:RequiredFieldValidator>
+    <comp:MinLengthValidator runat="server" ControlToValidate="Password" EnableClientScript="False" CssClass="invalid-feedback" Display="Dynamic" ID="MinLengthValidator">
+        Minimalna długość hasła to <%: PasswordMinLength %>.
+    </comp:MinLengthValidator>
 
     <asp:Button runat="server" CssClass="btn btn-primary mt-4 mb-2" Text="Zarejestruj się"/>
 
