@@ -3,7 +3,7 @@ using BookReviews.Auth;
 
 namespace BookReviews.Books
 {
-    [Authenticated]
+    [AuthenticatedGuard]
     public partial class Default : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)

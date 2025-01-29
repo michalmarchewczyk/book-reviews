@@ -4,7 +4,7 @@ using System.Web.UI;
 namespace BookReviews.Auth
 {
     [AttributeUsage(AttributeTargets.Class)]
-    public class AuthenticatedAttribute : Attribute, IPageAttribute
+    public class AuthenticatedGuardAttribute : Attribute, IPageAttribute
     {
         public void OnPageInit(Page page)
         {

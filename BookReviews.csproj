@@ -132,6 +132,7 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Content Include="Admin\Default.aspx"/>
         <Content Include="App_Data\schema.sql"/>
         <Content Include="Auth\AuthPage.master"/>
         <Content Include="Auth\Controls\VisibilityControl.ascx"/>
@@ -147,6 +148,7 @@
         <Content Include="Components\Navbar.ascx"/>
         <Content Include="Components\ReviewCounter.ascx"/>
         <Content Include="Components\ReviewCounter.css"/>
+        <Content Include="Components\UserImage.ascx"/>
         <Content Include="Content\bootstrap.css"/>
         <Content Include="Content\bootstrap.min.css"/>
         <Content Include="Content\bootstrap.rtl.css"/>
@@ -202,6 +204,13 @@
         <Content Include="Bundle.config"/>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Admin\Default.aspx.cs">
+            <SubType>ASPXCodeBehind</SubType>
+            <DependentUpon>Default.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="Admin\Default.aspx.designer.cs">
+            <DependentUpon>Default.aspx</DependentUpon>
+        </Compile>
         <Compile Include="App_Code\PageBase.cs"/>
         <Compile Include="App_Start\BundleConfig.cs"/>
         <Compile Include="App_Start\RouteConfig.cs"/>
@@ -244,7 +253,8 @@
         <Compile Include="Auth\Register.aspx.designer.cs">
             <DependentUpon>Register.aspx</DependentUpon>
         </Compile>
-        <Compile Include="Auth\AuthenticatedAttribute.cs"/>
+        <Compile Include="Auth\AuthenticatedGuardAttribute.cs"/>
+        <Compile Include="Auth\RoleGuardAttribute.cs"/>
         <Compile Include="Auth\Startup.cs"/>
         <Compile Include="Books\Default.aspx.cs">
             <SubType>ASPXCodeBehind</SubType>
@@ -295,6 +305,13 @@
         <Compile Include="Components\ReviewCounter.ascx.designer.cs">
             <DependentUpon>ReviewCounter.ascx</DependentUpon>
         </Compile>
+        <Compile Include="Components\UserImage.ascx.cs">
+            <SubType>ASPXCodeBehind</SubType>
+            <DependentUpon>UserImage.ascx</DependentUpon>
+        </Compile>
+        <Compile Include="Components\UserImage.ascx.designer.cs">
+            <DependentUpon>UserImage.ascx</DependentUpon>
+        </Compile>
         <Compile Include="Components\Validators\MinLengthValidator.cs"/>
         <Compile Include="Default.aspx.cs">
             <DependentUpon>Default.aspx</DependentUpon>
@@ -329,6 +346,7 @@
             <DependentUpon>Site.Master</DependentUpon>
         </Compile>
         <Compile Include="Utils\ContentHelper.cs"/>
+        <Compile Include="Utils\CustomExtensions\StringExtension.cs"/>
     </ItemGroup>
     <ItemGroup>
         <None Include="packages.config"/>

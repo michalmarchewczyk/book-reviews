@@ -10,7 +10,7 @@ namespace BookReviews.Auth
         {
             var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
             authenticationManager.SignOut();
-            Response.Redirect("~/auth/login");
+            Response.Redirect("~/auth/login?logout=true");
         }
     }
 }

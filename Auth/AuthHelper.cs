@@ -31,16 +31,34 @@ namespace BookReviews.Auth
             var user = userManager.FindById(userId);
             return new AuthUserData
             {
+                Id = user.Id,
                 Username = user.UserName,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Email = user.Email
             };
         }
+
+        public static string GetCurrentUserDisplayName(Page page)
+        {
+            var data = GetCurrentUserData(page);
+            if (data == null)
+            {
+                return null;
+            }
+
+            if (!string.IsNullOrEmpty(data.FirstName) || !string.IsNullOrEmpty(data.LastName))
+            {
+                return data.FirstName + " " + data.LastName;
+            }
+
+            return data.Username;
+        }
     }
 
     public class AuthUserData
     {
+        public string Id { get; set; }
         public string Username { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

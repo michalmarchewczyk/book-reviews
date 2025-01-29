@@ -2,7 +2,10 @@
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <asp:Label runat="server" CssClass="alert alert-secondary" ID="ReturnUrlInfo" Visible="False">
-        Aby kontynuować, zaloguj się.
+        Zaloguj się, aby kontynuować.
+    </asp:Label>
+    <asp:Label runat="server" CssClass="alert alert-secondary" ID="LogoutMessage" Visible="False">
+        Wylogowano.
     </asp:Label>
 
     <asp:Label runat="server" CssClass="alert alert-danger" ID="InvalidCredentialsMessage" Visible="False">
