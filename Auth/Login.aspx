@@ -1,7 +1,11 @@
 ﻿<%@ Page Title="Zaloguj się" Language="C#" MasterPageFile="~/Auth/AuthPage.Master" CodeBehind="Login.aspx.cs" Inherits="BookReviews.Auth.Login" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
-    <asp:Label runat="server" class="alert alert-danger" ID="InvalidCredentialsMessage" Visible="False">
+    <asp:Label runat="server" CssClass="alert alert-secondary" ID="ReturnUrlInfo" Visible="False">
+        Aby kontynuować, zaloguj się.
+    </asp:Label>
+
+    <asp:Label runat="server" CssClass="alert alert-danger" ID="InvalidCredentialsMessage" Visible="False">
         Nieprawidłowa nazwa użytkownika lub hasło.
     </asp:Label>
 

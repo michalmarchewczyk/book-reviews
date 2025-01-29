@@ -13,6 +13,7 @@ namespace BookReviews.Auth
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ReturnUrlInfo.Visible = !string.IsNullOrEmpty(Request.QueryString["ReturnUrl"]);
             if (Page.IsPostBack)
             {
                 Submit();
