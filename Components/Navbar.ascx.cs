@@ -7,7 +7,6 @@ namespace BookReviews.Components
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

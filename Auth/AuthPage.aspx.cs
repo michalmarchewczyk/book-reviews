@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Web.UI;
 
-namespace BookReviews.Components
+namespace BookReviews.Auth
 {
-    public partial class Features : UserControl
+    public partial class AuthPage : MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

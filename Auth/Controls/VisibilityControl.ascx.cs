@@ -26,10 +26,11 @@ namespace BookReviews.Auth.Controls
                     visible = !Request.IsAuthenticated;
                     break;
                 case AuthVisibilityType.HasRole:
-                    visible = AuthHelper.CheckRole(Page.User.Identity.GetUserId(), (AuthRole)Enum.Parse(typeof(AuthRole), Role));
+                    visible = AuthHelper.CheckRole(Page.User.Identity.GetUserId(),
+                        (AuthRole)Enum.Parse(typeof(AuthRole), Role));
                     break;
                 default:
-                    throw new ArgumentNullException(nameof (Visibility));
+                    throw new ArgumentNullException(nameof(Visibility));
             }
 
             if (visible)
@@ -43,6 +44,6 @@ namespace BookReviews.Auth.Controls
     {
         Authenticated,
         NotAuthenticated,
-        HasRole,
+        HasRole
     }
 }

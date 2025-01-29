@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using BookReviews.Auth;
+using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
 
-[assembly: OwinStartup(typeof(BookReviews.Auth.Startup))]
+[assembly: OwinStartup(typeof(Startup))]
 
 namespace BookReviews.Auth
 {

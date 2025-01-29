@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="BookReviews.Default" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="BookReviews.Default" %>
 <%@ Register TagPrefix="comp" TagName="Hero" Src="~/Components/Hero.ascx" %>
 <%@ Register TagPrefix="comp" TagName="ReviewCounter" Src="~/Components/ReviewCounter.ascx" %>
 <%@ Register TagPrefix="comp" TagName="Features" Src="~/Components/Features.ascx" %>

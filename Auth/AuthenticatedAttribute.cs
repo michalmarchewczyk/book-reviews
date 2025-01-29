@@ -10,7 +10,10 @@ namespace BookReviews.Auth
         {
             var isAuthenticated = page.User.Identity.IsAuthenticated;
 
-            if (isAuthenticated) return;
+            if (isAuthenticated)
+            {
+                return;
+            }
 
             page.Response.StatusCode = 401;
             page.Response.End();

@@ -20,11 +20,11 @@ namespace BookReviews.Reviews
         /// <remarks>
         /// Auto-generated property.
         /// </remarks>
-        public new BookReviews.SiteMaster Master
+        public new BookReviews.Main Master
         {
             get
             {
-                return ((BookReviews.SiteMaster)(base.Master));
+                return ((BookReviews.Main)(base.Master));
             }
         }
     }

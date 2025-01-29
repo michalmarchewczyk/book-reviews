@@ -1,6 +1,4 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="BookReviews.SiteMaster" %>
-<%@ Register TagPrefix="comp" TagName="Navbar" Src="~/Components/Navbar.ascx" %>
-<%@ Register TagPrefix="comp" TagName="Footer" Src="~/Components/Footer.ascx" %>
 
 <!DOCTYPE html>
 
@@ -43,12 +41,7 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <comp:Navbar runat="server" />
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <comp:Footer runat="server" />
-        </div>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
     </form>
 
     <asp:PlaceHolder runat="server">

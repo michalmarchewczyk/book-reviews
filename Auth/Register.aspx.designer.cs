@@ -15,6 +15,33 @@ namespace BookReviews.Auth
     {
 
         /// <summary>
+        /// UsernameUnavailableMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label UsernameUnavailableMessage;
+
+        /// <summary>
+        /// EmailUnavailableMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label EmailUnavailableMessage;
+
+        /// <summary>
+        /// GenericError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label GenericError;
+
+        /// <summary>
         /// Username control.
         /// </summary>
         /// <remarks>
@@ -65,11 +92,11 @@ namespace BookReviews.Auth
         /// <remarks>
         /// Auto-generated property.
         /// </remarks>
-        public new BookReviews.SiteMaster Master
+        public new BookReviews.Auth.AuthPage Master
         {
             get
             {
-                return ((BookReviews.SiteMaster)(base.Master));
+                return ((BookReviews.Auth.AuthPage)(base.Master));
             }
         }
     }

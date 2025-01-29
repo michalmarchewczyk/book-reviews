@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Web.UI;
 
-namespace BookReviews.Components
+namespace BookReviews
 {
-    public partial class Features : UserControl
+    public partial class Main : MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

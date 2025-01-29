@@ -32,7 +32,7 @@ namespace BookReviews.Auth
                 FirstName = "",
                 LastName = "Administrator",
                 PasswordHash = passwordHasher.HashPassword("admin"),
-                SecurityStamp = Guid.NewGuid().ToString("D"),
+                SecurityStamp = Guid.NewGuid().ToString("D")
             };
             var testUser = new AppIdentityUser
             {
@@ -41,7 +41,7 @@ namespace BookReviews.Auth
                 FirstName = "Test",
                 LastName = "User",
                 PasswordHash = passwordHasher.HashPassword("test"),
-                SecurityStamp = Guid.NewGuid().ToString("D"),
+                SecurityStamp = Guid.NewGuid().ToString("D")
             };
             context.Users.Add(adminUser);
             context.Users.Add(testUser);
@@ -57,7 +57,7 @@ namespace BookReviews.Auth
         private static void AssignRole(AppIdentityDbContext context, AppIdentityUser user, AuthRole authRole)
         {
             var roleId = context.Roles.First(r => r.Name == authRole.ToString()).Id;
-            context.Set<IdentityUserRole>().Add(new IdentityUserRole()
+            context.Set<IdentityUserRole>().Add(new IdentityUserRole
             {
                 RoleId = roleId,
                 UserId = user.Id

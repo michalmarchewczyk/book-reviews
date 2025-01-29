@@ -3,7 +3,7 @@ using System.Web.UI;
 
 namespace BookReviews
 {
-    public class PageBase: Page
+    public class PageBase : Page
     {
         protected override void OnInit(EventArgs e)
         {

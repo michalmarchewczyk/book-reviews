@@ -13,6 +13,7 @@ namespace BookReviews.Utils
             {
                 return;
             }
+
             var link = new HtmlLink();
             link.Href = href;
             link.Attributes.Add("rel", "stylesheet");

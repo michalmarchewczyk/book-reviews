@@ -7,12 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BookReviews.Books
+namespace BookReviews.Auth
 {
 
 
-    public partial class Default
+    public partial class AuthPage
     {
+
+        /// <summary>
+        /// MainContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
 
         /// <summary>
         /// Master property.
@@ -20,11 +29,11 @@ namespace BookReviews.Books
         /// <remarks>
         /// Auto-generated property.
         /// </remarks>
-        public new BookReviews.Main Master
+        public new BookReviews.SiteMaster Master
         {
             get
             {
-                return ((BookReviews.Main)(base.Master));
+                return ((BookReviews.SiteMaster)(base.Master));
             }
         }
     }
