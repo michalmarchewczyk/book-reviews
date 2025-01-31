@@ -2,7 +2,7 @@
 using System.Web.UI;
 using BookReviews.Utils;
 
-namespace BookReviews.Components
+namespace BookReviews.Components.Layout
 {
     public partial class Logotype : UserControl
     {

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BookReviews.Components
+namespace BookReviews.Components.Layout
 {
 
 

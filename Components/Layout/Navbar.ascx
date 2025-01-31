@@ -1,8 +1,8 @@
-﻿<%@ Control Language="C#" CodeBehind="Navbar.ascx.cs" Inherits="BookReviews.Components.Navbar" %>
+﻿<%@ Control Language="C#" CodeBehind="Navbar.ascx.cs" Inherits="BookReviews.Components.Layout.Navbar" %>
 <%@ Import Namespace="BookReviews.Auth" %>
-<%@ Register TagPrefix="comp" TagName="Logotype" Src="~/Components/Logotype.ascx" %>
+<%@ Register TagPrefix="comp" TagName="Logotype" Src="~/Components/Layout/Logotype.ascx" %>
 <%@ Register TagPrefix="auth" TagName="VisibilityControl" Src="~/Auth/Controls/VisibilityControl.ascx" %>
-<%@ Register TagPrefix="comp" TagName="UserImage" Src="~/Components/UserImage.ascx" %>
+<%@ Register TagPrefix="comp" TagName="UserImage" Src="~/Components/Layout/UserImage.ascx" %>
 
 <nav class="navbar navbar-expand-lg bg-light sticky-top" data-bs-theme="light">
     <div class="container px-4">

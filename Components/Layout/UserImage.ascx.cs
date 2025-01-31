@@ -4,7 +4,7 @@ using System.Web.UI;
 using BookReviews.Auth;
 using BookReviews.Utils.CustomExtensions;
 
-namespace BookReviews.Components
+namespace BookReviews.Components.Layout
 {
     public partial class UserImage : UserControl
     {

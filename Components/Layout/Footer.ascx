@@ -1,5 +1,5 @@
-﻿<%@ Control Language="C#" CodeBehind="Footer.ascx.cs" Inherits="BookReviews.Components.Footer" %>
-<%@ Register TagPrefix="comp" TagName="Logotype" Src="~/Components/Logotype.ascx" %>
+﻿<%@ Control Language="C#" CodeBehind="Footer.ascx.cs" Inherits="BookReviews.Components.Layout.Footer" %>
+<%@ Register TagPrefix="comp" TagName="Logotype" Src="~/Components/Layout/Logotype.ascx" %>
 
 
 <div class="container">

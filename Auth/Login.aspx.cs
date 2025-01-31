@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
+using BookReviews.Utils;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
@@ -24,25 +23,8 @@ namespace BookReviews.Auth
         private void Submit()
         {
             InvalidCredentialsMessage.Visible = false;
-            Page.Validate();
 
-            var validatedControls = Page.Validators.Cast<BaseValidator>()
-                .Select(v => v.NamingContainer.FindControl(v.ControlToValidate))
-                .OfType<WebControl>()
-                .ToArray();
-
-            foreach (var control in validatedControls)
-            {
-                control.CssClass = control.CssClass.Replace("is-invalid", "").Trim();
-                var validators = Page.Validators.Cast<BaseValidator>()
-                    .Where(v => v.ControlToValidate == control.ID);
-                if (validators.Any(v => !v.IsValid))
-                {
-                    control.CssClass += " is-invalid";
-                }
-            }
-
-            if (!Page.IsValid)
+            if (!FormHelper.ValidateAndHighlight(Page))
             {
                 return;
             }

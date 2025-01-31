@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" CodeBehind="Hero.ascx.cs" Inherits="BookReviews.Components.Hero" %>
-<%@ Register TagPrefix="comp" TagName="Logotype" Src="~/Components/Logotype.ascx" %>
+<%@ Register TagPrefix="comp" TagName="Logotype" Src="~/Components/Layout/Logotype.ascx" %>
 
 
 <div class="px-4 pt-5 my-5 text-center border-bottom pb-5 pb-md-0">

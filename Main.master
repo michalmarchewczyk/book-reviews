@@ -1,6 +1,6 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" CodeBehind="Main.aspx.cs" Inherits="BookReviews.Main" %>
-<%@ Register TagPrefix="comp" TagName="Navbar" Src="~/Components/Navbar.ascx" %>
-<%@ Register TagPrefix="comp" TagName="Footer" Src="~/Components/Footer.ascx" %>
+<%@ Register TagPrefix="comp" TagName="Navbar" Src="~/Components/Layout/Navbar.ascx" %>
+<%@ Register TagPrefix="comp" TagName="Footer" Src="~/Components/Layout/Footer.ascx" %>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
     <comp:Navbar runat="server" />

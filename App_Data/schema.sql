@@ -37,6 +37,7 @@ IF NOT EXISTS (SELECT *
             [AuthorId]    [int]                NOT NULL,
             [Description] [nvarchar](max)      NULL,
             [ISBN]        [char](13)           NOT NULL,
+            [ReleaseYear] [int]                NOT NULL,
             [Cover]       [varbinary](max)     NULL,
             CONSTRAINT [PK_Book] PRIMARY KEY CLUSTERED
                 (
@@ -84,6 +85,7 @@ IF NOT EXISTS (SELECT *
             [BookId]  [int]                NOT NULL,
             [UserId]  [nvarchar](128)      NOT NULL,
             [Title]   [nvarchar](max)      NOT NULL,
+            [Rating]  [int]                NOT NULL,
             [Content] [nvarchar](max)      NULL,
             CONSTRAINT [PK_Reviews] PRIMARY KEY CLUSTERED
                 (

@@ -1,5 +1,5 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" CodeBehind="AuthPage.aspx.cs" Inherits="BookReviews.Auth.AuthPage" %>
-<%@ Register TagPrefix="comp" TagName="Logotype" Src="~/Components/Logotype.ascx" %>
+<%@ Register TagPrefix="comp" TagName="Logotype" Src="~/Components/Layout/Logotype.ascx" %>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
     <div class="vw-100 vh-100 d-flex justify-content-center align-items-center">

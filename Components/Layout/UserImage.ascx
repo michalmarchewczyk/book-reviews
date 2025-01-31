@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" CodeBehind="UserImage.ascx.cs" Inherits="BookReviews.Components.UserImage" %>
+﻿<%@ Control Language="C#" CodeBehind="UserImage.ascx.cs" Inherits="BookReviews.Components.Layout.UserImage" %>
 
 
 <svg

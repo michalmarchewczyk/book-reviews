@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Web.UI;
 
-namespace BookReviews.Components
+namespace BookReviews.Components.Layout
 {
-    public partial class Navbar : UserControl
+    public partial class Footer : UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
