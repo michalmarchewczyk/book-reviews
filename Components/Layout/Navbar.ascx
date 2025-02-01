@@ -5,7 +5,7 @@
 <%@ Register TagPrefix="comp" TagName="UserImage" Src="~/Components/Layout/UserImage.ascx" %>
 
 <nav class="navbar navbar-expand-lg bg-light sticky-top" data-bs-theme="light">
-    <div class="container px-4">
+    <div class="container px-3">
         <a class="navbar-brand" href="/"><comp:Logotype runat="server"/></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

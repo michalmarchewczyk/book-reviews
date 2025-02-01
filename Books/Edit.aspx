@@ -96,7 +96,6 @@
         ID="BooksDataSource"
         runat="server"
         ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
-
         SelectCommand="SELECT [Id], [Title], [AuthorId], [Description], [ISBN], [CoverPath], [ReleaseYear] FROM [Books] WHERE [Id] = @Id"
         UpdateCommand="UPDATE [Books] SET [Title] = @Title, [AuthorId] = @AuthorId, [Description] = @Description, [ISBN] = @ISBN, [ReleaseYear] = @ReleaseYear, [CoverPath] = @CoverPath WHERE [Id] = @Id">
         <SelectParameters>

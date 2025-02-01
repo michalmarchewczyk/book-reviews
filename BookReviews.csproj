@@ -141,6 +141,7 @@
         <Content Include="Auth\Logout.aspx"/>
         <Content Include="Auth\Register.aspx"/>
         <Content Include="Books\Add.aspx"/>
+        <Content Include="Books\Components\BookCard.ascx"/>
         <Content Include="Books\Default.aspx"/>
         <Content Include="Books\Edit.aspx"/>
         <Content Include="Components\Features.ascx"/>
@@ -219,6 +220,7 @@
         <Compile Include="App_Code\PageBase.cs"/>
         <Compile Include="App_Start\BundleConfig.cs"/>
         <Compile Include="App_Start\RouteConfig.cs"/>
+        <Compile Include="Authors\Author.cs"/>
         <Compile Include="Authors\Components\AuthorSelect.ascx.cs">
             <SubType>ASPXCodeBehind</SubType>
             <DependentUpon>AuthorSelect.ascx</DependentUpon>
@@ -276,6 +278,13 @@
             <DependentUpon>Add.aspx</DependentUpon>
         </Compile>
         <Compile Include="Books\Book.cs"/>
+        <Compile Include="Books\Components\BookCard.ascx.cs">
+            <SubType>ASPXCodeBehind</SubType>
+            <DependentUpon>BookCard.ascx</DependentUpon>
+        </Compile>
+        <Compile Include="Books\Components\BookCard.ascx.designer.cs">
+            <DependentUpon>BookCard.ascx</DependentUpon>
+        </Compile>
         <Compile Include="Books\Default.aspx.cs">
             <SubType>ASPXCodeBehind</SubType>
             <DependentUpon>Default.aspx</DependentUpon>

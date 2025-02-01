@@ -3,6 +3,7 @@ using System.IO;
 using System.Web;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Web.UI.WebControls;
 using BookReviews.Auth;
 
 namespace BookReviews
@@ -20,6 +21,8 @@ namespace BookReviews
 
             var schemaSql = File.ReadAllText(Server.MapPath("~/App_Data/schema.sql"));
             identityDbContext.Database.ExecuteSqlCommand(schemaSql);
+
+            WebControl.DisabledCssClass = "disabled";
         }
     }
 }

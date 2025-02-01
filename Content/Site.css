@@ -19,16 +19,30 @@ html, body {
     margin-top: 0.6rem;
 }
 
-.img-thumbnail {
+.img-thumbnail, .img-fluid {
     object-fit: contain;
+}
+
+.bottom-fade {
+    position: relative;
+}
+
+.bottom-fade::after {
+    content: "";
+    display: block;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    height: 2rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    margin-top: 45px;
-    padding-left: 15px;
-    padding-right: 15px;
+    margin-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 
