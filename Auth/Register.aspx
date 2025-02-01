@@ -12,19 +12,19 @@
         Coś poszło nie tak. Spróbuj ponownie.
     </asp:Label>
 
-    <asp:Label runat="server" CssClass="form-label" AssociatedControlID="Username">Nazwa użytkownika</asp:Label>
+    <asp:Label runat="server" CssClass="form-label mt-0" AssociatedControlID="Username">Nazwa użytkownika</asp:Label>
     <asp:TextBox ID="Username" runat="server" CssClass="form-control" placeholder="Nazwa użytkownika" />
     <asp:RequiredFieldValidator runat="server" ControlToValidate="Username" EnableClientScript="False" CssClass="invalid-feedback" Display="Dynamic">
         Nazwa użytkownika jest wymagana.
     </asp:RequiredFieldValidator>
 
-    <asp:Label runat="server" CssClass="form-label mt-3" AssociatedControlID="FirstName">Imię</asp:Label>
+    <asp:Label runat="server" CssClass="form-label" AssociatedControlID="FirstName">Imię</asp:Label>
     <asp:TextBox ID="FirstName" runat="server" CssClass="form-control" placeholder="Imię" />
 
-    <asp:Label runat="server" CssClass="form-label mt-3" AssociatedControlID="LastName">Nazwisko</asp:Label>
+    <asp:Label runat="server" CssClass="form-label" AssociatedControlID="LastName">Nazwisko</asp:Label>
     <asp:TextBox ID="LastName" runat="server" CssClass="form-control" placeholder="Nazwisko" />
 
-    <asp:Label runat="server" CssClass="form-label mt-3" AssociatedControlID="Email">Adres email</asp:Label>
+    <asp:Label runat="server" CssClass="form-label" AssociatedControlID="Email">Adres email</asp:Label>
     <asp:TextBox ID="Email" runat="server" CssClass="form-control" placeholder="Email" />
     <asp:RequiredFieldValidator runat="server" ControlToValidate="Email" EnableClientScript="False" CssClass="invalid-feedback" Display="Dynamic">
         Email jest wymagany.
@@ -33,7 +33,7 @@
         Nieprawidłowy adres email.
     </asp:RegularExpressionValidator>
 
-    <asp:Label runat="server" CssClass="form-label mt-3" AssociatedControlID="Password">Hasło</asp:Label>
+    <asp:Label runat="server" CssClass="form-label" AssociatedControlID="Password">Hasło</asp:Label>
     <asp:TextBox ID="Password" runat="server" CssClass="form-control" placeholder="Hasło" TextMode="Password" />
     <asp:Label runat="server" CssClass="form-text text-muted">
         Co najmniej <%: PasswordMinLength %> znaków

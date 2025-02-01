@@ -10,6 +10,7 @@ namespace BookReviews.Books
         public string Description { get; set; }
         public int AuthorId { get; set; }
         public int ReleaseYear { get; set; }
+        public string CoverPath { get; set; }
 
         public static Book Create(DataRow row)
         {
@@ -20,7 +21,8 @@ namespace BookReviews.Books
                 ISBN = row["ISBN"].ToString(),
                 Description = row["Description"].ToString(),
                 AuthorId = (int)row["AuthorId"],
-                ReleaseYear = (int)row["ReleaseYear"]
+                ReleaseYear = (int)row["ReleaseYear"],
+                CoverPath = row["CoverPath"].ToString()
             };
         }
     }

@@ -156,9 +156,11 @@
         <Content Include="Content\bootstrap.min.css"/>
         <Content Include="Content\bootstrap.rtl.css"/>
         <Content Include="Content\bootstrap.rtl.min.css"/>
+        <Content Include="Content\cover_default.png"/>
         <Content Include="Content\Site.css"/>
         <Content Include="Default.aspx"/>
         <Content Include="favicon.ico"/>
+        <Content Include="Files\.gitkeep"/>
         <Content Include="Global.asax"/>
         <Content Include="Main.master"/>
         <Content Include="Reviews\Default.aspx"/>

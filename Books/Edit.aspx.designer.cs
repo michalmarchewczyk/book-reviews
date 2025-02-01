@@ -15,6 +15,24 @@ namespace BookReviews.Books
     {
 
         /// <summary>
+        /// CoverImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image CoverImage;
+
+        /// <summary>
+        /// Cover control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload Cover;
+
+        /// <summary>
         /// AuthorExisting control.
         /// </summary>
         /// <remarks>

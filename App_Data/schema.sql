@@ -38,7 +38,7 @@ IF NOT EXISTS (SELECT *
             [Description] [nvarchar](max)      NULL,
             [ISBN]        [char](13)           NOT NULL,
             [ReleaseYear] [int]                NOT NULL,
-            [Cover]       [varbinary](max)     NULL,
+            [CoverPath]   [varchar](max)       NULL,
             CONSTRAINT [PK_Book] PRIMARY KEY CLUSTERED
                 (
                  [Id] ASC

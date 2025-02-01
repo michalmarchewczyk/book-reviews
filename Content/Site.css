@@ -14,10 +14,19 @@ html, body {
     font-weight: 500;
 }
 
+.form-label {
+    margin-bottom: 0.1rem;
+    margin-top: 0.6rem;
+}
+
+.img-thumbnail {
+    object-fit: contain;
+}
+
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    margin-top: 15px;
+    margin-top: 45px;
     padding-left: 15px;
     padding-right: 15px;
 }

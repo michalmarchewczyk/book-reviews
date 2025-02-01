@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using BookReviews.Auth;
 using BookReviews.Utils;
 
@@ -14,8 +15,14 @@ namespace BookReviews.Books
 
             AuthorChange(Page, EventArgs.Empty);
 
+            Page.ClientScript.RegisterClientScriptBlock(GetType(), $"FileUploadPreview-{Cover.ClientID}",
+                $"var FileUploadPreviewInputIds = (FileUploadPreviewInputIds || []).concat('{Cover.ClientID}');" +
+                $"var FileUploadPreviewPreviewIds = (FileUploadPreviewPreviewIds || []).concat('{CoverImage.ClientID}');",
+                true);
+
             if (Page.IsPostBack)
             {
+                // TODO: dont validate if not dirty
                 FormHelper.ValidateAndHighlight(Page, new[] { AuthorLastName.ID });
             }
         }
@@ -27,14 +34,14 @@ namespace BookReviews.Books
                 AuthorSelect.Disabled = true;
                 AuthorFirstName.Attributes.Remove("disabled");
                 AuthorLastName.Attributes.Remove("disabled");
+                AuthorLastNameValidator.Enabled = true;
             }
             else
             {
                 AuthorSelect.Disabled = false;
                 AuthorFirstName.Attributes.Add("disabled", "disabled");
                 AuthorLastName.Attributes.Add("disabled", "disabled");
-                // TODO: disable validation
-                // AuthorLastNameValidator.IsValid = true;
+                AuthorLastNameValidator.Enabled = false;
             }
         }
 
@@ -77,7 +84,17 @@ namespace BookReviews.Books
             BooksDataSource.InsertParameters["ReleaseYear"].DefaultValue = releaseYear.ToString();
             BooksDataSource.InsertParameters["Description"].DefaultValue = description;
 
+            if (Cover.HasFile)
+            {
+                var fileName = Guid.NewGuid() + Path.GetExtension(Cover.FileName);
+                var coverPath = $"/Files/{fileName}";
+                Cover.SaveAs(Server.MapPath(coverPath));
+                BooksDataSource.InsertParameters["CoverPath"].DefaultValue = coverPath;
+            }
+
             BooksDataSource.Insert();
+
+            // TODO: redirect to book page?
         }
     }
 }
