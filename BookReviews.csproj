@@ -143,6 +143,7 @@
         <Content Include="Books\Add.aspx"/>
         <Content Include="Books\BookPage.aspx"/>
         <Content Include="Books\Components\BookCard.ascx"/>
+        <Content Include="Books\Components\BookPreview.ascx"/>
         <Content Include="Books\Default.aspx"/>
         <Content Include="Books\Edit.aspx"/>
         <Content Include="Components\Features.ascx"/>
@@ -152,6 +153,9 @@
         <Content Include="Components\Layout\Navbar.ascx"/>
         <Content Include="Components\Layout\UserImage.ascx"/>
         <Content Include="Components\Logotype.css"/>
+        <Content Include="Components\RatingInput.ascx"/>
+        <Content Include="Components\RatingInput.css"/>
+        <Content Include="Components\RatingInput.js"/>
         <Content Include="Components\ReviewCounter.ascx"/>
         <Content Include="Components\ReviewCounter.css"/>
         <Content Include="Content\bootstrap.css"/>
@@ -165,6 +169,7 @@
         <Content Include="Files\.gitkeep"/>
         <Content Include="Global.asax"/>
         <Content Include="Main.master"/>
+        <Content Include="Reviews\Add.aspx"/>
         <Content Include="Reviews\Default.aspx"/>
         <Content Include="Scripts\bootstrap.bundle.js"/>
         <Content Include="Scripts\bootstrap.bundle.min.js"/>
@@ -293,6 +298,13 @@
         <Compile Include="Books\Components\BookCard.ascx.designer.cs">
             <DependentUpon>BookCard.ascx</DependentUpon>
         </Compile>
+        <Compile Include="Books\Components\BookPreview.ascx.cs">
+            <SubType>ASPXCodeBehind</SubType>
+            <DependentUpon>BookPreview.ascx</DependentUpon>
+        </Compile>
+        <Compile Include="Books\Components\BookPreview.ascx.designer.cs">
+            <DependentUpon>BookPreview.ascx</DependentUpon>
+        </Compile>
         <Compile Include="Books\Default.aspx.cs">
             <SubType>ASPXCodeBehind</SubType>
             <DependentUpon>Default.aspx</DependentUpon>
@@ -349,6 +361,13 @@
         <Compile Include="Components\Layout\UserImage.ascx.designer.cs">
             <DependentUpon>UserImage.ascx</DependentUpon>
         </Compile>
+        <Compile Include="Components\RatingInput.ascx.cs">
+            <SubType>ASPXCodeBehind</SubType>
+            <DependentUpon>RatingInput.ascx</DependentUpon>
+        </Compile>
+        <Compile Include="Components\RatingInput.ascx.designer.cs">
+            <DependentUpon>RatingInput.ascx</DependentUpon>
+        </Compile>
         <Compile Include="Components\ReviewCounter.ascx.cs">
             <SubType>ASPXCodeBehind</SubType>
             <DependentUpon>ReviewCounter.ascx</DependentUpon>
@@ -375,6 +394,13 @@
             <DependentUpon>Main.master</DependentUpon>
         </Compile>
         <Compile Include="Properties\AssemblyInfo.cs"/>
+        <Compile Include="Reviews\Add.aspx.cs">
+            <SubType>ASPXCodeBehind</SubType>
+            <DependentUpon>Add.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="Reviews\Add.aspx.designer.cs">
+            <DependentUpon>Add.aspx</DependentUpon>
+        </Compile>
         <Compile Include="Reviews\Default.aspx.cs">
             <SubType>ASPXCodeBehind</SubType>
             <DependentUpon>Default.aspx</DependentUpon>

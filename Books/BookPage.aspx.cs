@@ -46,6 +46,8 @@ namespace BookReviews.Books
             {
                 CoverImage.ImageUrl = Book.CoverPath;
             }
+
+            // TODO: dont show add review button if review already exists
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿/****** Object:  Table [dbo].[Authors]    Script Date: 29.01.2025 21:31:31 ******/
+﻿/****** Object:  Table [dbo].[Authors]    Script Date: 01.02.2025 19:00:30 ******/
 SET ANSI_NULLS ON
 
 SET QUOTED_IDENTIFIER ON
@@ -20,7 +20,7 @@ IF NOT EXISTS (SELECT *
         ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
     END
 
-/****** Object:  Table [dbo].[Books]    Script Date: 29.01.2025 21:31:31 ******/
+/****** Object:  Table [dbo].[Books]    Script Date: 01.02.2025 19:00:30 ******/
 SET ANSI_NULLS ON
 
 SET QUOTED_IDENTIFIER ON
@@ -37,8 +37,8 @@ IF NOT EXISTS (SELECT *
             [AuthorId]    [int]                NOT NULL,
             [Description] [nvarchar](max)      NULL,
             [ISBN]        [char](13)           NOT NULL,
-            [ReleaseYear] [int]                NOT NULL,
             [CoverPath]   [varchar](max)       NULL,
+            [ReleaseYear] [int]                NOT NULL,
             CONSTRAINT [PK_Book] PRIMARY KEY CLUSTERED
                 (
                  [Id] ASC
@@ -46,7 +46,7 @@ IF NOT EXISTS (SELECT *
         ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
     END
 
-/****** Object:  Table [dbo].[ReviewRatings]    Script Date: 29.01.2025 21:31:31 ******/
+/****** Object:  Table [dbo].[ReviewRatings]    Script Date: 01.02.2025 19:00:30 ******/
 SET ANSI_NULLS ON
 
 SET QUOTED_IDENTIFIER ON
@@ -69,7 +69,7 @@ IF NOT EXISTS (SELECT *
         ) ON [PRIMARY]
     END
 
-/****** Object:  Table [dbo].[Reviews]    Script Date: 29.01.2025 21:31:31 ******/
+/****** Object:  Table [dbo].[Reviews]    Script Date: 01.02.2025 19:00:30 ******/
 SET ANSI_NULLS ON
 
 SET QUOTED_IDENTIFIER ON
@@ -90,11 +90,16 @@ IF NOT EXISTS (SELECT *
             CONSTRAINT [PK_Reviews] PRIMARY KEY CLUSTERED
                 (
                  [Id] ASC
+                    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+            CONSTRAINT [UK_Reviews] UNIQUE NONCLUSTERED
+                (
+                 [BookId] ASC,
+                 [UserId] ASC
                     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
         ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
     END
 
-/****** Object:  Index [Index_Books_1]    Script Date: 29.01.2025 21:31:31 ******/
+/****** Object:  Index [Index_Books_1]    Script Date: 01.02.2025 19:00:30 ******/
 IF NOT EXISTS (SELECT *
                FROM sys.indexes
                WHERE object_id = OBJECT_ID(N'[dbo].[Books]')
@@ -106,7 +111,7 @@ CREATE NONCLUSTERED INDEX [Index_Books_1] ON [dbo].[Books]
 
 SET ANSI_PADDING ON
 
-/****** Object:  Index [Index_Books_2]    Script Date: 29.01.2025 21:31:31 ******/
+/****** Object:  Index [Index_Books_2]    Script Date: 01.02.2025 19:00:31 ******/
 IF NOT EXISTS (SELECT *
                FROM sys.indexes
                WHERE object_id = OBJECT_ID(N'[dbo].[Books]')
@@ -116,7 +121,7 @@ CREATE NONCLUSTERED INDEX [Index_Books_2] ON [dbo].[Books]
      [ISBN] ASC
         ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
-/****** Object:  Index [Index_ReviewRatings_1]    Script Date: 29.01.2025 21:31:31 ******/
+/****** Object:  Index [Index_ReviewRatings_1]    Script Date: 01.02.2025 19:00:31 ******/
 IF NOT EXISTS (SELECT *
                FROM sys.indexes
                WHERE object_id = OBJECT_ID(N'[dbo].[ReviewRatings]')
@@ -128,7 +133,7 @@ CREATE NONCLUSTERED INDEX [Index_ReviewRatings_1] ON [dbo].[ReviewRatings]
 
 SET ANSI_PADDING ON
 
-/****** Object:  Index [Index_ReviewRatings_2]    Script Date: 29.01.2025 21:31:31 ******/
+/****** Object:  Index [Index_ReviewRatings_2]    Script Date: 01.02.2025 19:00:31 ******/
 IF NOT EXISTS (SELECT *
                FROM sys.indexes
                WHERE object_id = OBJECT_ID(N'[dbo].[ReviewRatings]')
@@ -138,7 +143,7 @@ CREATE NONCLUSTERED INDEX [Index_ReviewRatings_2] ON [dbo].[ReviewRatings]
      [UserId] ASC
         ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
-/****** Object:  Index [Index_Reviews_1]    Script Date: 29.01.2025 21:31:31 ******/
+/****** Object:  Index [Index_Reviews_1]    Script Date: 01.02.2025 19:00:31 ******/
 IF NOT EXISTS (SELECT *
                FROM sys.indexes
                WHERE object_id = OBJECT_ID(N'[dbo].[Reviews]')
@@ -150,7 +155,7 @@ CREATE NONCLUSTERED INDEX [Index_Reviews_1] ON [dbo].[Reviews]
 
 SET ANSI_PADDING ON
 
-/****** Object:  Index [Index_Reviews_2]    Script Date: 29.01.2025 21:31:31 ******/
+/****** Object:  Index [Index_Reviews_2]    Script Date: 01.02.2025 19:00:31 ******/
 IF NOT EXISTS (SELECT *
                FROM sys.indexes
                WHERE object_id = OBJECT_ID(N'[dbo].[Reviews]')
@@ -248,4 +253,18 @@ IF EXISTS (SELECT *
              AND parent_object_id = OBJECT_ID(N'[dbo].[ReviewRatings]'))
 ALTER TABLE [dbo].[ReviewRatings]
     CHECK CONSTRAINT [CK_ReviewRatings_1]
+
+IF NOT EXISTS (SELECT *
+               FROM sys.check_constraints
+               WHERE object_id = OBJECT_ID(N'[dbo].[CK_Reviews_1]')
+                 AND parent_object_id = OBJECT_ID(N'[dbo].[Reviews]'))
+ALTER TABLE [dbo].[Reviews]
+    WITH CHECK ADD CONSTRAINT [CK_Reviews_1] CHECK (([Rating] > (0) AND [Rating] <= (5)))
+
+IF EXISTS (SELECT *
+           FROM sys.check_constraints
+           WHERE object_id = OBJECT_ID(N'[dbo].[CK_Reviews_1]')
+             AND parent_object_id = OBJECT_ID(N'[dbo].[Reviews]'))
+ALTER TABLE [dbo].[Reviews]
+    CHECK CONSTRAINT [CK_Reviews_1]
 

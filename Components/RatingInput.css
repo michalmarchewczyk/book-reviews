@@ -1,0 +1,8 @@
+﻿
+.comp-RatingInput-star {
+    --bs-btn-color: #ffcc00;
+    --bs-btn-hover-color: #cca300;
+    --bs-btn-active-color: #997a00;
+    --bs-btn-font-size: 1.5rem;
+    --bs-btn-padding-x: 0.25rem;
+}

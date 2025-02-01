@@ -1,9 +1,9 @@
 ﻿<%@ Control Language="C#" CodeBehind="BookCard.ascx.cs" Inherits="BookReviews.Books.Components.BookCard" %>
 <%@ Register TagPrefix="auth" TagName="VisibilityControl" Src="~/Auth/Controls/VisibilityControl.ascx" %>
 
-<div class="card mb-3 overflow-hidden row g-0 mh-100 w-100" style="max-width: 780px; max-height: 263px; height: 263px;">
+<div class="card mb-3 overflow-hidden row g-0 mh-100 w-100" style="max-width: 780px; max-height: 260px; height: 260px;">
     <a href="/books/<%: Book.Id %>" class="col-sm-3 align-items-center h-100 ps-3 ps-lg-0 d-none d-sm-flex">
-        <asp:Image runat="server" CssClass="img-fluid rounded" style="max-height: 280px; aspect-ratio: 17 / 24;" ID="CoverImage" ImageUrl="/Content/cover_default.png"/>
+        <asp:Image runat="server" CssClass="img-fluid rounded" style="max-height: 100%; aspect-ratio: 17 / 24;" ID="CoverImage" ImageUrl="/Content/cover_default.png"/>
     </a>
     <div class="col-sm-9 card-body d-flex flex-column h-100">
         <a href="/books/<%: Book.Id %>" class="text-black link-underline-dark link-underline-opacity-0 link-underline-opacity-100-hover">
