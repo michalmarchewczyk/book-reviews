@@ -80,7 +80,10 @@
         ID="AuthorsDataSource"
         runat="server"
         ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
-        InsertCommand="INSERT INTO [Authors] ([FirstName], [LastName]) VALUES (@FirstName, @LastName); SELECT @NewId=Scope_Identity();">
+        InsertCommand="INSERT INTO
+            [Authors] ([FirstName], [LastName])
+            VALUES (@FirstName, @LastName);
+            SELECT @NewId=Scope_Identity();">
         <InsertParameters>
             <asp:Parameter Name="NewId" Type="Int32" Direction="Output" />
             <asp:Parameter Name="FirstName" Type="String" />
@@ -92,9 +95,13 @@
         ID="BooksDataSource"
         runat="server"
         ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
-        InsertCommand="INSERT INTO [Books] ([Title], [AuthorId], [Description], [ISBN], [ReleaseYear], [CoverPath]) VALUES (@Title, @AuthorId, @Description, @ISBN, @ReleaseYear, @CoverPath)"
+        InsertCommand="INSERT INTO
+            [Books] ([Title], [AuthorId], [Description], [ISBN], [ReleaseYear], [CoverPath])
+            VALUES (@Title, @AuthorId, @Description, @ISBN, @ReleaseYear, @CoverPath);
+            SELECT @NewId=Scope_Identity();"
         >
         <InsertParameters>
+            <asp:Parameter Name="NewId" Type="Int32" Direction="Output" />
             <asp:Parameter Name="Title" Type="String" />
             <asp:Parameter Name="AuthorId" Type="Int32" />
             <asp:Parameter Name="Description" Type="String" />

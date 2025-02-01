@@ -79,7 +79,7 @@ namespace BookReviews.Books
 
         protected void CancelButton_OnCommand(object sender, EventArgs e)
         {
-            Response.Redirect("~/books"); // TODO: change to book page
+            Response.Redirect($"~/books/{Book.Id}");
         }
 
         protected void Submit(object sender, EventArgs e)
@@ -127,7 +127,7 @@ namespace BookReviews.Books
 
             BooksDataSource.Update();
 
-            Response.Redirect("~/books"); // TODO: change to book page
+            Response.Redirect($"~/books/{Book.Id}");
         }
     }
 }

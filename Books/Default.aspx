@@ -4,7 +4,7 @@
 
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
-    <div class="d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
         <h2 class="mb-0">
             Książki
         </h2>

@@ -141,6 +141,7 @@
         <Content Include="Auth\Logout.aspx"/>
         <Content Include="Auth\Register.aspx"/>
         <Content Include="Books\Add.aspx"/>
+        <Content Include="Books\BookPage.aspx"/>
         <Content Include="Books\Components\BookCard.ascx"/>
         <Content Include="Books\Default.aspx"/>
         <Content Include="Books\Edit.aspx"/>
@@ -278,6 +279,13 @@
             <DependentUpon>Add.aspx</DependentUpon>
         </Compile>
         <Compile Include="Books\Book.cs"/>
+        <Compile Include="Books\BookPage.aspx.cs">
+            <SubType>ASPXCodeBehind</SubType>
+            <DependentUpon>BookPage.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="Books\BookPage.aspx.designer.cs">
+            <DependentUpon>BookPage.aspx</DependentUpon>
+        </Compile>
         <Compile Include="Books\Components\BookCard.ascx.cs">
             <SubType>ASPXCodeBehind</SubType>
             <DependentUpon>BookCard.ascx</DependentUpon>

@@ -1,0 +1,58 @@
+﻿<%@ Page Title="Title" Language="C#" MasterPageFile="~/Main.master" CodeBehind="BookPage.aspx.cs" Inherits="BookReviews.Books.BookPage" %>
+<%@ Register TagPrefix="auth" TagName="VisibilityControl" Src="~/Auth/Controls/VisibilityControl.ascx" %>
+
+<asp:Content runat="server" ContentPlaceHolderID="MainContent">
+    <div class="row">
+        <div class="col-md-3">
+            <asp:Image runat="server" CssClass="img-fluid rounded w-100 border" ID="CoverImage"  style="aspect-ratio: 17 / 24;" ImageUrl="/Content/cover_default.png"/>
+        </div>
+        <div class="col-md-9">
+            <div class="d-flex align-items-center">
+                <h2 class="mb-0">
+                    <%: Book.Title %>
+                </h2>
+                <div class="flex-fill"></div>
+                <auth:VisibilityControl runat="server" Visibility="HasRole" Role="Admin">
+                    <Content>
+                        <a class="btn btn-secondary ms-3" href="/books/edit?id=<%: Book.Id %>">Edytuj</a>
+                        <a class="btn btn-danger ms-3" href="/books/delete?id=<%: Book.Id %>">Usuń</a>
+                    </Content>
+                </auth:VisibilityControl>
+            </div>
+            <hr/>
+
+            <div class="d-flex flex-column">
+                <h4><%: Author.FirstName + " " + Author.LastName %></h4>
+                <span>Rok wydania: <%: Book.ReleaseYear %></span>
+                <span>Numer ISBN: <%: Book.ISBN %></span>
+                <span>Opis:</span>
+                <p style="white-space: pre;"><%: Book.Description %><%= string.IsNullOrEmpty(Book.Description) ? "<span class='fst-italic'>Brak opisu.</span>" : "" %></p>
+                <span>Średnia ocena:</span>
+            </div>
+
+        </div>
+    </div>
+    <div class="mt-5 d-flex justify-content-between align-items-center">
+        <h4 class="mb-0">Recenzje</h4>
+        <a class="btn btn-primary" href="/reviews/add?bookId=<%: Book.Id %>">Dodaj recenzję</a>
+    </div>
+    <hr/>
+
+
+
+
+
+    <asp:SqlDataSource
+        ID="BooksDataSource"
+        runat="server"
+        ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
+        SelectCommand="SELECT
+            b.[Id], b.[Title], b.[AuthorId], b.[Description], b.[ISBN], b.[CoverPath], b.[ReleaseYear],
+            a.[FirstName] AS AuthorFirstName, a.[LastName] AS AuthorLastName
+            FROM [Books] b LEFT JOIN [Authors] a ON b.AuthorId = a.Id WHERE b.[Id] = @Id"
+    >
+        <SelectParameters>
+            <asp:Parameter Name="Id" Type="Int32" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+</asp:Content>

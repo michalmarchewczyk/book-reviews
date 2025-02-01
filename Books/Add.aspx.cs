@@ -92,9 +92,15 @@ namespace BookReviews.Books
                 BooksDataSource.InsertParameters["CoverPath"].DefaultValue = coverPath;
             }
 
+            var bookId = -1;
+
+            BooksDataSource.Inserted += (o, args) =>
+            {
+                bookId = int.Parse(args.Command.Parameters["@NewId"].Value.ToString());
+            };
             BooksDataSource.Insert();
 
-            // TODO: redirect to book page?
+            Response.Redirect($"~/books/{bookId}");
         }
     }
 }

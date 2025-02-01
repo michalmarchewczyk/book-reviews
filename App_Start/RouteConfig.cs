@@ -10,6 +10,11 @@ namespace BookReviews
             var settings = new FriendlyUrlSettings();
             settings.AutoRedirectMode = RedirectMode.Permanent;
             routes.EnableFriendlyUrls(settings);
+
+            routes.MapPageRoute(
+                "BookPageRoute",
+                "books/{id}",
+                "~/books/BookPage.aspx");
         }
     }
 }
