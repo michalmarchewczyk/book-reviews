@@ -1,16 +1,17 @@
-﻿<%@ Page Title="Title" Language="C#" MasterPageFile="~/Main.master" CodeBehind="Add.aspx.cs" Inherits="BookReviews.Reviews.Add" %>
+﻿<%@ Page Title="Title" Language="C#" MasterPageFile="~/Main.master" CodeBehind="Edit.aspx.cs" Inherits="BookReviews.Reviews.Edit" %>
+
 <%@ Register TagPrefix="comp" TagName="BookPreview" Src="~/Books/Components/BookPreview.ascx" %>
 <%@ Register TagPrefix="comp" TagName="RatingInput" Src="~/Components/RatingInput.ascx" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div class="card mx-auto">
         <h3 class="card-header">
-            Dodaj recenzję
+            Edytuj recenzję
         </h3>
         <div class="card-body">
             <div class="row g-5">
                 <div class="col-md-7">
-                    <span class="d-inline-block mb-1">Dodajesz recenzję dla książki:</span>
+                    <span class="d-inline-block mb-1">Edytujesz recenzję dla książki:</span>
                     <comp:BookPreview runat="server" ID="BookPreview" />
                 </div>
                 <div class="col-md-5">
@@ -30,7 +31,7 @@
 
             <div class="d-flex justify-content-between mt-4">
                 <asp:Button runat="server" ID="CancelButton" Text="Anuluj" CssClass="btn btn-danger" OnCommand="CancelButton_OnCommand"/>
-                <asp:Button runat="server" ID="SubmitButton" Text="Dodaj" CssClass="btn btn-primary" OnCommand="Submit"/>
+                <asp:Button runat="server" ID="SubmitButton" Text="Zapisz" CssClass="btn btn-primary" OnCommand="Submit"/>
             </div>
         </div>
     </div>
@@ -55,24 +56,16 @@
         ID="ReviewsDataSource"
         runat="server"
         ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
-        DeleteCommand="DELETE FROM [Reviews] WHERE [Id] = @Id"
-        InsertCommand="INSERT INTO
-            [Reviews] ([UserId], [BookId], [Title], [Rating], [Content])
-            VALUES (@UserId, @BookId, @Title, @Rating, @Content);
-            SELECT @NewId = SCOPE_IDENTITY();"
-        SelectCommand="SELECT [Id], [UserId], [BookId], [Title], [Rating], [Content] FROM [Reviews] WHERE [UserId] = @UserId AND [BookId] = @BookId"
-    >
+        SelectCommand="SELECT [Id], [UserId], [BookId], [Title], [Rating], [Content] FROM [Reviews] WHERE [Id] = @Id"
+        UpdateCommand="UPDATE [Reviews] SET [Title] = @Title, [Rating] = @Rating, [Content] = @Content WHERE [Id] = @Id">
         <SelectParameters>
-            <asp:Parameter Name="UserId" Type="String" />
-            <asp:Parameter Name="BookId" Type="Int32" />
+            <asp:Parameter Name="Id" Type="Int32" />
         </SelectParameters>
-        <InsertParameters>
-            <asp:Parameter Name="NewId" Type="Int32" Direction="Output" />
-            <asp:Parameter Name="UserId" Type="String" />
-            <asp:Parameter Name="BookId" Type="Int32" />
+        <UpdateParameters>
             <asp:Parameter Name="Title" Type="String" />
             <asp:Parameter Name="Rating" Type="Int32" />
             <asp:Parameter Name="Content" Type="String" />
-        </InsertParameters>
+            <asp:Parameter Name="Id" Type="Int32" />
+        </UpdateParameters>
     </asp:SqlDataSource>
 </asp:Content>
