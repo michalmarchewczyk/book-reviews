@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" CodeBehind="ReviewCard.ascx.cs" Inherits="BookReviews.Reviews.Components.ReviewCard" %>
 <%@ Import Namespace="BookReviews.Auth" %>
+<%@ Import Namespace="Microsoft.AspNet.Identity" %>
 <%@ Register TagPrefix="comp" TagName="BookPreview" Src="~/Books/Components/BookPreview.ascx" %>
 <%@ Register TagPrefix="comp" TagName="RatingInput" Src="~/Components/RatingInput.ascx" %>
 <%@ Register TagPrefix="comp" TagName="ReviewLikes" Src="~/Reviews/Components/ReviewLikes.ascx" %>
@@ -9,7 +10,16 @@
     <div class="row g-4">
         <div class="col-md-6">
             <a href="/reviews/<%: Review.Id %>" class="text-black link-underline-dark link-underline-opacity-0 link-underline-opacity-100-hover">
-                <h5 class="card-title fw-bolder text-truncate"><%: Review.Title %></h5>
+                <h5 class="card-title fw-bolder text-truncate">
+                    <asp:Label
+                        runat="server"
+                        Visible="<%# Review.UserId == Page.User.Identity.GetUserId() %>"
+                        CssClass="badge rounded-pill bg-primary me-1"
+                    >
+                        Twoja recenzja
+                    </asp:Label>
+                    <%: Review.Title %>
+                </h5>
             </a>
             <span class="card-subtitle fw-normal">Użytkownik: <%: AuthHelper.GetUserDisplayName(Review?.UserId) %></span>
             <div class="card-text d-flex align-items-center gap-2">

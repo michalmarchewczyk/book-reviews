@@ -35,7 +35,8 @@
     </div>
     <div class="mt-5 d-flex align-items-center">
         <h4 class="mb-0 me-4">Recenzje (<%: ReviewsList.Count.ToString() %>)</h4>
-        <a class="btn btn-primary" href="/reviews/add?bookId=<%: Book.Id %>">Dodaj recenzję</a>
+        <asp:HyperLink runat="server" Text="Dodaj recenzję" ID="AddReviewButton" CssClass="btn btn-primary"></asp:HyperLink>
+        <asp:HyperLink runat="server" Text="Zobacz swoją recenzję" ID="ViewReviewButton" CssClass="btn btn-secondary"></asp:HyperLink>
         <div class="flex-fill"></div>
         <asp:DropDownList
             runat="server"
@@ -60,11 +61,16 @@
         SelectCommand="SELECT
             b.[Id], b.[Title], b.[AuthorId], b.[Description], b.[ISBN], b.[CoverPath], b.[ReleaseYear],
             a.[FirstName] AS AuthorFirstName, a.[LastName] AS AuthorLastName,
+            r.[Id] as ReviewId,
             (SELECT AVG(Cast(r.[Rating] as Float)) FROM [Reviews] r WHERE r.[BookId] = b.[Id]) AS AverageRating
-            FROM [Books] b LEFT JOIN [Authors] a ON b.AuthorId = a.Id WHERE b.[Id] = @Id"
+            FROM [Books] b
+            LEFT JOIN [Authors] a ON b.AuthorId = a.Id
+            LEFT JOIN [Reviews] r ON r.BookId = b.Id AND r.UserId = @UserId
+            WHERE b.[Id] = @Id"
     >
         <SelectParameters>
             <asp:Parameter Name="Id" Type="Int32" />
+            <asp:Parameter Name="UserId" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
 </asp:Content>

@@ -5,6 +5,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BookReviews.Auth;
 using BookReviews.Authors;
+using Microsoft.AspNet.Identity;
 
 namespace BookReviews.Books
 {
@@ -14,12 +15,14 @@ namespace BookReviews.Books
         private int BookId { get; set; }
         protected Book Book { get; set; }
         protected Author Author { get; set; }
+        protected int CurrentUserReview { get; set; } = -1;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             BookId = Convert.ToInt32(RouteData.Values["id"]);
 
             BooksDataSource.SelectParameters["Id"].DefaultValue = BookId.ToString();
+            BooksDataSource.SelectParameters["UserId"].DefaultValue = Page.User.Identity.GetUserId();
 
             var foundBooks = BooksDataSource.Select(new DataSourceSelectArguments());
 
@@ -32,6 +35,9 @@ namespace BookReviews.Books
             {
                 Book = Book.FromRow(rowView.Row);
                 Author = Author.FromRelatedRow(rowView.Row);
+                CurrentUserReview = rowView.Row["ReviewId"] == DBNull.Value
+                    ? -1
+                    : Convert.ToInt32(rowView.Row["ReviewId"]);
             }
 
             if (Book == null)
@@ -40,6 +46,10 @@ namespace BookReviews.Books
             }
 
             ReviewsList.BookId = BookId;
+            AddReviewButton.Visible = CurrentUserReview == -1;
+            AddReviewButton.NavigateUrl = $"~/reviews/add?bookId={BookId}";
+            ViewReviewButton.Visible = CurrentUserReview != -1;
+            ViewReviewButton.NavigateUrl = $"~/reviews/{CurrentUserReview}";
 
             ReviewsListSortingChanged(Page, EventArgs.Empty);
 

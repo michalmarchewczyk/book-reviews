@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data;
-using System.Diagnostics;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
@@ -16,8 +15,6 @@ namespace BookReviews.Reviews.Components
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Debug.WriteLine("ReviewLikes RENDER ID=" + ReviewId);
-
             ReviewLikesDataSource.SelectParameters["Id"].DefaultValue = ReviewId.ToString();
 
             var foundRecords = ReviewLikesDataSource.Select(DataSourceSelectArguments.Empty);
