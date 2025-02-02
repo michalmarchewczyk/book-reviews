@@ -2,6 +2,7 @@
 using System.IO;
 using BookReviews.Auth;
 using BookReviews.Utils;
+using BookReviews.Utils.CustomExtensions;
 
 namespace BookReviews.Books
 {
@@ -19,12 +20,6 @@ namespace BookReviews.Books
                 $"var FileUploadPreviewInputIds = (FileUploadPreviewInputIds || []).concat('{Cover.ClientID}');" +
                 $"var FileUploadPreviewPreviewIds = (FileUploadPreviewPreviewIds || []).concat('{CoverImage.ClientID}');",
                 true);
-
-            if (Page.IsPostBack)
-            {
-                // TODO: dont validate if not dirty
-                FormHelper.ValidateAndHighlight(Page, new[] { AuthorLastName.ID });
-            }
         }
 
         protected void AuthorChange(object sender, EventArgs e)
@@ -42,6 +37,7 @@ namespace BookReviews.Books
                 AuthorFirstName.Attributes.Add("disabled", "disabled");
                 AuthorLastName.Attributes.Add("disabled", "disabled");
                 AuthorLastNameValidator.Enabled = false;
+                AuthorLastName.CssClass = AuthorLastName.CssClass.RemoveFromList("is-invalid");
             }
         }
 

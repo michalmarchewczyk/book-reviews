@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using BookReviews.Auth;
 using BookReviews.Utils;
+using BookReviews.Utils.CustomExtensions;
 
 namespace BookReviews.Books
 {
@@ -49,8 +50,6 @@ namespace BookReviews.Books
 
             if (Page.IsPostBack)
             {
-                // TODO: dont validate if not dirty
-                FormHelper.ValidateAndHighlight(Page, new[] { AuthorLastName.ID });
                 return;
             }
 
@@ -80,6 +79,7 @@ namespace BookReviews.Books
                 AuthorFirstName.Attributes.Add("disabled", "disabled");
                 AuthorLastName.Attributes.Add("disabled", "disabled");
                 AuthorLastNameValidator.Enabled = false;
+                AuthorLastName.CssClass = AuthorLastName.CssClass.RemoveFromList("is-invalid");
             }
         }
 

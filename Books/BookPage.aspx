@@ -27,7 +27,7 @@
                 <span><span class="text-muted">Rok wydania: </span> <%: Book.ReleaseYear %></span>
                 <span><span class="text-muted">Numer ISBN: </span><%: Book.ISBN %></span>
                 <span class="text-muted">Opis:</span>
-                <p style="white-space: pre;" class="fs-5"><%: Book.Description %><%= string.IsNullOrEmpty(Book.Description) ? "<span class='fst-italic'>Brak opisu.</span>" : "" %></p>
+                <p style="white-space: pre;" class="fs-5 text-break overflow-hidden"><%: Book.Description %><%= string.IsNullOrEmpty(Book.Description) ? "<span class='fst-italic'>Brak opisu.</span>" : "" %></p>
                 <span class="text-muted">Średnia ocena: </span><span class="fs-5"><%: Book.AverageRating == null ? "brak recenzji" : ((double)Book.AverageRating).ToString("F2") %></span>
             </div>
 

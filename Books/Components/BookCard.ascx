@@ -10,7 +10,7 @@
             <h5 class="card-title fw-bolder"><%: Book.Title %></h5>
         </a>
         <span class="card-subtitle fw-normal"><%: Author.FirstName + " " + Author.LastName %> (rok wydania: <%: Book.ReleaseYear %>)</span>
-        <p class="card-text flex-grow-1 overflow-hidden bottom-fade mt-2" style="white-space: pre;"><%: Book.Description %><%= string.IsNullOrEmpty(Book.Description) ? "<span class='fst-italic'>Brak opisu.</span>" : "" %></p>
+        <p class="card-text flex-grow-1 overflow-hidden bottom-fade mt-2 text-break" style="white-space: pre;"><%: Book.Description %><%= string.IsNullOrEmpty(Book.Description) ? "<span class='fst-italic'>Brak opisu.</span>" : "" %></p>
         <auth:VisibilityControl runat="server" Visibility="HasRole" Role="Admin">
             <Content>
                 <div class="position-absolute bottom-0 end-0 m-3">
