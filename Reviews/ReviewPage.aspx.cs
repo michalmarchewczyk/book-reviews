@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Web;
 using System.Web.UI;
 using BookReviews.Auth;
 using BookReviews.Authors;
@@ -25,7 +26,7 @@ namespace BookReviews.Reviews
 
             if (foundReviews == null)
             {
-                throw new Exception("Review not found"); // TODO: handle?
+                throw new HttpException(404, "Not Found");
             }
 
             foreach (DataRowView rowView in foundReviews)
@@ -37,7 +38,7 @@ namespace BookReviews.Reviews
 
             if (Review == null)
             {
-                throw new Exception("Review not found"); // TODO: handle?
+                throw new HttpException(404, "Not Found");
             }
 
             BookPreview.Book = Book;

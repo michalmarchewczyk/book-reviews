@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BookReviews.Auth;
@@ -39,13 +40,18 @@ namespace BookReviews.Reviews
             var foundBooks = BooksDataSource.Select(new DataSourceSelectArguments());
             if (foundBooks == null)
             {
-                throw new Exception("Book not found"); // TODO: handle?
+                throw new HttpException(404, "Not Found");
             }
 
             foreach (DataRowView rowView in foundBooks)
             {
                 Book = Book.FromRow(rowView.Row);
                 Author = Author.FromRelatedRow(rowView.Row);
+            }
+
+            if (Book == null)
+            {
+                throw new HttpException(404, "Not Found");
             }
 
             BookPreview.Book = Book;

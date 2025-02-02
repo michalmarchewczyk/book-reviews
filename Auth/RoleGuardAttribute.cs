@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web;
 using System.Web.UI;
 using Microsoft.AspNet.Identity;
 
@@ -23,8 +24,7 @@ namespace BookReviews.Auth
                 return;
             }
 
-            page.Response.StatusCode = 403;
-            page.Response.End();
+            throw new HttpException(403, "Forbidden");
         }
     }
 }

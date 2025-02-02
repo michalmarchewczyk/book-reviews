@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BookReviews.Auth;
@@ -25,7 +26,7 @@ namespace BookReviews.Reviews
             var foundReviews = ReviewsDataSource.Select(new DataSourceSelectArguments());
             if (foundReviews == null)
             {
-                throw new Exception("Review not found"); // TODO: handle?
+                throw new HttpException(404, "Not Found");
             }
 
             foreach (DataRowView rowView in foundReviews)
@@ -35,28 +36,32 @@ namespace BookReviews.Reviews
 
             if (Review == null)
             {
-                throw new Exception("Review not found"); // TODO: handle?
+                throw new HttpException(404, "Not Found");
             }
 
             var currentUserId = Page.User.Identity.GetUserId();
 
             if (Review.UserId != currentUserId)
             {
-                Response.StatusCode = 403; // TODO: handle?
-                Response.End();
+                throw new HttpException(403, "Forbidden");
             }
 
             BooksDataSource.SelectParameters["Id"].DefaultValue = Review.BookId.ToString();
             var foundBooks = BooksDataSource.Select(new DataSourceSelectArguments());
             if (foundBooks == null)
             {
-                throw new Exception("Book not found"); // TODO: handle?
+                throw new HttpException(404, "Not Found");
             }
 
             foreach (DataRowView rowView in foundBooks)
             {
                 Book = Book.FromRow(rowView.Row);
                 Author = Author.FromRelatedRow(rowView.Row);
+            }
+
+            if (Book == null)
+            {
+                throw new HttpException(404, "Not Found");
             }
 
             BookPreview.Book = Book;

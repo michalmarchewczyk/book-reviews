@@ -166,6 +166,9 @@
         <Content Include="Content\cover_default.png"/>
         <Content Include="Content\Site.css"/>
         <Content Include="Default.aspx"/>
+        <Content Include="Errors\Forbidden.aspx"/>
+        <Content Include="Errors\GenericError.aspx"/>
+        <Content Include="Errors\NotFound.aspx"/>
         <Content Include="favicon.ico"/>
         <Content Include="Files\.gitkeep"/>
         <Content Include="Global.asax"/>
@@ -396,6 +399,27 @@
         </Compile>
         <Compile Include="Default.aspx.designer.cs">
             <DependentUpon>Default.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="Errors\Forbidden.aspx.cs">
+            <SubType>ASPXCodeBehind</SubType>
+            <DependentUpon>Forbidden.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="Errors\Forbidden.aspx.designer.cs">
+            <DependentUpon>Forbidden.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="Errors\GenericError.aspx.cs">
+            <SubType>ASPXCodeBehind</SubType>
+            <DependentUpon>GenericError.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="Errors\GenericError.aspx.designer.cs">
+            <DependentUpon>GenericError.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="Errors\NotFound.aspx.cs">
+            <SubType>ASPXCodeBehind</SubType>
+            <DependentUpon>NotFound.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="Errors\NotFound.aspx.designer.cs">
+            <DependentUpon>NotFound.aspx</DependentUpon>
         </Compile>
         <Compile Include="Global.asax.cs">
             <DependentUpon>Global.asax</DependentUpon>
