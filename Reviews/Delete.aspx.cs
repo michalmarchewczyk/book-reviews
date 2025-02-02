@@ -5,7 +5,6 @@ using System.Web.UI.WebControls;
 using BookReviews.Auth;
 using BookReviews.Authors;
 using BookReviews.Books;
-using BookReviews.Utils;
 using Microsoft.AspNet.Identity;
 
 namespace BookReviews.Reviews
@@ -71,11 +70,6 @@ namespace BookReviews.Reviews
 
         protected void Submit(object sender, CommandEventArgs e)
         {
-            if (!FormHelper.ValidateAndHighlight(Page))
-            {
-                return;
-            }
-
             ReviewsDataSource.DeleteParameters["Id"].DefaultValue = ReviewId.ToString();
 
             ReviewsDataSource.Delete();

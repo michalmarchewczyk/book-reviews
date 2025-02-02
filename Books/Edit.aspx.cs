@@ -31,6 +31,11 @@ namespace BookReviews.Books
                 Book = Book.FromRow(rowView.Row);
             }
 
+            if (Book == null)
+            {
+                throw new Exception("Book not found"); // TODO: handle?
+            }
+
             AuthorExisting.InputAttributes.Add("class", "form-check-input");
             AuthorNew.InputAttributes.Add("class", "form-check-input");
 

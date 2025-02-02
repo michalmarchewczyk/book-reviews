@@ -3,20 +3,18 @@ using System.Data;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BookReviews.Auth;
-using BookReviews.Authors;
 
 namespace BookReviews.Books
 {
-    [AuthenticatedGuard]
-    public partial class BookPage : PageBase
+    [RoleGuard(AuthRole.Admin)]
+    public partial class Delete : PageBase
     {
         private int BookId { get; set; }
         protected Book Book { get; set; }
-        protected Author Author { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            BookId = Convert.ToInt32(RouteData.Values["id"]);
+            BookId = int.Parse(Request.QueryString["id"] ?? "-1");
 
             BooksDataSource.SelectParameters["Id"].DefaultValue = BookId.ToString();
 
@@ -30,7 +28,6 @@ namespace BookReviews.Books
             foreach (DataRowView rowView in foundBooks)
             {
                 Book = Book.FromRow(rowView.Row);
-                Author = Author.FromRelatedRow(rowView.Row);
             }
 
             if (Book == null)
@@ -38,35 +35,25 @@ namespace BookReviews.Books
                 throw new Exception("Book not found"); // TODO: handle?
             }
 
-            ReviewsList.BookId = BookId;
-
-            ReviewsListSortingChanged(Page, EventArgs.Empty);
-
-            Render();
-        }
-
-        private void Render()
-        {
-            if (Book == null)
-            {
-                return;
-            }
-
             if (!string.IsNullOrEmpty(Book.CoverPath))
             {
                 CoverImage.ImageUrl = Book.CoverPath;
             }
-
-            // TODO: dont show add review button if review already exists
         }
 
-        protected void ReviewsListSortingChanged(object sender, EventArgs e)
+
+        protected void CancelButton_OnCommand(object sender, CommandEventArgs e)
         {
-            var selectedValue = ReviewsListSorting.SelectedValue;
-            var sortColumn = selectedValue.Split('_')[0];
-            var sortDirection = selectedValue.Split('_')[1];
-            ReviewsList.Sort(sortColumn,
-                sortDirection == "DESC" ? SortDirection.Descending : SortDirection.Ascending);
+            Response.Redirect($"~/books/{BookId}");
+        }
+
+        protected void Submit(object sender, CommandEventArgs e)
+        {
+            BooksDataSource.DeleteParameters["Id"].DefaultValue = BookId.ToString();
+
+            BooksDataSource.Delete();
+
+            Response.Redirect("~/books/");
         }
     }
 }

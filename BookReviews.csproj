@@ -145,6 +145,7 @@
         <Content Include="Books\Components\BookCard.ascx"/>
         <Content Include="Books\Components\BookPreview.ascx"/>
         <Content Include="Books\Default.aspx"/>
+        <Content Include="Books\Delete.aspx"/>
         <Content Include="Books\Edit.aspx"/>
         <Content Include="Components\Features.ascx"/>
         <Content Include="Components\Hero.ascx"/>
@@ -317,6 +318,13 @@
         </Compile>
         <Compile Include="Books\Default.aspx.designer.cs">
             <DependentUpon>Default.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="Books\Delete.aspx.cs">
+            <SubType>ASPXCodeBehind</SubType>
+            <DependentUpon>Delete.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="Books\Delete.aspx.designer.cs">
+            <DependentUpon>Delete.aspx</DependentUpon>
         </Compile>
         <Compile Include="Books\Edit.aspx.cs">
             <SubType>ASPXCodeBehind</SubType>

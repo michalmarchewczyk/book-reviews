@@ -13,7 +13,10 @@
         <p class="card-text flex-grow-1 overflow-hidden bottom-fade mt-2" style="white-space: pre;"><%: Book.Description %><%= string.IsNullOrEmpty(Book.Description) ? "<span class='fst-italic'>Brak opisu.</span>" : "" %></p>
         <auth:VisibilityControl runat="server" Visibility="HasRole" Role="Admin">
             <Content>
-                <a class="btn btn-secondary position-absolute bottom-0 end-0 m-3" href="/books/edit?id=<%: Book.Id %>">Edytuj</a>
+                <div class="position-absolute bottom-0 end-0 m-3">
+                    <a class="btn btn-secondary me-3" href="/books/edit?id=<%: Book.Id %>">Edytuj</a>
+                    <a class="btn btn-danger" href="/books/delete?id=<%: Book.Id %>">Usuń</a>
+                </div>
             </Content>
         </auth:VisibilityControl>
         <p class="card-text"><span class="text-muted">Średnia ocena: </span><span class="fs-5"><%: Book.AverageRating == null ? "brak recenzji" : ((double)Book.AverageRating).ToString("F2") %></span></p>

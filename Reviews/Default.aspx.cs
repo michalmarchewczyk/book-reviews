@@ -9,6 +9,7 @@ namespace BookReviews.Reviews
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ReviewsListSortingChanged(Page, EventArgs.Empty);
         }
 
         protected void ReviewsListSortingChanged(object sender, EventArgs e)
