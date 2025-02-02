@@ -28,7 +28,7 @@
                 <span><span class="text-muted">Numer ISBN: </span><%: Book.ISBN %></span>
                 <span class="text-muted">Opis:</span>
                 <p style="white-space: pre;" class="fs-5"><%: Book.Description %><%= string.IsNullOrEmpty(Book.Description) ? "<span class='fst-italic'>Brak opisu.</span>" : "" %></p>
-                <span>Średnia ocena:</span>
+                <span class="text-muted">Średnia ocena: </span><span class="fs-5"><%: Book.AverageRating == null ? "brak recenzji" : ((double)Book.AverageRating).ToString("F2") %></span>
             </div>
 
         </div>
@@ -59,7 +59,8 @@
         ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
         SelectCommand="SELECT
             b.[Id], b.[Title], b.[AuthorId], b.[Description], b.[ISBN], b.[CoverPath], b.[ReleaseYear],
-            a.[FirstName] AS AuthorFirstName, a.[LastName] AS AuthorLastName
+            a.[FirstName] AS AuthorFirstName, a.[LastName] AS AuthorLastName,
+            (SELECT AVG(Cast(r.[Rating] as Float)) FROM [Reviews] r WHERE r.[BookId] = b.[Id]) AS AverageRating
             FROM [Books] b LEFT JOIN [Authors] a ON b.AuthorId = a.Id WHERE b.[Id] = @Id"
     >
         <SelectParameters>

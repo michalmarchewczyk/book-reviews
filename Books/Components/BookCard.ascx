@@ -16,6 +16,6 @@
                 <a class="btn btn-secondary position-absolute bottom-0 end-0 m-3" href="/books/edit?id=<%: Book.Id %>">Edytuj</a>
             </Content>
         </auth:VisibilityControl>
-        <p class="card-text"><small class="text-muted">Średnia ocena:</small></p>
+        <p class="card-text"><span class="text-muted">Średnia ocena: </span><span class="fs-5"><%: Book.AverageRating == null ? "brak recenzji" : ((double)Book.AverageRating).ToString("F2") %></span></p>
     </div>
 </div>

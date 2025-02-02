@@ -29,8 +29,8 @@ namespace BookReviews.Books
 
             foreach (DataRowView rowView in foundBooks)
             {
-                Book = Book.Create(rowView.Row);
-                Author = Author.CreateFromBook(rowView.Row);
+                Book = Book.FromRow(rowView.Row);
+                Author = Author.FromRelatedRow(rowView.Row);
             }
 
             if (Book == null)

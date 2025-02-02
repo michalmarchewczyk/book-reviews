@@ -49,9 +49,9 @@ namespace BookReviews.Reviews.Components
 
             var dataItem = (ListViewDataItem)e.Item;
             var rowView = (DataRowView)dataItem.DataItem;
-            var review = Review.Create(rowView.Row);
-            var book = Book.CreateFromReview(rowView.Row);
-            var author = Author.CreateFromBook(rowView.Row);
+            var review = Review.FromRow(rowView.Row);
+            var book = Book.FromRelatedRow(rowView.Row);
+            var author = Author.FromRelatedRow(rowView.Row);
             foreach (Control dataItemControl in dataItem.Controls)
             {
                 if (dataItemControl is ReviewCard reviewCard)

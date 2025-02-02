@@ -28,7 +28,7 @@ namespace BookReviews.Books
 
             foreach (DataRowView rowView in foundBooks)
             {
-                Book = Book.Create(rowView.Row);
+                Book = Book.FromRow(rowView.Row);
             }
 
             AuthorExisting.InputAttributes.Add("class", "form-check-input");

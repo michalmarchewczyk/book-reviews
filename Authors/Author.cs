@@ -8,7 +8,7 @@ namespace BookReviews.Authors
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public static Author Create(DataRow row)
+        public static Author FromRow(DataRow row)
         {
             return new Author
             {
@@ -18,7 +18,7 @@ namespace BookReviews.Authors
             };
         }
 
-        public static Author CreateFromBook(DataRow row)
+        public static Author FromRelatedRow(DataRow row)
         {
             return new Author
             {

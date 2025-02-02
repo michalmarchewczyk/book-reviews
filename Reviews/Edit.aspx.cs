@@ -30,7 +30,7 @@ namespace BookReviews.Reviews
 
             foreach (DataRowView rowView in foundReviews)
             {
-                Review = Review.Create(rowView.Row);
+                Review = Review.FromRow(rowView.Row);
             }
 
             if (Review == null)
@@ -55,8 +55,8 @@ namespace BookReviews.Reviews
 
             foreach (DataRowView rowView in foundBooks)
             {
-                Book = Book.Create(rowView.Row);
-                Author = Author.CreateFromBook(rowView.Row);
+                Book = Book.FromRow(rowView.Row);
+                Author = Author.FromRelatedRow(rowView.Row);
             }
 
             BookPreview.Book = Book;

@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 
 namespace BookReviews.Books
 {
@@ -11,8 +12,9 @@ namespace BookReviews.Books
         public int AuthorId { get; set; }
         public int ReleaseYear { get; set; }
         public string CoverPath { get; set; }
+        public double? AverageRating { get; set; }
 
-        public static Book Create(DataRow row)
+        public static Book FromRow(DataRow row)
         {
             return new Book
             {
@@ -22,11 +24,12 @@ namespace BookReviews.Books
                 Description = row["Description"].ToString(),
                 AuthorId = (int)row["AuthorId"],
                 ReleaseYear = (int)row["ReleaseYear"],
-                CoverPath = row["CoverPath"].ToString()
+                CoverPath = row["CoverPath"].ToString(),
+                AverageRating = row["AverageRating"] == DBNull.Value ? null : (double?)row["AverageRating"]
             };
         }
 
-        public static Book CreateFromReview(DataRow row)
+        public static Book FromRelatedRow(DataRow row)
         {
             return new Book
             {

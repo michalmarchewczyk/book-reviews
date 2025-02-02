@@ -30,9 +30,9 @@ namespace BookReviews.Reviews
 
             foreach (DataRowView rowView in foundReviews)
             {
-                Review = Review.Create(rowView.Row);
-                Book = Book.CreateFromReview(rowView.Row);
-                Author = Author.CreateFromBook(rowView.Row);
+                Review = Review.FromRow(rowView.Row);
+                Book = Book.FromRelatedRow(rowView.Row);
+                Author = Author.FromRelatedRow(rowView.Row);
             }
 
             if (Review == null)

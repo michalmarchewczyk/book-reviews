@@ -11,7 +11,7 @@ namespace BookReviews.Reviews
         public string Content { get; set; }
         public int Rating { get; set; }
 
-        public static Review Create(DataRow row)
+        public static Review FromRow(DataRow row)
         {
             return new Review
             {

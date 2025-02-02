@@ -61,7 +61,8 @@
         ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
         SelectCommand="SELECT
             b.[Id], b.[Title], b.[AuthorId], b.[Description], b.[ISBN], b.[CoverPath], b.[ReleaseYear],
-            a.[FirstName] AS AuthorFirstName, a.[LastName] AS AuthorLastName
+            a.[FirstName] AS AuthorFirstName, a.[LastName] AS AuthorLastName,
+            (SELECT AVG(Cast(r.[Rating] as Float)) FROM [Reviews] r WHERE r.[BookId] = b.[Id]) AS AverageRating
             FROM [Books] b LEFT JOIN [Authors] a ON b.AuthorId = a.Id"
     >
     </asp:SqlDataSource>
