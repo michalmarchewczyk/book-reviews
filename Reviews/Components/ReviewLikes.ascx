@@ -1,12 +1,16 @@
 ﻿<%@ Control Language="C#" CodeBehind="ReviewLikes.ascx.cs" Inherits="BookReviews.Reviews.Components.ReviewLikes" %>
 
+<asp:UpdatePanel runat="server">
+    <ContentTemplate>
+        <asp:LinkButton ClientIdMode="AutoID" ID="LikeButton" runat="server" CssClass="btn btn-outline-success me-2" style="min-width: 60px; white-space: nowrap;" OnCommand="LikeButton_OnCommand">
+            <i class="bi bi-hand-thumbs-up<%: CurrentUserVote == 1 ? "-fill" : "" %> me-2 "></i> <asp:Label ID="LikeCount" runat="server" Text="-" />
+        </asp:LinkButton>
+        <asp:LinkButton ClientIdMode="AutoID" ID="DislikeButton" runat="server" CssClass="btn btn-outline-danger" style="min-width: 60px; white-space: nowrap;" OnCommand="DislikeButton_OnCommand">
+            <i class="bi bi-hand-thumbs-down<%: CurrentUserVote == -1 ? "-fill" : "" %> me-2"></i> <asp:Label ID="DislikeCount" runat="server" Text="-" />
+        </asp:LinkButton>
+    </ContentTemplate>
+</asp:UpdatePanel>
 
-<asp:LinkButton ID="LikeButton" runat="server" CssClass="btn btn-outline-success me-2" style="min-width: 60px; white-space: nowrap;" OnCommand="LikeButton_OnCommand">
-    <i class="bi bi-hand-thumbs-up me-2"></i> <asp:Label ID="LikeCount" runat="server" Text="-" />
-</asp:LinkButton>
-<asp:LinkButton ID="DislikeButton" runat="server" CssClass="btn btn-outline-danger" style="min-width: 60px; white-space: nowrap;" OnCommand="DislikeButton_OnCommand">
-    <i class="bi bi-hand-thumbs-down me-2"></i> <asp:Label ID="DislikeCount" runat="server" Text="-" />
-</asp:LinkButton>
 
 <asp:SqlDataSource
     ID="ReviewLikesDataSource"
