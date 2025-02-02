@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 using BookReviews.Auth;
 using BookReviews.Authors;
 
@@ -32,6 +33,8 @@ namespace BookReviews.Books
                 Author = Author.CreateFromBook(rowView.Row);
             }
 
+            ReviewsList.BookId = BookId;
+
             Render();
         }
 
@@ -48,6 +51,15 @@ namespace BookReviews.Books
             }
 
             // TODO: dont show add review button if review already exists
+        }
+
+        protected void ReviewsListSortingChanged(object sender, EventArgs e)
+        {
+            var selectedValue = ReviewsListSorting.SelectedValue;
+            var sortColumn = selectedValue.Split('_')[0];
+            var sortDirection = selectedValue.Split('_')[1];
+            ReviewsList.Sort(sortColumn,
+                sortDirection == "DESC" ? SortDirection.Descending : SortDirection.Ascending);
         }
     }
 }

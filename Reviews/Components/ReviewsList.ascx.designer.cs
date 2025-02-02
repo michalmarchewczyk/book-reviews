@@ -7,43 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BookReviews.Reviews
+namespace BookReviews.Reviews.Components
 {
 
 
-    public partial class Default
+    public partial class ReviewsList
     {
 
         /// <summary>
-        /// ReviewsListSorting control.
+        /// ReviewsListView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ReviewsListSorting;
+        protected global::System.Web.UI.WebControls.ListView ReviewsListView;
 
         /// <summary>
-        /// ReviewsList control.
+        /// ReviewsDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::BookReviews.Reviews.Components.ReviewsList ReviewsList;
-
-        /// <summary>
-        /// Master property.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated property.
-        /// </remarks>
-        public new BookReviews.Main Master
-        {
-            get
-            {
-                return ((BookReviews.Main)(base.Master));
-            }
-        }
+        protected global::System.Web.UI.WebControls.SqlDataSource ReviewsDataSource;
     }
 }

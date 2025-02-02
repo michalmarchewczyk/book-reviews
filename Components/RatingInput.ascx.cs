@@ -12,14 +12,25 @@ namespace BookReviews.Components
         public int Value
         {
             get => ValueField.Value == string.Empty ? 0 : Convert.ToInt32(ValueField.Value);
-            set => ValueField.Value = value.ToString();
+            set
+            {
+                ValueField.Value = value.ToString();
+                Render();
+            }
         }
+
+        public bool ReadOnly { get; set; } = false;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             ContentHelper.AddCssFile("~/Components/RatingInput.css", Page);
             ContentHelper.AddJsFile("~/Components/RatingInput.js", Page);
 
+            Render();
+        }
+
+        private void Render()
+        {
             var values = new ArrayList();
 
             for (var i = 1; i <= MaxRating; i++)

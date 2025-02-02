@@ -54,6 +54,29 @@ namespace BookReviews.Auth
 
             return data.Username;
         }
+
+        public static string GetUserDisplayName(string userId)
+        {
+            if (userId == null)
+            {
+                return null;
+            }
+
+            var userStore = new UserStore<AppIdentityUser>(new AppIdentityDbContext());
+            var userManager = new UserManager<AppIdentityUser>(userStore);
+            var user = userManager.FindById(userId);
+            if (user == null)
+            {
+                return null;
+            }
+
+            if (!string.IsNullOrEmpty(user.FirstName) || !string.IsNullOrEmpty(user.LastName))
+            {
+                return user.FirstName + " " + user.LastName;
+            }
+
+            return user.UserName;
+        }
     }
 
     public class AuthUserData

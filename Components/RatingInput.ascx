@@ -9,6 +9,7 @@
                 class="btn btn-link comp-RatingInput-star"
                 data-value="<%# Container.DataItem %>"
                 data-input-id="<%# ValueField.ClientID %>"
+                <%# ReadOnly ? "disabled" : "" %>
                 onclick="RatingInput_setRating(this)">
                 <i class="bi <%# (int)Container.DataItem <= Value ? "bi-star-fill" : "bi-star" %>"></i>
             </button>

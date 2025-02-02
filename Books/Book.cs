@@ -25,5 +25,19 @@ namespace BookReviews.Books
                 CoverPath = row["CoverPath"].ToString()
             };
         }
+
+        public static Book CreateFromReview(DataRow row)
+        {
+            return new Book
+            {
+                Id = (int)row["BookId"],
+                Title = row["BookTitle"].ToString(),
+                ISBN = row["BookISBN"].ToString(),
+                Description = row["BookDescription"].ToString(),
+                AuthorId = (int)row["BookAuthorId"],
+                ReleaseYear = (int)row["BookReleaseYear"],
+                CoverPath = row["BookCoverPath"].ToString()
+            };
+        }
     }
 }

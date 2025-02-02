@@ -24,6 +24,24 @@ namespace BookReviews.Books
         protected global::System.Web.UI.WebControls.Image CoverImage;
 
         /// <summary>
+        /// ReviewsListSorting control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ReviewsListSorting;
+
+        /// <summary>
+        /// ReviewsList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::BookReviews.Reviews.Components.ReviewsList ReviewsList;
+
+        /// <summary>
         /// BooksDataSource control.
         /// </summary>
         /// <remarks>

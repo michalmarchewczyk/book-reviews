@@ -170,6 +170,8 @@
         <Content Include="Global.asax"/>
         <Content Include="Main.master"/>
         <Content Include="Reviews\Add.aspx"/>
+        <Content Include="Reviews\Components\ReviewCard.ascx"/>
+        <Content Include="Reviews\Components\ReviewsList.ascx"/>
         <Content Include="Reviews\Default.aspx"/>
         <Content Include="Reviews\Edit.aspx"/>
         <Content Include="Scripts\bootstrap.bundle.js"/>
@@ -401,6 +403,20 @@
         </Compile>
         <Compile Include="Reviews\Add.aspx.designer.cs">
             <DependentUpon>Add.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="Reviews\Components\ReviewCard.ascx.cs">
+            <SubType>ASPXCodeBehind</SubType>
+            <DependentUpon>ReviewCard.ascx</DependentUpon>
+        </Compile>
+        <Compile Include="Reviews\Components\ReviewCard.ascx.designer.cs">
+            <DependentUpon>ReviewCard.ascx</DependentUpon>
+        </Compile>
+        <Compile Include="Reviews\Components\ReviewsList.ascx.cs">
+            <SubType>ASPXCodeBehind</SubType>
+            <DependentUpon>ReviewsList.ascx</DependentUpon>
+        </Compile>
+        <Compile Include="Reviews\Components\ReviewsList.ascx.designer.cs">
+            <DependentUpon>ReviewsList.ascx</DependentUpon>
         </Compile>
         <Compile Include="Reviews\Default.aspx.cs">
             <SubType>ASPXCodeBehind</SubType>

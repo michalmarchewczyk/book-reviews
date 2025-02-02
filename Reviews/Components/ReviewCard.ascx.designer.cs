@@ -7,43 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BookReviews.Reviews
+namespace BookReviews.Reviews.Components
 {
 
 
-    public partial class Default
+    public partial class ReviewCard
     {
 
         /// <summary>
-        /// ReviewsListSorting control.
+        /// RatingInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ReviewsListSorting;
+        protected global::BookReviews.Components.RatingInput RatingInput;
 
         /// <summary>
-        /// ReviewsList control.
+        /// BookPreview control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::BookReviews.Reviews.Components.ReviewsList ReviewsList;
-
-        /// <summary>
-        /// Master property.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated property.
-        /// </remarks>
-        public new BookReviews.Main Master
-        {
-            get
-            {
-                return ((BookReviews.Main)(base.Master));
-            }
-        }
+        protected global::BookReviews.Books.Components.BookPreview BookPreview;
     }
 }

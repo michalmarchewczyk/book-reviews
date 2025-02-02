@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="Title" Language="C#" MasterPageFile="~/Main.master" CodeBehind="BookPage.aspx.cs" Inherits="BookReviews.Books.BookPage" %>
 <%@ Register TagPrefix="auth" TagName="VisibilityControl" Src="~/Auth/Controls/VisibilityControl.ascx" %>
+<%@ Register TagPrefix="comp" TagName="ReviewsList" Src="~/Reviews/Components/ReviewsList.ascx" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div class="row">
@@ -32,13 +33,23 @@
 
         </div>
     </div>
-    <div class="mt-5 d-flex justify-content-between align-items-center">
-        <h4 class="mb-0">Recenzje</h4>
+    <div class="mt-5 d-flex align-items-center">
+        <h4 class="mb-0 me-4">Recenzje (<%: ReviewsList.Count.ToString() %>)</h4>
         <a class="btn btn-primary" href="/reviews/add?bookId=<%: Book.Id %>">Dodaj recenzję</a>
+        <div class="flex-fill"></div>
+        <asp:DropDownList
+            runat="server"
+            OnSelectedIndexChanged="ReviewsListSortingChanged"
+            CssClass="form-select w-auto"
+            ID="ReviewsListSorting"
+            AutoPostBack="true">
+            <asp:ListItem Value="Title_ASC">Tytuł (A-Z)</asp:ListItem>
+            <asp:ListItem Value="Title_DESC">Tytuł (Z-A)</asp:ListItem>
+        </asp:DropDownList>
     </div>
     <hr/>
 
-
+    <comp:ReviewsList runat="server" ID="ReviewsList" />
 
 
 

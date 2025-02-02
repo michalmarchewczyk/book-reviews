@@ -1,8 +1,10 @@
 ﻿
 .comp-RatingInput-star {
-    --bs-btn-color: #ffcc00;
-    --bs-btn-hover-color: #cca300;
-    --bs-btn-active-color: #997a00;
+    --bs-btn-color: #e6ac00;
+    --bs-btn-disabled-color: #e6ac00;
+    --bs-btn-hover-color: #b38600;
+    --bs-btn-active-color: #806000;
     --bs-btn-font-size: 1.5rem;
     --bs-btn-padding-x: 0.25rem;
+    border-bottom-width: 0 !important;
 }
