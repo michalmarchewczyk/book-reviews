@@ -11,34 +11,52 @@ namespace BookReviews.Reviews.Components
 {
 
 
-    public partial class ReviewCard
+    public partial class ReviewLikes
     {
 
         /// <summary>
-        /// RatingInput control.
+        /// LikeButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::BookReviews.Components.RatingInput RatingInput;
+        protected global::System.Web.UI.WebControls.LinkButton LikeButton;
 
         /// <summary>
-        /// BookPreview control.
+        /// LikeCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::BookReviews.Books.Components.BookPreview BookPreview;
+        protected global::System.Web.UI.WebControls.Label LikeCount;
 
         /// <summary>
-        /// ReviewLikes control.
+        /// DislikeButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::BookReviews.Reviews.Components.ReviewLikes ReviewLikes;
+        protected global::System.Web.UI.WebControls.LinkButton DislikeButton;
+
+        /// <summary>
+        /// DislikeCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DislikeCount;
+
+        /// <summary>
+        /// ReviewLikesDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ReviewLikesDataSource;
     }
 }

@@ -1,13 +1,23 @@
 ﻿<%@ Control Language="C#" CodeBehind="ReviewsList.ascx.cs" Inherits="BookReviews.Reviews.Components.ReviewsList" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="BookReviews.Authors" %>
+<%@ Import Namespace="BookReviews.Books" %>
+<%@ Import Namespace="BookReviews.Reviews" %>
 <%@ Register TagPrefix="comp" TagName="ReviewCard" Src="~/Reviews/Components/ReviewCard.ascx" %>
 
 
-<asp:ListView ID="ReviewsListView" runat="server" DataSourceID="ReviewsDataSource" OnItemDataBound="ReviewsListView_OnItemDataBound" DataKeyNames="Id">
+<asp:ListView ID="ReviewsListView" runat="server" DataSourceID="ReviewsDataSource" DataKeyNames="Id">
     <EmptyDataTemplate>
         <span class="display-6 text-muted w-100 text-center d-block my-5 py-5">Nie znaleziono żadnych recenzji.</span>
     </EmptyDataTemplate>
     <ItemTemplate>
-        <comp:ReviewCard runat="server" />
+        <comp:ReviewCard
+            runat="server"
+            Review="<%# Review.FromRow(((DataRowView)Container.DataItem).Row) %>"
+            Book="<%# Book.FromRelatedRow(((DataRowView)Container.DataItem).Row) %>"
+            Author="<%# Author.FromRelatedRow(((DataRowView)Container.DataItem).Row) %>"
+            PreviewVisible="<%# BookId == null %>"
+            />
     </ItemTemplate>
     <LayoutTemplate>
         <div id="itemPlaceholderContainer" runat="server" class="d-flex flex-column align-items-center">

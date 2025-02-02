@@ -7,53 +7,13 @@ namespace BookReviews.Reviews.Components
 {
     public partial class ReviewCard : UserControl
     {
-        private Author _author;
+        public Review Review { get; set; }
 
-        private Book _book;
+        public Book Book { get; set; }
 
-        private bool _previewVisible;
+        public Author Author { get; set; }
 
-        private Review _review;
-
-        public Review Review
-        {
-            get => _review;
-            set
-            {
-                _review = value;
-                Render();
-            }
-        }
-
-        public Book Book
-        {
-            get => _book;
-            set
-            {
-                _book = value;
-                Render();
-            }
-        }
-
-        public Author Author
-        {
-            get => _author;
-            set
-            {
-                _author = value;
-                Render();
-            }
-        }
-
-        public bool PreviewVisible
-        {
-            get => _previewVisible;
-            set
-            {
-                _previewVisible = value;
-                Render();
-            }
-        }
+        public bool PreviewVisible { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -64,14 +24,7 @@ namespace BookReviews.Reviews.Components
         {
             if (Review == null || Book == null || Author == null)
             {
-                return;
             }
-
-            BookPreview.Visible = PreviewVisible;
-            BookPreview.Book = Book;
-            BookPreview.Author = Author;
-            RatingInput.Value = Review.Rating;
-
 
             // TODO: edit and delete buttons for owner
             // TODO: delete button for admin

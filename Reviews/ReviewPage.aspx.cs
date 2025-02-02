@@ -43,6 +43,7 @@ namespace BookReviews.Reviews
             BookPreview.Book = Book;
             BookPreview.Author = Author;
             RatingInput.Value = Review.Rating;
+            ReviewLikes.ReviewId = ReviewId;
 
             // TODO: edit and delete buttons for owner
             // TODO: delete button for admin

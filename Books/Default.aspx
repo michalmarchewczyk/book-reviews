@@ -1,4 +1,7 @@
 ﻿<%@ Page Title="Title" Language="C#" MasterPageFile="~/Main.Master" CodeBehind="Default.aspx.cs" Inherits="BookReviews.Books.Default" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="BookReviews.Authors" %>
+<%@ Import Namespace="BookReviews.Books" %>
 <%@ Register TagPrefix="comp" TagName="BookCard" Src="~/Books/Components/BookCard.ascx" %>
 <%@ Register TagPrefix="auth" TagName="VisibilityControl" Src="~/Auth/Controls/VisibilityControl.ascx" %>
 
@@ -28,12 +31,16 @@
     </div>
     <hr/>
 
-    <asp:ListView ID="BooksListView" runat="server" DataSourceID="BooksDataSource" OnItemDataBound="BooksListView_OnItemDataBound" DataKeyNames="Id">
+    <asp:ListView ID="BooksListView" runat="server" DataSourceID="BooksDataSource" DataKeyNames="Id">
         <EmptyDataTemplate>
             <span class="display-6 text-muted w-100 text-center d-block my-5 py-5">Nie znaleziono żadnych książek.</span>
         </EmptyDataTemplate>
         <ItemTemplate>
-            <comp:BookCard runat="server" />
+            <comp:BookCard
+                runat="server"
+                Book="<%# Book.FromRow(((DataRowView)Container.DataItem).Row) %>"
+                Author="<%# Author.FromRelatedRow(((DataRowView)Container.DataItem).Row) %>"
+                />
         </ItemTemplate>
         <LayoutTemplate>
             <div id="itemPlaceholderContainer" runat="server" class="d-flex flex-column align-items-center">

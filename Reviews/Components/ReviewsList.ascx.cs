@@ -2,8 +2,6 @@
 using System.Data;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using BookReviews.Authors;
-using BookReviews.Books;
 
 namespace BookReviews.Reviews.Components
 {
@@ -37,31 +35,7 @@ namespace BookReviews.Reviews.Components
                 }
             }
 
-            ReviewsDataSource.DataBind();
-        }
-
-        protected void ReviewsListView_OnItemDataBound(object sender, ListViewItemEventArgs e)
-        {
-            if (e.Item.ItemType != ListViewItemType.DataItem)
-            {
-                return;
-            }
-
-            var dataItem = (ListViewDataItem)e.Item;
-            var rowView = (DataRowView)dataItem.DataItem;
-            var review = Review.FromRow(rowView.Row);
-            var book = Book.FromRelatedRow(rowView.Row);
-            var author = Author.FromRelatedRow(rowView.Row);
-            foreach (Control dataItemControl in dataItem.Controls)
-            {
-                if (dataItemControl is ReviewCard reviewCard)
-                {
-                    reviewCard.PreviewVisible = true;
-                    reviewCard.Review = review;
-                    reviewCard.Book = book;
-                    reviewCard.Author = author;
-                }
-            }
+            ReviewsListView.DataBind();
         }
 
         public void Sort(string sortColumn, SortDirection sortDirection)

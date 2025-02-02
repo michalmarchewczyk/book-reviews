@@ -1,4 +1,4 @@
-﻿/****** Object:  Table [dbo].[Authors]    Script Date: 01.02.2025 19:00:30 ******/
+﻿/****** Object:  Table [dbo].[Authors]    Script Date: 02.02.2025 01:51:52 ******/
 SET ANSI_NULLS ON
 
 SET QUOTED_IDENTIFIER ON
@@ -20,7 +20,7 @@ IF NOT EXISTS (SELECT *
         ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
     END
 
-/****** Object:  Table [dbo].[Books]    Script Date: 01.02.2025 19:00:30 ******/
+/****** Object:  Table [dbo].[Books]    Script Date: 02.02.2025 01:51:52 ******/
 SET ANSI_NULLS ON
 
 SET QUOTED_IDENTIFIER ON
@@ -46,30 +46,30 @@ IF NOT EXISTS (SELECT *
         ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
     END
 
-/****** Object:  Table [dbo].[ReviewRatings]    Script Date: 01.02.2025 19:00:30 ******/
+/****** Object:  Table [dbo].[ReviewLikes]    Script Date: 02.02.2025 01:51:52 ******/
 SET ANSI_NULLS ON
 
 SET QUOTED_IDENTIFIER ON
 
 IF NOT EXISTS (SELECT *
                FROM sys.objects
-               WHERE object_id = OBJECT_ID(N'[dbo].[ReviewRatings]')
+               WHERE object_id = OBJECT_ID(N'[dbo].[ReviewLikes]')
                  AND type in (N'U'))
     BEGIN
-        CREATE TABLE [dbo].[ReviewRatings]
+        CREATE TABLE [dbo].[ReviewLikes]
         (
             [Id]       [int] IDENTITY (1,1) NOT NULL,
             [ReviewId] [int]                NOT NULL,
             [UserId]   [nvarchar](128)      NOT NULL,
             [Value]    [int]                NOT NULL,
-            CONSTRAINT [PK_ReviewRatings] PRIMARY KEY CLUSTERED
+            CONSTRAINT [PK_ReviewLikes] PRIMARY KEY CLUSTERED
                 (
                  [Id] ASC
                     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
         ) ON [PRIMARY]
     END
 
-/****** Object:  Table [dbo].[Reviews]    Script Date: 01.02.2025 19:00:30 ******/
+/****** Object:  Table [dbo].[Reviews]    Script Date: 02.02.2025 01:51:52 ******/
 SET ANSI_NULLS ON
 
 SET QUOTED_IDENTIFIER ON
@@ -99,7 +99,7 @@ IF NOT EXISTS (SELECT *
         ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
     END
 
-/****** Object:  Index [Index_Books_1]    Script Date: 01.02.2025 19:00:30 ******/
+/****** Object:  Index [Index_Books_1]    Script Date: 02.02.2025 01:51:52 ******/
 IF NOT EXISTS (SELECT *
                FROM sys.indexes
                WHERE object_id = OBJECT_ID(N'[dbo].[Books]')
@@ -111,7 +111,7 @@ CREATE NONCLUSTERED INDEX [Index_Books_1] ON [dbo].[Books]
 
 SET ANSI_PADDING ON
 
-/****** Object:  Index [Index_Books_2]    Script Date: 01.02.2025 19:00:31 ******/
+/****** Object:  Index [Index_Books_2]    Script Date: 02.02.2025 01:51:52 ******/
 IF NOT EXISTS (SELECT *
                FROM sys.indexes
                WHERE object_id = OBJECT_ID(N'[dbo].[Books]')
@@ -121,29 +121,29 @@ CREATE NONCLUSTERED INDEX [Index_Books_2] ON [dbo].[Books]
      [ISBN] ASC
         ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
-/****** Object:  Index [Index_ReviewRatings_1]    Script Date: 01.02.2025 19:00:31 ******/
+/****** Object:  Index [Index_ReviewLikes_1]    Script Date: 02.02.2025 01:51:52 ******/
 IF NOT EXISTS (SELECT *
                FROM sys.indexes
-               WHERE object_id = OBJECT_ID(N'[dbo].[ReviewRatings]')
-                 AND name = N'Index_ReviewRatings_1')
-CREATE NONCLUSTERED INDEX [Index_ReviewRatings_1] ON [dbo].[ReviewRatings]
+               WHERE object_id = OBJECT_ID(N'[dbo].[ReviewLikes]')
+                 AND name = N'Index_ReviewLikes_1')
+CREATE NONCLUSTERED INDEX [Index_ReviewLikes_1] ON [dbo].[ReviewLikes]
     (
      [ReviewId] ASC
         ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
 SET ANSI_PADDING ON
 
-/****** Object:  Index [Index_ReviewRatings_2]    Script Date: 01.02.2025 19:00:31 ******/
+/****** Object:  Index [Index_ReviewLikes_2]    Script Date: 02.02.2025 01:51:52 ******/
 IF NOT EXISTS (SELECT *
                FROM sys.indexes
-               WHERE object_id = OBJECT_ID(N'[dbo].[ReviewRatings]')
-                 AND name = N'Index_ReviewRatings_2')
-CREATE NONCLUSTERED INDEX [Index_ReviewRatings_2] ON [dbo].[ReviewRatings]
+               WHERE object_id = OBJECT_ID(N'[dbo].[ReviewLikes]')
+                 AND name = N'Index_ReviewLikes_2')
+CREATE NONCLUSTERED INDEX [Index_ReviewLikes_2] ON [dbo].[ReviewLikes]
     (
      [UserId] ASC
         ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
-/****** Object:  Index [Index_Reviews_1]    Script Date: 01.02.2025 19:00:31 ******/
+/****** Object:  Index [Index_Reviews_1]    Script Date: 02.02.2025 01:51:52 ******/
 IF NOT EXISTS (SELECT *
                FROM sys.indexes
                WHERE object_id = OBJECT_ID(N'[dbo].[Reviews]')
@@ -155,7 +155,7 @@ CREATE NONCLUSTERED INDEX [Index_Reviews_1] ON [dbo].[Reviews]
 
 SET ANSI_PADDING ON
 
-/****** Object:  Index [Index_Reviews_2]    Script Date: 01.02.2025 19:00:31 ******/
+/****** Object:  Index [Index_Reviews_2]    Script Date: 02.02.2025 01:51:52 ******/
 IF NOT EXISTS (SELECT *
                FROM sys.indexes
                WHERE object_id = OBJECT_ID(N'[dbo].[Reviews]')
@@ -182,33 +182,33 @@ ALTER TABLE [dbo].[Books]
 
 IF NOT EXISTS (SELECT *
                FROM sys.foreign_keys
-               WHERE object_id = OBJECT_ID(N'[dbo].[FK_ReviewRatings_Reviews]')
-                 AND parent_object_id = OBJECT_ID(N'[dbo].[ReviewRatings]'))
-ALTER TABLE [dbo].[ReviewRatings]
-    WITH CHECK ADD CONSTRAINT [FK_ReviewRatings_Reviews] FOREIGN KEY ([ReviewId])
+               WHERE object_id = OBJECT_ID(N'[dbo].[FK_ReviewLikes_Reviews]')
+                 AND parent_object_id = OBJECT_ID(N'[dbo].[ReviewLikes]'))
+ALTER TABLE [dbo].[ReviewLikes]
+    WITH CHECK ADD CONSTRAINT [FK_ReviewLikes_Reviews] FOREIGN KEY ([ReviewId])
         REFERENCES [dbo].[Reviews] ([Id])
 
 IF EXISTS (SELECT *
            FROM sys.foreign_keys
-           WHERE object_id = OBJECT_ID(N'[dbo].[FK_ReviewRatings_Reviews]')
-             AND parent_object_id = OBJECT_ID(N'[dbo].[ReviewRatings]'))
-ALTER TABLE [dbo].[ReviewRatings]
-    CHECK CONSTRAINT [FK_ReviewRatings_Reviews]
+           WHERE object_id = OBJECT_ID(N'[dbo].[FK_ReviewLikes_Reviews]')
+             AND parent_object_id = OBJECT_ID(N'[dbo].[ReviewLikes]'))
+ALTER TABLE [dbo].[ReviewLikes]
+    CHECK CONSTRAINT [FK_ReviewLikes_Reviews]
 
 IF NOT EXISTS (SELECT *
                FROM sys.foreign_keys
-               WHERE object_id = OBJECT_ID(N'[dbo].[FK_ReviewRatings_Users]')
-                 AND parent_object_id = OBJECT_ID(N'[dbo].[ReviewRatings]'))
-ALTER TABLE [dbo].[ReviewRatings]
-    WITH CHECK ADD CONSTRAINT [FK_ReviewRatings_Users] FOREIGN KEY ([UserId])
+               WHERE object_id = OBJECT_ID(N'[dbo].[FK_ReviewLikes_Users]')
+                 AND parent_object_id = OBJECT_ID(N'[dbo].[ReviewLikes]'))
+ALTER TABLE [dbo].[ReviewLikes]
+    WITH CHECK ADD CONSTRAINT [FK_ReviewLikes_Users] FOREIGN KEY ([UserId])
         REFERENCES [dbo].[Users] ([Id])
 
 IF EXISTS (SELECT *
            FROM sys.foreign_keys
-           WHERE object_id = OBJECT_ID(N'[dbo].[FK_ReviewRatings_Users]')
-             AND parent_object_id = OBJECT_ID(N'[dbo].[ReviewRatings]'))
-ALTER TABLE [dbo].[ReviewRatings]
-    CHECK CONSTRAINT [FK_ReviewRatings_Users]
+           WHERE object_id = OBJECT_ID(N'[dbo].[FK_ReviewLikes_Users]')
+             AND parent_object_id = OBJECT_ID(N'[dbo].[ReviewLikes]'))
+ALTER TABLE [dbo].[ReviewLikes]
+    CHECK CONSTRAINT [FK_ReviewLikes_Users]
 
 IF NOT EXISTS (SELECT *
                FROM sys.foreign_keys
@@ -242,17 +242,17 @@ ALTER TABLE [dbo].[Reviews]
 
 IF NOT EXISTS (SELECT *
                FROM sys.check_constraints
-               WHERE object_id = OBJECT_ID(N'[dbo].[CK_ReviewRatings_1]')
-                 AND parent_object_id = OBJECT_ID(N'[dbo].[ReviewRatings]'))
-ALTER TABLE [dbo].[ReviewRatings]
-    WITH CHECK ADD CONSTRAINT [CK_ReviewRatings_1] CHECK (([Value] = (1) OR [Value] = (-1)))
+               WHERE object_id = OBJECT_ID(N'[dbo].[CK_ReviewLikes_1]')
+                 AND parent_object_id = OBJECT_ID(N'[dbo].[ReviewLikes]'))
+ALTER TABLE [dbo].[ReviewLikes]
+    WITH CHECK ADD CONSTRAINT [CK_ReviewLikes_1] CHECK (([Value] = (1) OR [Value] = (-1)))
 
 IF EXISTS (SELECT *
            FROM sys.check_constraints
-           WHERE object_id = OBJECT_ID(N'[dbo].[CK_ReviewRatings_1]')
-             AND parent_object_id = OBJECT_ID(N'[dbo].[ReviewRatings]'))
-ALTER TABLE [dbo].[ReviewRatings]
-    CHECK CONSTRAINT [CK_ReviewRatings_1]
+           WHERE object_id = OBJECT_ID(N'[dbo].[CK_ReviewLikes_1]')
+             AND parent_object_id = OBJECT_ID(N'[dbo].[ReviewLikes]'))
+ALTER TABLE [dbo].[ReviewLikes]
+    CHECK CONSTRAINT [CK_ReviewLikes_1]
 
 IF NOT EXISTS (SELECT *
                FROM sys.check_constraints

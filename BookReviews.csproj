@@ -171,6 +171,7 @@
         <Content Include="Main.master"/>
         <Content Include="Reviews\Add.aspx"/>
         <Content Include="Reviews\Components\ReviewCard.ascx"/>
+        <Content Include="Reviews\Components\ReviewLikes.ascx"/>
         <Content Include="Reviews\Components\ReviewsList.ascx"/>
         <Content Include="Reviews\Default.aspx"/>
         <Content Include="Reviews\Edit.aspx"/>
@@ -411,6 +412,13 @@
         </Compile>
         <Compile Include="Reviews\Components\ReviewCard.ascx.designer.cs">
             <DependentUpon>ReviewCard.ascx</DependentUpon>
+        </Compile>
+        <Compile Include="Reviews\Components\ReviewLikes.ascx.cs">
+            <SubType>ASPXCodeBehind</SubType>
+            <DependentUpon>ReviewLikes.ascx</DependentUpon>
+        </Compile>
+        <Compile Include="Reviews\Components\ReviewLikes.ascx.designer.cs">
+            <DependentUpon>ReviewLikes.ascx</DependentUpon>
         </Compile>
         <Compile Include="Reviews\Components\ReviewsList.ascx.cs">
             <SubType>ASPXCodeBehind</SubType>

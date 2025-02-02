@@ -6,8 +6,8 @@
     </a>
     <div class="card-body d-flex flex-column h-100">
         <a href="/books/<%: Book.Id %>" class="text-black link-underline-dark link-underline-opacity-0 link-underline-opacity-100-hover">
-            <h5 class="card-title fw-bolder"><%: Book.Title %></h5>
+            <h5 class="card-title fw-bolder text-truncate"><%: Book.Title %></h5>
         </a>
-        <span class="card-subtitle fw-normal"><%: Author.FirstName + " " + Author.LastName %> (rok wydania: <%: Book.ReleaseYear %>)</span>
+        <span class="card-subtitle fw-normal text-truncate"><%: Author.FirstName + " " + Author.LastName %> (<%: Book.ReleaseYear %>)</span>
     </div>
 </div>

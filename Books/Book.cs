@@ -25,7 +25,9 @@ namespace BookReviews.Books
                 AuthorId = (int)row["AuthorId"],
                 ReleaseYear = (int)row["ReleaseYear"],
                 CoverPath = row["CoverPath"].ToString(),
-                AverageRating = row["AverageRating"] == DBNull.Value ? null : (double?)row["AverageRating"]
+                AverageRating = !row.Table.Columns.Contains("AverageRating") || row["AverageRating"] == DBNull.Value
+                    ? null
+                    : (double?)row["AverageRating"]
             };
         }
 

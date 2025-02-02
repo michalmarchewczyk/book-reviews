@@ -2,12 +2,17 @@
 <%@ Import Namespace="BookReviews.Auth" %>
 <%@ Register TagPrefix="comp" TagName="BookPreview" Src="~/Books/Components/BookPreview.ascx" %>
 <%@ Register TagPrefix="comp" TagName="RatingInput" Src="~/Components/RatingInput.ascx" %>
+<%@ Register TagPrefix="comp" TagName="ReviewLikes" Src="~/Reviews/Components/ReviewLikes.ascx" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div class="d-flex">
-        <h2 class="mb-0">
+        <comp:ReviewLikes runat="server" ID="ReviewLikes"/>
+        <h2 class="mb-0 ms-3">
             <span class="text-muted">Recenzja</span> <span class="fst-italic fw-bolder"><%: Review.Title %></span>
         </h2>
+        <div class="flex-fill"></div>
+        <a href="/reviews/edit?id=<%: Review.Id %>" class="btn btn-secondary me-3">Edytuj</a>
+        <a href="/reviews/delete?id=<%: Review.Id %>" class="btn btn-danger">Usuń</a>
     </div>
 
     <hr/>
