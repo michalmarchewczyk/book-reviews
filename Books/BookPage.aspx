@@ -10,7 +10,7 @@
         <div class="col-md-9">
             <div class="d-flex align-items-center">
                 <h2 class="mb-0">
-                    <%: Book.Title %>
+                    <span class="text-muted">Książka</span> <span class="fst-italic fw-bolder"><%: Book.Title %></span>
                 </h2>
                 <div class="flex-fill"></div>
                 <auth:VisibilityControl runat="server" Visibility="HasRole" Role="Admin">
@@ -24,10 +24,10 @@
 
             <div class="d-flex flex-column">
                 <h4><%: Author.FirstName + " " + Author.LastName %></h4>
-                <span>Rok wydania: <%: Book.ReleaseYear %></span>
-                <span>Numer ISBN: <%: Book.ISBN %></span>
-                <span>Opis:</span>
-                <p style="white-space: pre;"><%: Book.Description %><%= string.IsNullOrEmpty(Book.Description) ? "<span class='fst-italic'>Brak opisu.</span>" : "" %></p>
+                <span><span class="text-muted">Rok wydania: </span> <%: Book.ReleaseYear %></span>
+                <span><span class="text-muted">Numer ISBN: </span><%: Book.ISBN %></span>
+                <span class="text-muted">Opis:</span>
+                <p style="white-space: pre;" class="fs-5"><%: Book.Description %><%= string.IsNullOrEmpty(Book.Description) ? "<span class='fst-italic'>Brak opisu.</span>" : "" %></p>
                 <span>Średnia ocena:</span>
             </div>
 

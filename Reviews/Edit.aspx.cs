@@ -42,7 +42,7 @@ namespace BookReviews.Reviews
 
             if (Review.UserId != currentUserId)
             {
-                Response.StatusCode = 403;
+                Response.StatusCode = 403; // TODO: handle?
                 Response.End();
             }
 

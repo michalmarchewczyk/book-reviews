@@ -15,6 +15,11 @@ namespace BookReviews
                 "BookPageRoute",
                 "books/{id}",
                 "~/books/BookPage.aspx");
+
+            routes.MapPageRoute(
+                "ReviewPageRoute",
+                "reviews/{id}",
+                "~/reviews/ReviewPage.aspx");
         }
     }
 }

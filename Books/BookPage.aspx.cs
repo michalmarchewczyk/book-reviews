@@ -33,6 +33,11 @@ namespace BookReviews.Books
                 Author = Author.CreateFromBook(rowView.Row);
             }
 
+            if (Book == null)
+            {
+                throw new Exception("Book not found"); // TODO: handle?
+            }
+
             ReviewsList.BookId = BookId;
 
             Render();

@@ -71,6 +71,10 @@ namespace BookReviews.Reviews.Components
             BookPreview.Book = Book;
             BookPreview.Author = Author;
             RatingInput.Value = Review.Rating;
+
+
+            // TODO: edit and delete buttons for owner
+            // TODO: delete button for admin
         }
     }
 }

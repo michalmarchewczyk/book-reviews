@@ -11,7 +11,7 @@
             </a>
             <span class="card-subtitle fw-normal">Użytkownik: <%: AuthHelper.GetUserDisplayName(Review.UserId) %></span>
             <div class="card-text d-flex align-items-center gap-2">
-                <small class="text-muted">Ocena:</small>
+                <span class="text-muted">Ocena:</span>
                 <comp:RatingInput runat="server" ID="RatingInput" ReadOnly="true" />
             </div>
         </div>

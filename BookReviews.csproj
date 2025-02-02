@@ -174,6 +174,7 @@
         <Content Include="Reviews\Components\ReviewsList.ascx"/>
         <Content Include="Reviews\Default.aspx"/>
         <Content Include="Reviews\Edit.aspx"/>
+        <Content Include="Reviews\ReviewPage.aspx"/>
         <Content Include="Scripts\bootstrap.bundle.js"/>
         <Content Include="Scripts\bootstrap.bundle.min.js"/>
         <Content Include="Scripts\bootstrap.esm.js"/>
@@ -433,6 +434,13 @@
             <DependentUpon>Edit.aspx</DependentUpon>
         </Compile>
         <Compile Include="Reviews\Review.cs"/>
+        <Compile Include="Reviews\ReviewPage.aspx.cs">
+            <SubType>ASPXCodeBehind</SubType>
+            <DependentUpon>ReviewPage.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="Reviews\ReviewPage.aspx.designer.cs">
+            <DependentUpon>ReviewPage.aspx</DependentUpon>
+        </Compile>
         <Compile Include="Site.Master.cs">
             <DependentUpon>Site.Master</DependentUpon>
             <SubType>ASPXCodeBehind</SubType>
