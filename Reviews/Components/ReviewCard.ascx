@@ -3,6 +3,7 @@
 <%@ Register TagPrefix="comp" TagName="BookPreview" Src="~/Books/Components/BookPreview.ascx" %>
 <%@ Register TagPrefix="comp" TagName="RatingInput" Src="~/Components/RatingInput.ascx" %>
 <%@ Register TagPrefix="comp" TagName="ReviewLikes" Src="~/Reviews/Components/ReviewLikes.ascx" %>
+<%@ Register TagPrefix="auth" TagName="VisibilityControl" Src="~/Auth/Controls/VisibilityControl.ascx" %>
 
 <div class="card mb-3 overflow-hidden mh-100 w-100 p-3" style="max-width: 900px; max-height: 360px; height: 360px;">
     <div class="row g-4">
@@ -21,11 +22,23 @@
         </div>
     </div>
 
-    <p class="card-text flex-grow-1 overflow-hidden bottom-fade mt-2" style="white-space: pre;"><%: Review.Content %><%= string.IsNullOrEmpty(Review.Content) ? "<span class='fst-italic'>Brak treści.</span>" : "" %></p>
+    <p class="card-text flex-grow-1 overflow-hidden bottom-fade mt-2 mb-0" style="white-space: pre;"><%: Review.Content %><%= string.IsNullOrEmpty(Review.Content) ? "<span class='fst-italic'>Brak treści.</span>" : "" %></p>
 
     <hr/>
 
     <div class="d-flex">
+        <auth:VisibilityControl runat="server" Visibility="HasRoleOrOwner" Role="Admin" OwnerId="<%# Review.UserId %>">
+            <Content>
+                <a href="/reviews/delete?id=<%: Review.Id %>" class="btn btn-danger me-3">Usuń</a>
+            </Content>
+        </auth:VisibilityControl>
+        <auth:VisibilityControl runat="server" Visibility="IsOwner" OwnerId="<%# Review.UserId %>">
+            <Content>
+                <a href="/reviews/edit?id=<%: Review.Id %>" class="btn btn-secondary">Edytuj</a>
+            </Content>
+        </auth:VisibilityControl>
+
+
         <div class="flex-fill"></div>
         <comp:ReviewLikes runat="server" ID="ReviewLikes" ReviewId="<%# Review.Id %>"/>
     </div>

@@ -3,16 +3,25 @@
 <%@ Register TagPrefix="comp" TagName="BookPreview" Src="~/Books/Components/BookPreview.ascx" %>
 <%@ Register TagPrefix="comp" TagName="RatingInput" Src="~/Components/RatingInput.ascx" %>
 <%@ Register TagPrefix="comp" TagName="ReviewLikes" Src="~/Reviews/Components/ReviewLikes.ascx" %>
+<%@ Register TagPrefix="auth" TagName="VisibilityControl" Src="~/Auth/Controls/VisibilityControl.ascx" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
-    <div class="d-flex">
+    <div class="d-flex align-items-center">
         <comp:ReviewLikes runat="server" ID="ReviewLikes"/>
         <h2 class="mb-0 ms-3">
             <span class="text-muted">Recenzja</span> <span class="fst-italic fw-bolder"><%: Review.Title %></span>
         </h2>
         <div class="flex-fill"></div>
-        <a href="/reviews/edit?id=<%: Review.Id %>" class="btn btn-secondary me-3">Edytuj</a>
-        <a href="/reviews/delete?id=<%: Review.Id %>" class="btn btn-danger">Usuń</a>
+        <auth:VisibilityControl runat="server" Visibility="HasRoleOrOwner" Role="Admin" OwnerId="<%# Review.UserId %>">
+            <Content>
+                <a href="/reviews/delete?id=<%: Review.Id %>" class="btn btn-danger me-3">Usuń</a>
+            </Content>
+        </auth:VisibilityControl>
+        <auth:VisibilityControl runat="server" Visibility="IsOwner" OwnerId="<%# Review.UserId %>">
+            <Content>
+                <a href="/reviews/edit?id=<%: Review.Id %>" class="btn btn-secondary">Edytuj</a>
+            </Content>
+        </auth:VisibilityControl>
     </div>
 
     <hr/>

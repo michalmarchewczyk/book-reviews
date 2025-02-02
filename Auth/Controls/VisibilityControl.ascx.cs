@@ -10,6 +10,8 @@ namespace BookReviews.Auth.Controls
 
         public string Role { get; set; }
 
+        public string OwnerId { get; set; }
+
         [TemplateInstance(TemplateInstance.Single)]
         public ITemplate Content { get; set; }
 
@@ -29,6 +31,14 @@ namespace BookReviews.Auth.Controls
                     visible = AuthHelper.CheckRole(Page.User.Identity.GetUserId(),
                         (AuthRole)Enum.Parse(typeof(AuthRole), Role));
                     break;
+                case AuthVisibilityType.HasRoleOrOwner:
+                    visible = Page.User.Identity.GetUserId() == OwnerId ||
+                              AuthHelper.CheckRole(Page.User.Identity.GetUserId(),
+                                  (AuthRole)Enum.Parse(typeof(AuthRole), Role));
+                    break;
+                case AuthVisibilityType.IsOwner:
+                    visible = Page.User.Identity.GetUserId() == OwnerId;
+                    break;
                 default:
                     throw new ArgumentNullException(nameof(Visibility));
             }
@@ -44,6 +54,8 @@ namespace BookReviews.Auth.Controls
     {
         Authenticated,
         NotAuthenticated,
-        HasRole
+        HasRole,
+        HasRoleOrOwner,
+        IsOwner
     }
 }

@@ -29,7 +29,7 @@
             <asp:TextBox ID="ReviewContent" runat="server" CssClass="form-control" placeholder="Treść" TextMode="MultiLine" Rows="8"/>
 
             <div class="d-flex justify-content-between mt-4">
-                <asp:Button runat="server" ID="CancelButton" Text="Anuluj" CssClass="btn btn-danger" OnCommand="CancelButton_OnCommand"/>
+                <asp:Button runat="server" ID="CancelButton" Text="Anuluj" CssClass="btn btn-warning" OnCommand="CancelButton_OnCommand"/>
                 <asp:Button runat="server" ID="SubmitButton" Text="Dodaj" CssClass="btn btn-primary" OnCommand="Submit"/>
             </div>
         </div>

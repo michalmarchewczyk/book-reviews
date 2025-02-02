@@ -1,4 +1,4 @@
-﻿/****** Object:  Table [dbo].[Authors]    Script Date: 02.02.2025 01:51:52 ******/
+﻿/****** Object:  Table [dbo].[Authors]    Script Date: 02.02.2025 18:26:49 ******/
 SET ANSI_NULLS ON
 
 SET QUOTED_IDENTIFIER ON
@@ -20,7 +20,7 @@ IF NOT EXISTS (SELECT *
         ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
     END
 
-/****** Object:  Table [dbo].[Books]    Script Date: 02.02.2025 01:51:52 ******/
+/****** Object:  Table [dbo].[Books]    Script Date: 02.02.2025 18:26:49 ******/
 SET ANSI_NULLS ON
 
 SET QUOTED_IDENTIFIER ON
@@ -46,7 +46,7 @@ IF NOT EXISTS (SELECT *
         ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
     END
 
-/****** Object:  Table [dbo].[ReviewLikes]    Script Date: 02.02.2025 01:51:52 ******/
+/****** Object:  Table [dbo].[ReviewLikes]    Script Date: 02.02.2025 18:26:49 ******/
 SET ANSI_NULLS ON
 
 SET QUOTED_IDENTIFIER ON
@@ -69,7 +69,7 @@ IF NOT EXISTS (SELECT *
         ) ON [PRIMARY]
     END
 
-/****** Object:  Table [dbo].[Reviews]    Script Date: 02.02.2025 01:51:52 ******/
+/****** Object:  Table [dbo].[Reviews]    Script Date: 02.02.2025 18:26:49 ******/
 SET ANSI_NULLS ON
 
 SET QUOTED_IDENTIFIER ON
@@ -99,7 +99,7 @@ IF NOT EXISTS (SELECT *
         ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
     END
 
-/****** Object:  Index [Index_Books_1]    Script Date: 02.02.2025 01:51:52 ******/
+/****** Object:  Index [Index_Books_1]    Script Date: 02.02.2025 18:26:49 ******/
 IF NOT EXISTS (SELECT *
                FROM sys.indexes
                WHERE object_id = OBJECT_ID(N'[dbo].[Books]')
@@ -111,7 +111,7 @@ CREATE NONCLUSTERED INDEX [Index_Books_1] ON [dbo].[Books]
 
 SET ANSI_PADDING ON
 
-/****** Object:  Index [Index_Books_2]    Script Date: 02.02.2025 01:51:52 ******/
+/****** Object:  Index [Index_Books_2]    Script Date: 02.02.2025 18:26:49 ******/
 IF NOT EXISTS (SELECT *
                FROM sys.indexes
                WHERE object_id = OBJECT_ID(N'[dbo].[Books]')
@@ -121,7 +121,7 @@ CREATE NONCLUSTERED INDEX [Index_Books_2] ON [dbo].[Books]
      [ISBN] ASC
         ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
-/****** Object:  Index [Index_ReviewLikes_1]    Script Date: 02.02.2025 01:51:52 ******/
+/****** Object:  Index [Index_ReviewLikes_1]    Script Date: 02.02.2025 18:26:49 ******/
 IF NOT EXISTS (SELECT *
                FROM sys.indexes
                WHERE object_id = OBJECT_ID(N'[dbo].[ReviewLikes]')
@@ -133,7 +133,7 @@ CREATE NONCLUSTERED INDEX [Index_ReviewLikes_1] ON [dbo].[ReviewLikes]
 
 SET ANSI_PADDING ON
 
-/****** Object:  Index [Index_ReviewLikes_2]    Script Date: 02.02.2025 01:51:52 ******/
+/****** Object:  Index [Index_ReviewLikes_2]    Script Date: 02.02.2025 18:26:49 ******/
 IF NOT EXISTS (SELECT *
                FROM sys.indexes
                WHERE object_id = OBJECT_ID(N'[dbo].[ReviewLikes]')
@@ -143,7 +143,7 @@ CREATE NONCLUSTERED INDEX [Index_ReviewLikes_2] ON [dbo].[ReviewLikes]
      [UserId] ASC
         ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 
-/****** Object:  Index [Index_Reviews_1]    Script Date: 02.02.2025 01:51:52 ******/
+/****** Object:  Index [Index_Reviews_1]    Script Date: 02.02.2025 18:26:49 ******/
 IF NOT EXISTS (SELECT *
                FROM sys.indexes
                WHERE object_id = OBJECT_ID(N'[dbo].[Reviews]')
@@ -155,7 +155,7 @@ CREATE NONCLUSTERED INDEX [Index_Reviews_1] ON [dbo].[Reviews]
 
 SET ANSI_PADDING ON
 
-/****** Object:  Index [Index_Reviews_2]    Script Date: 02.02.2025 01:51:52 ******/
+/****** Object:  Index [Index_Reviews_2]    Script Date: 02.02.2025 18:26:49 ******/
 IF NOT EXISTS (SELECT *
                FROM sys.indexes
                WHERE object_id = OBJECT_ID(N'[dbo].[Reviews]')
@@ -187,6 +187,7 @@ IF NOT EXISTS (SELECT *
 ALTER TABLE [dbo].[ReviewLikes]
     WITH CHECK ADD CONSTRAINT [FK_ReviewLikes_Reviews] FOREIGN KEY ([ReviewId])
         REFERENCES [dbo].[Reviews] ([Id])
+        ON DELETE CASCADE
 
 IF EXISTS (SELECT *
            FROM sys.foreign_keys
@@ -217,6 +218,7 @@ IF NOT EXISTS (SELECT *
 ALTER TABLE [dbo].[Reviews]
     WITH CHECK ADD CONSTRAINT [FK_Reviews_Book] FOREIGN KEY ([BookId])
         REFERENCES [dbo].[Books] ([Id])
+        ON DELETE CASCADE
 
 IF EXISTS (SELECT *
            FROM sys.foreign_keys

@@ -67,7 +67,7 @@
                 <asp:TextBox ID="Description" runat="server" CssClass="form-control" placeholder="Opis" TextMode="MultiLine" Rows="4"/>
 
                 <div class="d-flex justify-content-between mt-4">
-                    <asp:Button runat="server" ID="CancelButton" Text="Anuluj" CssClass="btn btn-danger" OnCommand="CancelButton_OnCommand"/>
+                    <asp:Button runat="server" ID="CancelButton" Text="Anuluj" CssClass="btn btn-warning" OnCommand="CancelButton_OnCommand"/>
                     <asp:Button runat="server" ID="SubmitButton" Text="Dodaj" CssClass="btn btn-primary" OnCommand="Submit"/>
                 </div>
             </div>
