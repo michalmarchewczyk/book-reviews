@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 
 namespace BookReviews.Reviews
 {
@@ -10,6 +11,7 @@ namespace BookReviews.Reviews
         public string Title { get; set; }
         public string Content { get; set; }
         public int Rating { get; set; }
+        public DateTime CreatedAt { get; set; }
 
         public static Review FromRow(DataRow row)
         {
@@ -20,7 +22,8 @@ namespace BookReviews.Reviews
                 UserId = row["UserId"].ToString(),
                 Title = row["Title"].ToString(),
                 Content = row["Content"].ToString(),
-                Rating = (int)row["Rating"]
+                Rating = (int)row["Rating"],
+                CreatedAt = (DateTime)row["CreatedAt"]
             };
         }
     }

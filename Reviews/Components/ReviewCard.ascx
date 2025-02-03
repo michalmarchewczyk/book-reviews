@@ -6,7 +6,7 @@
 <%@ Register TagPrefix="comp" TagName="ReviewLikes" Src="~/Reviews/Components/ReviewLikes.ascx" %>
 <%@ Register TagPrefix="auth" TagName="VisibilityControl" Src="~/Auth/Controls/VisibilityControl.ascx" %>
 
-<div class="card mb-3 overflow-hidden mh-100 w-100 p-3" style="max-width: 900px; max-height: 360px; height: 360px;">
+<div class="card mb-3 overflow-hidden mh-100 w-100 p-3" style="max-width: 900px; max-height: 370px; height: 370px;">
     <div class="row g-4">
         <div class="col-md-6">
             <a href="/reviews/<%: Review.Id %>" class="text-black link-underline-dark link-underline-opacity-0 link-underline-opacity-100-hover">
@@ -21,7 +21,8 @@
                     <%: Review.Title %>
                 </h5>
             </a>
-            <span class="card-subtitle fw-normal">Użytkownik: <%: AuthHelper.GetUserDisplayName(Review?.UserId) %></span>
+            <span class="card-subtitle fw-normal d-block">Użytkownik: <%: AuthHelper.GetUserDisplayName(Review?.UserId) %></span>
+            <span class="card-subtitle fw-normal d-block">Utworzono: <%: Review.CreatedAt %></span>
             <div class="card-text d-flex align-items-center gap-2">
                 <span class="text-muted">Ocena:</span>
                 <comp:RatingInput runat="server" ID="RatingInput" ReadOnly="true" Value="<%# Review.Rating %>" />

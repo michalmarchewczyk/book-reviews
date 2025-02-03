@@ -45,10 +45,6 @@
                 <a href="/auth/login" class="btn btn-secondary">Zaloguj się</a>
             </Content>
         </auth:VisibilityControl>
-        <%-- <form class="d-flex"> --%>
-        <%--   <input class="form-control me-sm-2" type="search" placeholder="Search"> --%>
-        <%--   <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button> --%>
-        <%-- </form> --%>
         </div>
     </div>
 </nav>

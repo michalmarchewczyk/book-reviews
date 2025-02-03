@@ -31,7 +31,8 @@
             <comp:BookPreview runat="server" ID="BookPreview" />
         </div>
         <div class="col-md-5">
-            <span class="d-block mb-2 fs-5">Użytkownik: <%: AuthHelper.GetUserDisplayName(Review.UserId) %></span>
+            <span class="d-block mb-1 fs-5">Użytkownik: <%: AuthHelper.GetUserDisplayName(Review.UserId) %></span>
+            <span class="d-block mb-1">Utworzono: <%: Review.CreatedAt %></span>
             <span class="text-muted">Ocena:</span>
             <comp:RatingInput runat="server" ID="RatingInput" ReadOnly="true" />
         </div>
@@ -45,7 +46,7 @@
         runat="server"
         ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
         SelectCommand="SELECT
-        r.[Id], r.[Title], r.[Content], r.[UserId], r.[BookId], r.[Rating],
+        r.[Id], r.[Title], r.[Content], r.[UserId], r.[BookId], r.[Rating], r.[CreatedAt],
         b.[Id] AS BookId, b.[Title] AS BookTitle, b.[Description] AS BookDescription, b.[ISBN] AS BookISBN,
         b.[ReleaseYear] AS BookReleaseYear, b.[CoverPath] AS BookCoverPath, b.[AuthorId] AS BookAuthorId,
         a.[Id] AS AuthorId, a.[FirstName] AS AuthorFirstName, a.[LastName] AS AuthorLastName
