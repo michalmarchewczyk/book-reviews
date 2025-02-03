@@ -12,7 +12,7 @@ namespace BookReviews.Auth
 {
     public partial class Register : Page
     {
-        protected const int PasswordMinLength = 8;
+        public const int PasswordMinLength = 8;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -44,6 +44,10 @@ namespace BookReviews.Auth
             var userStore = new UserStore<AppIdentityUser>(new AppIdentityDbContext());
             var userManager = new UserManager<AppIdentityUser>(userStore);
             userManager.PasswordValidator = new MinimumLengthValidator(PasswordMinLength);
+            userManager.UserValidator = new UserValidator<AppIdentityUser>(userManager)
+            {
+                RequireUniqueEmail = true
+            };
 
             var user = new AppIdentityUser
             {
@@ -54,8 +58,6 @@ namespace BookReviews.Auth
             };
             var result = userManager.Create(user, password);
             Console.WriteLine(string.Join(", ", result.Errors));
-
-            // TODO: make email unique
 
             if (result.Succeeded)
             {

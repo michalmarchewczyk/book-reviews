@@ -45,6 +45,15 @@
         Minimalna długość hasła to <%: PasswordMinLength %>.
     </comp:MinLengthValidator>
 
+    <asp:Label runat="server" CssClass="form-label" AssociatedControlID="ConfirmPassword">Powtórz hasło</asp:Label>
+    <asp:TextBox ID="ConfirmPassword" runat="server" CssClass="form-control" placeholder="Powtórz hasło" TextMode="Password" />
+    <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword" EnableClientScript="False" CssClass="invalid-feedback" Display="Dynamic">
+        Hasło jest wymagane.
+    </asp:RequiredFieldValidator>
+    <asp:CompareValidator runat="server" ControlToValidate="ConfirmPassword" ControlToCompare="Password" EnableClientScript="False" CssClass="invalid-feedback" Display="Dynamic" Operator="Equal">
+        Hasła nie są takie same.
+    </asp:CompareValidator>
+
     <asp:Button runat="server" CssClass="btn btn-primary mt-4 mb-2" Text="Zarejestruj się"/>
 
     <hr/>

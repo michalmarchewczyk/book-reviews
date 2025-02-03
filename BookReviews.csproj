@@ -132,6 +132,7 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Content Include="Account\Default.aspx"/>
         <Content Include="Admin\Default.aspx"/>
         <Content Include="App_Data\schema.sql"/>
         <Content Include="Authors\Components\AuthorSelect.ascx"/>
@@ -227,6 +228,13 @@
         <Content Include="Bundle.config"/>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Account\Default.aspx.cs">
+            <SubType>ASPXCodeBehind</SubType>
+            <DependentUpon>Default.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="Account\Default.aspx.designer.cs">
+            <DependentUpon>Default.aspx</DependentUpon>
+        </Compile>
         <Compile Include="Admin\Default.aspx.cs">
             <SubType>ASPXCodeBehind</SubType>
             <DependentUpon>Default.aspx</DependentUpon>
@@ -519,9 +527,6 @@
         <None Include="Web.Release.config">
             <DependentUpon>Web.config</DependentUpon>
         </None>
-    </ItemGroup>
-    <ItemGroup>
-        <Folder Include="Account\"/>
     </ItemGroup>
     <PropertyGroup>
         <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
