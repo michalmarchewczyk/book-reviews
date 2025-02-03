@@ -115,25 +115,18 @@ namespace BookReviews.Account
 
         protected void ChangeView(object sender, CommandEventArgs e)
         {
+            PasswordLink.CssClass = PasswordLink.CssClass.RemoveFromList("active");
+            DetailsLink.CssClass = DetailsLink.CssClass.RemoveFromList("active");
             switch (e.CommandArgument)
             {
                 case "Details":
                     AccountMultiView.SetActiveView(ViewDetails);
+                    DetailsLink.CssClass = DetailsLink.CssClass.AddToList("active");
                     break;
                 case "Password":
                     AccountMultiView.SetActiveView(ViewPassword);
+                    PasswordLink.CssClass = PasswordLink.CssClass.AddToList("active");
                     break;
-            }
-
-            if (AccountMultiView.GetActiveView() == ViewDetails)
-            {
-                DetailsLink.CssClass = DetailsLink.CssClass.AddToList("active");
-                PasswordLink.CssClass = PasswordLink.CssClass.RemoveFromList("active");
-            }
-            else
-            {
-                DetailsLink.CssClass = DetailsLink.CssClass.RemoveFromList("active");
-                PasswordLink.CssClass = PasswordLink.CssClass.AddToList("active");
             }
 
             SuccessDetails.Visible = false;

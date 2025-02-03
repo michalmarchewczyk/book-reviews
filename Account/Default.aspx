@@ -8,15 +8,15 @@
                 Moje konto
             </h3>
             <ul class="nav nav-tabs card-header-tabs">
-              <li class="nav-item">
-                <asp:LinkButton CssClass="nav-link active" runat="server" OnCommand="ChangeView" CommandArgument="Details" ID="DetailsLink">Edytuj dane</asp:LinkButton>
-              </li>
-              <li class="nav-item">
-                <asp:LinkButton CssClass="nav-link" runat="server" OnCommand="ChangeView" CommandArgument="Password" ID="PasswordLink">Zmień hasło</asp:LinkButton>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/reviews/my">Moje recenzje<i class="bi bi-box-arrow-up-right ms-2"></i></a>
-              </li>
+                <li class="nav-item">
+                    <asp:LinkButton CssClass="nav-link active" runat="server" OnCommand="ChangeView" CommandArgument="Details" ID="DetailsLink">Edytuj dane</asp:LinkButton>
+                </li>
+                <li class="nav-item">
+                    <asp:LinkButton CssClass="nav-link" runat="server" OnCommand="ChangeView" CommandArgument="Password" ID="PasswordLink">Zmień hasło</asp:LinkButton>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/reviews/my">Moje recenzje<i class="bi bi-box-arrow-up-right ms-2"></i></a>
+                </li>
             </ul>
         </div>
         <div class="card-body">

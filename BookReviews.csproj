@@ -133,7 +133,6 @@
     </ItemGroup>
     <ItemGroup>
         <Content Include="Account\Default.aspx"/>
-        <Content Include="Admin\Default.aspx"/>
         <Content Include="App_Data\schema.sql"/>
         <Content Include="Authors\Components\AuthorSelect.ascx"/>
         <Content Include="Auth\AuthPage.master"/>
@@ -233,13 +232,6 @@
             <DependentUpon>Default.aspx</DependentUpon>
         </Compile>
         <Compile Include="Account\Default.aspx.designer.cs">
-            <DependentUpon>Default.aspx</DependentUpon>
-        </Compile>
-        <Compile Include="Admin\Default.aspx.cs">
-            <SubType>ASPXCodeBehind</SubType>
-            <DependentUpon>Default.aspx</DependentUpon>
-        </Compile>
-        <Compile Include="Admin\Default.aspx.designer.cs">
             <DependentUpon>Default.aspx</DependentUpon>
         </Compile>
         <Compile Include="App_Code\PageBase.cs"/>
