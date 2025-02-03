@@ -180,6 +180,7 @@
         <Content Include="Reviews\Default.aspx"/>
         <Content Include="Reviews\Delete.aspx"/>
         <Content Include="Reviews\Edit.aspx"/>
+        <Content Include="Reviews\My.aspx"/>
         <Content Include="Reviews\ReviewPage.aspx"/>
         <Content Include="Scripts\bootstrap.bundle.js"/>
         <Content Include="Scripts\bootstrap.bundle.min.js"/>
@@ -482,6 +483,13 @@
         <Compile Include="Reviews\Edit.aspx.designer.cs">
             <DependentUpon>Edit.aspx</DependentUpon>
         </Compile>
+        <Compile Include="Reviews\My.aspx.cs">
+            <SubType>ASPXCodeBehind</SubType>
+            <DependentUpon>My.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="Reviews\My.aspx.designer.cs">
+            <DependentUpon>My.aspx</DependentUpon>
+        </Compile>
         <Compile Include="Reviews\Review.cs"/>
         <Compile Include="Reviews\ReviewPage.aspx.cs">
             <SubType>ASPXCodeBehind</SubType>
@@ -511,6 +519,9 @@
         <None Include="Web.Release.config">
             <DependentUpon>Web.config</DependentUpon>
         </None>
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Account\"/>
     </ItemGroup>
     <PropertyGroup>
         <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

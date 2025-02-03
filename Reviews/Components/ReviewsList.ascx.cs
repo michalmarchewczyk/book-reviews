@@ -9,7 +9,7 @@ namespace BookReviews.Reviews.Components
     {
         public int? BookId { get; set; } = null;
 
-        public int? UserId { get; set; } = null;
+        public string UserId { get; set; } = null;
 
         public int Count => ReviewsListView.Items.Count;
 
@@ -26,12 +26,12 @@ namespace BookReviews.Reviews.Components
                 }
             }
 
-            if (UserId != null && ReviewsDataSource.SelectParameters["UserId"] == null)
+            if (UserId != null)
             {
                 ReviewsDataSource.SelectCommand += " WHERE r.[UserId] = @UserId";
                 if (ReviewsDataSource.SelectParameters["UserId"] == null)
                 {
-                    ReviewsDataSource.SelectParameters.Add("UserId", DbType.Int32, UserId.ToString());
+                    ReviewsDataSource.SelectParameters.Add("UserId", DbType.String, UserId);
                 }
             }
 
