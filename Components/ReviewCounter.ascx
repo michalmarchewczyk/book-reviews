@@ -5,3 +5,11 @@
     <span class="counter"><%: GetCount() %></span>
     <span>recenzji</span>
 </div>
+
+<asp:SqlDataSource
+    ID="ReviewsCountDataSource"
+    runat="server"
+    ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
+    SelectCommand="SELECT COUNT(*) as Count FROM [Reviews]"
+>
+</asp:SqlDataSource>
