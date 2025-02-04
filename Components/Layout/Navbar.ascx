@@ -21,6 +21,13 @@
             <li class="nav-item">
                 <a class="nav-link <%: Request.RawUrl.StartsWith("/reviews/") ? "active" : "" %>" href="/reviews">Recenzje</a>
             </li>
+            <auth:VisibilityControl runat="server" Visibility="HasRole" Role="Admin">
+                <Content>
+                    <li class="nav-item">
+                        <a class="nav-link <%: Request.RawUrl.StartsWith("/admin/") ? "active" : "" %>" href="/admin">Panel administracyjny</a>
+                    </li>
+                </Content>
+            </auth:VisibilityControl>
         </ul>
 
         <auth:VisibilityControl runat="server" Visibility="Authenticated">
