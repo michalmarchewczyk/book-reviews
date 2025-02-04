@@ -9,7 +9,7 @@
         </h3>
         <div class="row card-body">
             <div class="col-md-4 d-flex flex-column align-items-center mb-4">
-                <asp:Image runat="server" ID="CoverImage" alt="Cover" CssClass="img-thumbnail" style="height: 100%; max-height: 320px; aspect-ratio: 17 / 24; " ImageUrl="/Content/cover_default.png" />
+                <asp:Image runat="server" ID="CoverImage" alt="Cover" CssClass="img-thumbnail h-100 img-cover-lg" ImageUrl="/Content/cover_default.png" />
                 <asp:Label runat="server" CssClass="form-label w-100 mt-3" AssociatedControlID="Cover">Okładka</asp:Label>
                 <asp:FileUpload runat="server" ID="Cover" CssClass="form-control"/>
             </div>

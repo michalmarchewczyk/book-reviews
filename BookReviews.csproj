@@ -137,6 +137,7 @@
         <Content Include="Admin\Default.aspx"/>
         <Content Include="App_Data\schema.sql"/>
         <Content Include="Authors\Components\AuthorSelect.ascx"/>
+        <Content Include="Auth\AuthPage.css"/>
         <Content Include="Auth\AuthPage.master"/>
         <Content Include="Auth\Controls\VisibilityControl.ascx"/>
         <Content Include="Auth\Login.aspx"/>
@@ -161,10 +162,12 @@
         <Content Include="Components\RatingInput.js"/>
         <Content Include="Components\ReviewCounter.ascx"/>
         <Content Include="Components\ReviewCounter.css"/>
+        <Content Include="Content\bootstrap-overrides.css"/>
         <Content Include="Content\bootstrap.css"/>
         <Content Include="Content\bootstrap.min.css"/>
         <Content Include="Content\bootstrap.rtl.css"/>
         <Content Include="Content\bootstrap.rtl.min.css"/>
+        <Content Include="Content\components.css"/>
         <Content Include="Content\cover_default.png"/>
         <Content Include="Content\Screenshot.png"/>
         <Content Include="Content\Site.css"/>
@@ -179,6 +182,7 @@
         <Content Include="Reviews\Add.aspx"/>
         <Content Include="Reviews\Components\ReviewCard.ascx"/>
         <Content Include="Reviews\Components\ReviewLikes.ascx"/>
+        <Content Include="Reviews\Components\ReviewLikes.css"/>
         <Content Include="Reviews\Components\ReviewsList.ascx"/>
         <Content Include="Reviews\Default.aspx"/>
         <Content Include="Reviews\Delete.aspx"/>

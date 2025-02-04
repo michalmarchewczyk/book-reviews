@@ -1,0 +1,20 @@
+﻿.comp-Hero-image {
+    max-height: 350px;
+}
+
+.comp-BookPreview-card {
+    max-height: 93px;
+    height: 93px;
+}
+
+.comp-BookCard-card {
+    max-width: 780px;
+    max-height: 260px;
+    height: 260px;
+}
+
+.comp-ReviewCard-card {
+    max-width: 900px;
+    max-height: 370px;
+    height: 370px;
+}

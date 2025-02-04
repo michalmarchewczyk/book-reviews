@@ -7,7 +7,7 @@
         </h3>
         <div class="row card-body">
             <div class="col-md-3 d-flex flex-column align-items-center mb-2">
-                <asp:Image runat="server" ID="CoverImage" alt="Cover" CssClass="img-thumbnail" style="height: 100%; max-height: 260px; aspect-ratio: 17 / 24; " ImageUrl="/Content/cover_default.png" />
+                <asp:Image runat="server" ID="CoverImage" alt="Cover" CssClass="img-thumbnail h-100 img-cover-md" ImageUrl="/Content/cover_default.png" />
             </div>
             <div class="col-md-9">
                 <p class="fs-5">

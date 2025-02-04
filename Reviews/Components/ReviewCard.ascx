@@ -5,7 +5,7 @@
 <%@ Register TagPrefix="comp" TagName="RatingInput" Src="~/Components/RatingInput.ascx" %>
 <%@ Register TagPrefix="auth" TagName="VisibilityControl" Src="~/Auth/Controls/VisibilityControl.ascx" %>
 
-<div class="card mb-3 overflow-hidden mh-100 w-100 p-3" style="max-width: 900px; max-height: 370px; height: 370px;">
+<div class="card mb-3 overflow-hidden mh-100 w-100 p-3 comp-ReviewCard-card">
     <div class="row g-4">
         <div class="col-md-6">
             <a href="/reviews/<%: Review.Id %>" class="text-black link-underline-dark link-underline-opacity-0 link-underline-opacity-100-hover">
@@ -32,7 +32,7 @@
         </div>
     </div>
 
-    <p class="card-text flex-grow-1 overflow-hidden bottom-fade mt-2 mb-0" style="white-space: break-spaces;"><%: Review.Content %><%= string.IsNullOrEmpty(Review.Content) ? "<span class='fst-italic'>Brak treści.</span>" : "" %></p>
+    <p class="card-text flex-grow-1 overflow-hidden bottom-fade mt-2 mb-0 text-break-spaces"><%: Review.Content %><%= string.IsNullOrEmpty(Review.Content) ? "<span class='fst-italic'>Brak treści.</span>" : "" %></p>
 
     <hr/>
 

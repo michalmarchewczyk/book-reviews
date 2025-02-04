@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.UI;
+using BookReviews.Utils;
 
 namespace BookReviews.Auth
 {
@@ -7,6 +8,7 @@ namespace BookReviews.Auth
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ContentHelper.AddCssFile("/Auth/AuthPage.css", Page);
         }
     }
 }

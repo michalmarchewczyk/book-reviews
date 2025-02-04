@@ -23,7 +23,7 @@
         <div id="itemPlaceholderContainer" runat="server" class="d-flex flex-column align-items-center">
             <span runat="server" id="itemPlaceholder"></span>
         </div>
-        <asp:DataPager ID="BooksListDataPager" runat="server" PageSize="10" class="btn-group mx-auto d-flex mt-4" style="width: min-content;">
+        <asp:DataPager ID="BooksListDataPager" runat="server" PageSize="10" class="btn-group mx-auto d-flex mt-4 w-content">
            <Fields>
                 <asp:NextPreviousPagerField PreviousPageText="&lsaquo;" FirstPageText="&laquo;" ShowPreviousPageButton="true"
                     ShowFirstPageButton="true" ShowNextPageButton="false" ShowLastPageButton="false"

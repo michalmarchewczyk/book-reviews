@@ -1,47 +1,31 @@
 ﻿body {
     overflow-y: scroll;
     overflow-x: hidden;
-    background: #faf9f5;
+    background: #faf9f7;
 }
 
 html, body {
     font-size: 18px;
 }
 
-
-.lead {
-    font-size: 1.5rem;
-    font-weight: 500;
+.feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.75rem;
 }
 
-.form-label {
-    margin-bottom: 0.1rem;
-    margin-top: 0.6rem;
+.img-cover {
+    aspect-ratio: 17 / 24;
 }
 
-.btn {
-    --btn-height-override-height: 44px;
-    height: var(--btn-height-override-height);
+.img-cover-md {
+    aspect-ratio: 17 / 24;
+    max-height: 260px;
 }
 
-.btn-lg {
-    --btn-height-override-height: 55px;
-}
-
-.btn:not(.disabled):hover {
-    height: calc(var(--btn-height-override-height) - 1px);
-}
-
-.btn:not(.disabled):active {
-    height: calc(var(--btn-height-override-height) - 2px);
-}
-
-.img-thumbnail, .img-fluid {
-    object-fit: contain;
-}
-
-.dropdown-item, .dropdown-item:hover {
-    color: rgba(34, 34, 34, 0.8)
+.img-cover-lg {
+    aspect-ratio: 17 / 24;
+    max-height: 320px;
 }
 
 .bottom-fade {
@@ -56,10 +40,6 @@ html, body {
     width: 100%;
     position: absolute;
     bottom: 0;
-}
-
-.mw-20rem {
-    max-width: 20rem;
 }
 
 .table-container > div {

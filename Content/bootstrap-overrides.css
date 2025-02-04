@@ -1,0 +1,47 @@
+﻿
+.lead {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.form-label {
+    margin-bottom: 0.1rem;
+    margin-top: 0.6rem;
+}
+
+.btn {
+    --btn-height-override-height: 44px;
+    height: var(--btn-height-override-height);
+}
+
+.btn-lg {
+    --btn-height-override-height: 55px;
+}
+
+.btn:not(.disabled):hover {
+    height: calc(var(--btn-height-override-height) - 1px);
+}
+
+.btn:not(.disabled):active {
+    height: calc(var(--btn-height-override-height) - 2px);
+}
+
+.img-thumbnail, .img-fluid {
+    object-fit: contain;
+}
+
+.dropdown-item, .dropdown-item:hover {
+    color: rgba(34, 34, 34, 0.8)
+}
+
+.text-break-spaces {
+    white-space: break-spaces;
+}
+
+.w-content {
+    width: min-content;
+}
+
+.mw-20rem {
+    max-width: 20rem;
+}

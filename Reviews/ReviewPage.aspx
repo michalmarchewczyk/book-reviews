@@ -38,7 +38,7 @@
         </div>
     </div>
     <span class="d-block text-muted mb-2">Treść:</span>
-    <p style="white-space: break-spaces;" class="fs-5"><%: Review.Content %></p>
+    <p class="fs-5 text-break-spaces"><%: Review.Content %></p>
 
 
     <asp:SqlDataSource

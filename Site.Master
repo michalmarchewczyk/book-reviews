@@ -6,6 +6,8 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="BookReviews - recenzje książek"/>
+    <meta name="author" content="Michał Marchewczyk">
     <title><%: Page.Title %> - BookReviews</title>
 
     <asp:PlaceHolder runat="server">

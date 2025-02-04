@@ -5,7 +5,7 @@
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div class="row">
         <div class="col-md-3">
-            <asp:Image runat="server" CssClass="img-fluid rounded w-100 border" ID="CoverImage"  style="aspect-ratio: 17 / 24;" ImageUrl="/Content/cover_default.png"/>
+            <asp:Image runat="server" CssClass="img-fluid rounded w-100 border img-cover" ID="CoverImage" ImageUrl="/Content/cover_default.png"/>
         </div>
         <div class="col-md-9">
             <div class="d-flex align-items-center">
@@ -27,7 +27,7 @@
                 <span><span class="text-muted">Rok wydania: </span> <%: Book.ReleaseYear %></span>
                 <span><span class="text-muted">Numer ISBN: </span><%: Book.ISBN %></span>
                 <span class="text-muted">Opis:</span>
-                <p style="white-space: break-spaces;" class="fs-5 text-break overflow-hidden"><%: Book.Description %><%= string.IsNullOrEmpty(Book.Description) ? "<span class='fst-italic'>Brak opisu.</span>" : "" %></p>
+                <p class="fs-5 text-break overflow-hidden text-break-spaces"><%: Book.Description %><%= string.IsNullOrEmpty(Book.Description) ? "<span class='fst-italic'>Brak opisu.</span>" : "" %></p>
                 <span class="text-muted">Średnia ocena: </span><span class="fs-5"><%: Book.AverageRating == null ? "brak recenzji" : ((double)Book.AverageRating).ToString("F2") %></span>
             </div>
 
