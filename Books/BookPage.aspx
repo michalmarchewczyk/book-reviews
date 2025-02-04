@@ -3,12 +3,12 @@
 <%@ Register TagPrefix="comp" TagName="ReviewsList" Src="~/Reviews/Components/ReviewsList.ascx" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
-    <div class="row">
-        <div class="col-md-3">
+    <section class="row">
+        <aside class="col-md-3">
             <asp:Image runat="server" CssClass="img-fluid rounded w-100 border img-cover" ID="CoverImage" ImageUrl="/Content/cover_default.png"/>
-        </div>
-        <div class="col-md-9">
-            <div class="d-flex align-items-center">
+        </aside>
+        <section class="col-md-9">
+            <header class="d-flex align-items-center">
                 <h2 class="mb-0">
                     <span class="text-muted">Książka</span> <span class="fst-italic fw-bolder"><%: Book.Title %></span>
                 </h2>
@@ -19,21 +19,21 @@
                         <a class="btn btn-danger ms-3" href="/books/delete?id=<%: Book.Id %>">Usuń</a>
                     </Content>
                 </auth:VisibilityControl>
-            </div>
+            </header>
             <hr/>
 
-            <div class="d-flex flex-column">
+            <section class="d-flex flex-column">
                 <h4><%: Author.FirstName + " " + Author.LastName %></h4>
                 <span><span class="text-muted">Rok wydania: </span> <%: Book.ReleaseYear %></span>
                 <span><span class="text-muted">Numer ISBN: </span><%: Book.ISBN %></span>
                 <span class="text-muted">Opis:</span>
                 <p class="fs-5 text-break overflow-hidden text-break-spaces"><%: Book.Description %><%= string.IsNullOrEmpty(Book.Description) ? "<span class='fst-italic'>Brak opisu.</span>" : "" %></p>
                 <span class="text-muted">Średnia ocena: </span><span class="fs-5"><%: Book.AverageRating == null ? "brak recenzji" : ((double)Book.AverageRating).ToString("F2") %></span>
-            </div>
+            </section>
 
-        </div>
-    </div>
-    <div class="mt-5 d-flex align-items-center">
+        </section>
+    </section>
+    <section class="mt-5 d-flex align-items-center">
         <h4 class="mb-0 me-4">Recenzje (<%: ReviewsList.Count.ToString() %>)</h4>
         <asp:HyperLink runat="server" Text="Dodaj recenzję" ID="AddReviewButton" CssClass="btn btn-primary"></asp:HyperLink>
         <asp:HyperLink runat="server" Text="Zobacz swoją recenzję" ID="ViewReviewButton" CssClass="btn btn-secondary"></asp:HyperLink>
@@ -47,7 +47,7 @@
             <asp:ListItem Value="Title_ASC">Tytuł (A-Z)</asp:ListItem>
             <asp:ListItem Value="Title_DESC">Tytuł (Z-A)</asp:ListItem>
         </asp:DropDownList>
-    </div>
+    </section>
     <hr/>
 
     <comp:ReviewsList runat="server" ID="ReviewsList" />

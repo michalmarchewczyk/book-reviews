@@ -3,28 +3,28 @@
 <%@ Register TagPrefix="comp" Namespace="BookReviews.Components.Validators" Assembly="BookReviews" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
-    <div class="card mx-auto">
+    <section class="card mx-auto">
         <h3 class="card-header">
             Edytuj książkę
         </h3>
-        <div class="row card-body">
-            <div class="col-md-4 d-flex flex-column align-items-center mb-4">
+        <section class="row card-body">
+            <section class="col-md-4 d-flex flex-column align-items-center mb-4">
                 <asp:Image runat="server" ID="CoverImage" alt="Cover" CssClass="img-thumbnail h-100 img-cover-lg" ImageUrl="/Content/cover_default.png" />
                 <asp:Label runat="server" CssClass="form-label w-100 mt-3" AssociatedControlID="Cover">Okładka</asp:Label>
                 <asp:FileUpload runat="server" ID="Cover" CssClass="form-control"/>
-            </div>
-            <div class="col-md-8">
+            </section>
+            <section class="col-md-8">
                 <asp:UpdatePanel runat="server">
                     <ContentTemplate>
-                        <div class="d-flex align-items-center gap-3">
+                        <section class="d-flex align-items-center gap-3">
                             <div class="form-check">
                                 <asp:RadioButton runat="server" GroupName="Author" Checked="True" ID="AuthorExisting" OnCheckedChanged="AuthorChange" AutoPostBack="True" CausesValidation="False"/>
                                 <asp:Label runat="server" AssociatedControlID="AuthorExisting" CssClass="form-label text-nowrap my-0">Istniejący autor</asp:Label>
                             </div>
                             <comp:AuthorSelect runat="server" ID="AuthorSelect" />
-                        </div>
+                        </section>
 
-                        <div class="d-flex align-items-center gap-3 mt-3">
+                        <section class="d-flex align-items-center gap-3 mt-3">
                             <div class="form-check">
                                 <asp:RadioButton runat="server" GroupName="Author" Checked="False" ID="AuthorNew" OnCheckedChanged="AuthorChange" AutoPostBack="True" CausesValidation="False"/>
                                 <asp:Label runat="server" AssociatedControlID="AuthorNew" CssClass="form-label text-nowrap my-0">Nowy autor</asp:Label>
@@ -38,7 +38,7 @@
                                     Nazwisko autora jest wymagane.
                                 </asp:RequiredFieldValidator>
                             </div>
-                        </div>
+                        </section>
                     </ContentTemplate>
                 </asp:UpdatePanel>
 
@@ -48,7 +48,7 @@
                     Tytuł jest wymagany.
                 </asp:RequiredFieldValidator>
 
-                <div class="row">
+                <section class="row">
                     <div class="col-sm-8">
                         <asp:Label runat="server" CssClass="form-label" AssociatedControlID="ISBN">Numer ISBN</asp:Label>
                         <asp:TextBox ID="ISBN" runat="server" CssClass="form-control" placeholder="ISBN (same cyfry, bez myślników)" TextMode="Number"/>
@@ -70,18 +70,18 @@
                             Rok wydania jest wymagany.
                         </asp:RequiredFieldValidator>
                     </div>
-                </div>
+                </section>
 
                 <asp:Label runat="server" CssClass="form-label" AssociatedControlID="Description">Opis</asp:Label>
                 <asp:TextBox ID="Description" runat="server" CssClass="form-control" placeholder="Opis" TextMode="MultiLine" Rows="4"/>
 
-                <div class="d-flex justify-content-between mt-4">
+                <section class="d-flex justify-content-between mt-4">
                     <asp:Button runat="server" ID="CancelButton" Text="Anuluj" CssClass="btn btn-warning" OnCommand="CancelButton_OnCommand"/>
                     <asp:Button runat="server" ID="SubmitButton" Text="Zapisz" CssClass="btn btn-primary" OnCommand="Submit"/>
-                </div>
-            </div>
-        </div>
-    </div>
+                </section>
+            </section>
+        </section>
+    </section>
 
 
 

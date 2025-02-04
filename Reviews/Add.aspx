@@ -3,12 +3,12 @@
 <%@ Register TagPrefix="comp" TagName="RatingInput" Src="~/Components/RatingInput.ascx" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
-    <div class="card mx-auto">
+    <section class="card mx-auto">
         <h3 class="card-header">
             Dodaj recenzję
         </h3>
-        <div class="card-body">
-            <div class="row g-5">
+        <section class="card-body">
+            <section class="row g-5">
                 <div class="col-md-7">
                     <span class="d-inline-block mb-1">Dodajesz recenzję dla książki:</span>
                     <comp:BookPreview runat="server" ID="BookPreview" />
@@ -17,7 +17,7 @@
                     <span class="d-inline-block mb-1">Twoja ocena:</span>
                     <comp:RatingInput runat="server" ID="RatingInput" Value="5" MaxRating="5"/>
                 </div>
-            </div>
+            </section>
 
             <asp:Label runat="server" CssClass="form-label mt-0" AssociatedControlID="ReviewTitle">Tytuł recenzji</asp:Label>
             <asp:TextBox ID="ReviewTitle" runat="server" CssClass="form-control" placeholder="Tytuł" />
@@ -28,12 +28,12 @@
             <asp:Label runat="server" CssClass="form-label" AssociatedControlID="ReviewContent">Treść recenzji</asp:Label>
             <asp:TextBox ID="ReviewContent" runat="server" CssClass="form-control" placeholder="Treść" TextMode="MultiLine" Rows="8"/>
 
-            <div class="d-flex justify-content-between mt-4">
+            <section class="d-flex justify-content-between mt-4">
                 <asp:Button runat="server" ID="CancelButton" Text="Anuluj" CssClass="btn btn-warning" OnCommand="CancelButton_OnCommand"/>
                 <asp:Button runat="server" ID="SubmitButton" Text="Dodaj" CssClass="btn btn-primary" OnCommand="Submit"/>
-            </div>
-        </div>
-    </div>
+            </section>
+        </section>
+    </section>
 
 
 

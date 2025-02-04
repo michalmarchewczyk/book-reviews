@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" CodeBehind="BookPreview.ascx.cs" Inherits="BookReviews.Books.Components.BookPreview" %>
 
-<div class="card mb-3 overflow-hidden mh-100 w-100 d-flex gap-2 flex-row comp-BookPreview-card">
+<aside class="card mb-3 overflow-hidden mh-100 w-100 d-flex gap-2 flex-row comp-BookPreview-card">
     <a href="/books/<%: Book.Id %>" class="align-items-center h-100 ps-3 ps-lg-0 d-none d-sm-flex">
         <asp:Image runat="server" CssClass="img-fluid rounded mh-100 img-cover" ID="CoverImage" ImageUrl="/Content/cover_default.png"/>
     </a>
@@ -10,4 +10,4 @@
         </a>
         <span class="card-subtitle fw-normal text-truncate"><%: Author.FirstName + " " + Author.LastName %> (<%: Book.ReleaseYear %>)</span>
     </div>
-</div>
+</aside>

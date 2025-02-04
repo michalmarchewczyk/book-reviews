@@ -3,26 +3,26 @@
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div class="card mx-auto">
-        <div class="card-header">
+        <header class="card-header">
             <h3>
                 Moje konto
             </h3>
             <ul class="nav nav-tabs card-header-tabs">
-              <li class="nav-item">
-                <asp:LinkButton CssClass="nav-link active" runat="server" OnCommand="ChangeView" CommandArgument="Details" ID="DetailsLink">Edytuj dane</asp:LinkButton>
-              </li>
-              <li class="nav-item">
-                <asp:LinkButton CssClass="nav-link" runat="server" OnCommand="ChangeView" CommandArgument="Password" ID="PasswordLink">Zmień hasło</asp:LinkButton>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/reviews/my">Moje recenzje<i class="bi bi-box-arrow-up-right ms-2"></i></a>
-              </li>
+                <li class="nav-item">
+                    <asp:LinkButton CssClass="nav-link active" runat="server" OnCommand="ChangeView" CommandArgument="Details" ID="DetailsLink">Edytuj dane</asp:LinkButton>
+                </li>
+                <li class="nav-item">
+                    <asp:LinkButton CssClass="nav-link" runat="server" OnCommand="ChangeView" CommandArgument="Password" ID="PasswordLink">Zmień hasło</asp:LinkButton>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/reviews/my">Moje recenzje<i class="bi bi-box-arrow-up-right ms-2"></i></a>
+                </li>
             </ul>
-        </div>
-        <div class="card-body">
+        </header>
+        <section class="card-body">
             <asp:MultiView runat="server" ID="AccountMultiView" ActiveViewIndex="0">
                 <asp:View runat="server" ID="ViewDetails">
-                    <div class="row gx-3">
+                    <section class="row gx-3">
                         <div class="col-12">
                             <asp:Label runat="server" class="alert alert-danger d-block" ID="EmailUnavailableMessage" Visible="False">
                                 Ten adres email jest już zajęty.
@@ -43,8 +43,8 @@
                             <asp:Label runat="server" CssClass="form-label mt-0" AssociatedControlID="LastName">Nazwisko</asp:Label>
                             <asp:TextBox ID="LastName" runat="server" CssClass="form-control" placeholder="Twoje nazwisko"/>
                         </div>
-                    </div>
-                    <div class="row gx-3 mt-3">
+                    </section>
+                    <section class="row gx-3 mt-3">
                         <div class="col-md-4">
                             <asp:Label runat="server" CssClass="form-label mt-0" AssociatedControlID="UserName">Nazwa użytkownika</asp:Label>
                             <asp:TextBox ID="UserName" runat="server" CssClass="form-control" placeholder="Nazwa użytkownika" Disabled="true"/>
@@ -59,14 +59,14 @@
                                 Nieprawidłowy adres email.
                             </asp:RegularExpressionValidator>
                         </div>
-                    </div>
+                    </section>
 
                     <div class="d-flex justify-content-end mt-4">
                         <asp:Button runat="server" ID="SubmitButtonDetails" Text="Zapisz" CssClass="btn btn-primary" OnCommand="SubmitDetails"/>
                     </div>
                 </asp:View>
                 <asp:View runat="server" ID="ViewPassword">
-                    <div class="d-flex flex-column">
+                    <section class="d-flex flex-column">
                         <asp:Label runat="server" class="alert alert-danger" ID="WrongPasswordMessage" Visible="False">
                             Nieprawidłowe hasło.
                         </asp:Label>
@@ -107,9 +107,9 @@
                         <div class="d-flex justify-content-end mt-4">
                             <asp:Button runat="server" ID="SubmitButtonPassword" Text="Zapisz" CssClass="btn btn-primary" OnCommand="SubmitPassword"/>
                         </div>
-                    </div>
+                    </section>
                 </asp:View>
             </asp:MultiView>
-        </div>
+        </section>
     </div>
 </asp:Content>

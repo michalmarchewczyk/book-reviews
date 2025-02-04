@@ -2,15 +2,15 @@
 <%@ Register TagPrefix="comp" TagName="Logotype" Src="~/Components/Layout/Logotype.ascx" %>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
-    <div class="vw-100 vh-100 d-flex justify-content-center align-items-center">
+    <main class="vw-100 vh-100 d-flex justify-content-center align-items-center">
         <a href="/" class="text-decoration-none position-fixed z-2 top-0 start-0 my-2 mx-4"><comp:Logotype runat="server" Size="1.5"/></a>
-        <div class="card shadow page-AuthPage-container">
+        <section class="card shadow page-AuthPage-container">
             <div class="card-body">
                 <h4 class="card-title text-center mb-4"><%: Page.Title %></h4>
                 <div class="d-flex flex-column align-items-stretch">
                     <asp:ContentPlaceHolder runat="server" ID="MainContent"></asp:ContentPlaceHolder>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 </asp:Content>

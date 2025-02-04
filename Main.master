@@ -4,9 +4,9 @@
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
     <comp:Navbar runat="server" />
-    <div class="container body-content">
+    <main class="container body-content">
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
         </asp:ContentPlaceHolder>
         <comp:Footer runat="server" />
-    </div>
+    </main>
 </asp:Content>

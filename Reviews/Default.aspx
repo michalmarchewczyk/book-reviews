@@ -2,7 +2,7 @@
 <%@ Register TagPrefix="comp" TagName="ReviewsList" Src="~/Reviews/Components/ReviewsList.ascx" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
-    <div class="d-flex align-items-center">
+    <header class="d-flex align-items-center">
         <h2 class="mb-0">
             Recenzje
         </h2>
@@ -18,7 +18,7 @@
             <asp:ListItem Value="BookTitle_ASC">Tytuł książki (A-Z)</asp:ListItem>
             <asp:ListItem Value="BookTitle_DESC">Tytuł książki (Z-A)</asp:ListItem>
         </asp:DropDownList>
-    </div>
+    </header>
     <hr/>
 
     <comp:ReviewsList runat="server" ID="ReviewsList" />

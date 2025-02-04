@@ -7,7 +7,7 @@
 
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
-    <div class="d-flex align-items-center">
+    <header class="d-flex align-items-center">
         <h2 class="mb-0">
             Książki
         </h2>
@@ -28,7 +28,7 @@
             <asp:ListItem Value="ReleaseYear_ASC">Rok wydania (rosnąco)</asp:ListItem>
             <asp:ListItem Value="ReleaseYear_DESC">Rok wydania (malejąco)</asp:ListItem>
         </asp:DropDownList>
-    </div>
+    </header>
     <hr/>
 
     <asp:ListView ID="BooksListView" runat="server" DataSourceID="BooksDataSource" DataKeyNames="Id">

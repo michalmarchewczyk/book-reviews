@@ -3,7 +3,7 @@
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div class="card mx-auto">
-        <div class="card-header">
+        <header class="card-header">
             <h3>
                 Panel administracyjny
             </h3>
@@ -21,8 +21,8 @@
                     <asp:LinkButton CssClass="nav-link" runat="server" OnCommand="ChangeView" CommandArgument="Reviews" ID="ReviewsLink">Recenzje</asp:LinkButton>
                 </li>
             </ul>
-        </div>
-        <div class="card-body p-0">
+        </header>
+        <section class="card-body p-0">
             <div class="table-container">
                 <asp:MultiView runat="server" ID="AdminMultiView" ActiveViewIndex="0"  >
                     <asp:View runat="server" ID="ViewUsers">
@@ -71,7 +71,7 @@
                                 </asp:BoundField>
                                 <asp:TemplateField HeaderText="">
                                     <ItemTemplate>
-                                        <div class="d-flex flex-nowrap gap-2 px-2">
+                                        <nav class="d-flex flex-nowrap gap-2 px-2">
                                             <a runat="server" href=<%# "/books/" + Eval("Id") %> class="btn btn-secondary">
                                                 Otwórz
                                             </a>
@@ -81,7 +81,7 @@
                                             <a runat="server" href=<%# "/books/delete?id=" + Eval("Id") %> class="btn btn-danger">
                                                 Usuń
                                             </a>
-                                        </div>
+                                        </nav>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>
@@ -122,14 +122,14 @@
                                 </asp:BoundField>
                                 <asp:TemplateField HeaderText="">
                                     <ItemTemplate>
-                                        <div class="d-flex flex-nowrap gap-2 px-2">
+                                        <nav class="d-flex flex-nowrap gap-2 px-2">
                                             <a runat="server" href=<%# "/reviews/" + Eval("Id") %> class="btn btn-secondary">
                                                 Otwórz
                                             </a>
                                             <a runat="server" href=<%# "/reviews/delete?id=" + Eval("Id") %> class="btn btn-danger">
                                                 Usuń
                                             </a>
-                                        </div>
+                                        </nav>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>
@@ -138,7 +138,7 @@
                     </asp:View>
                 </asp:MultiView>
             </div>
-        </div>
+        </section>
     </div>
 
 

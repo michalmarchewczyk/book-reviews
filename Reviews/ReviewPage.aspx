@@ -6,7 +6,7 @@
 <%@ Register TagPrefix="auth" TagName="VisibilityControl" Src="~/Auth/Controls/VisibilityControl.ascx" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
-    <div class="d-flex align-items-center">
+    <header class="d-flex align-items-center">
         <comp:ReviewLikes runat="server" ID="ReviewLikes"/>
         <h2 class="mb-0 ms-3">
             <span class="text-muted">Recenzja</span> <span class="fst-italic fw-bolder"><%: Review.Title %></span>
@@ -22,10 +22,10 @@
                 <a href="/reviews/edit?id=<%: Review.Id %>" class="btn btn-secondary">Edytuj</a>
             </Content>
         </auth:VisibilityControl>
-    </div>
+    </header>
 
     <hr/>
-    <div class="row g-5 mb-2">
+    <section class="row g-5 mb-2">
         <div class="col-md-7">
             <span class="d-inline-block mb-2">Dla książki:</span>
             <comp:BookPreview runat="server" ID="BookPreview" />
@@ -36,7 +36,7 @@
             <span class="text-muted">Ocena:</span>
             <comp:RatingInput runat="server" ID="RatingInput" ReadOnly="true" />
         </div>
-    </div>
+    </section>
     <span class="d-block text-muted mb-2">Treść:</span>
     <p class="fs-5 text-break-spaces"><%: Review.Content %></p>
 

@@ -5,17 +5,17 @@
 
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent" xmlns:asp="http://www.w3.org/1999/html">
-    <div class="card mx-auto">
+    <section class="card mx-auto">
         <h3 class="card-header">
             Usuń recenzję
         </h3>
-        <div class="card-body">
-            <div class="row g-5">
+        <section class="card-body">
+            <section class="row g-5">
                 <div class="col-md-7">
                     <span class="d-inline-block mb-1">Usuwasz recenzję dla książki:</span>
                     <comp:BookPreview runat="server" ID="BookPreview" />
                 </div>
-            </div>
+            </section>
 
 
             <p class="fs-5">
@@ -27,12 +27,12 @@
                 Usunięcie recenzji jest nieodwracalne. Czy na pewno chcesz kontynuować?
             </p>
 
-            <div class="d-flex justify-content-between mt-4">
+            <section class="d-flex justify-content-between mt-4">
                 <asp:Button runat="server" ID="CancelButton" Text="Anuluj" CssClass="btn btn-warning" OnCommand="CancelButton_OnCommand"/>
                 <asp:Button runat="server" ID="SubmitButton" Text="Usuń" CssClass="btn btn-danger" OnCommand="Submit"/>
-            </div>
-        </div>
-    </div>
+            </section>
+        </section>
+    </section>
 
 
 
