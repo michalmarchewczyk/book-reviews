@@ -24,7 +24,9 @@
         Hasło jest wymagane.
     </asp:RequiredFieldValidator>
 
-    <asp:Button runat="server" CssClass="btn btn-primary mt-4 mb-2" Text="Zaloguj się"/>
+    <hr class="opacity-0"/>
+
+    <asp:Button runat="server" CssClass="btn btn-primary mb-2" Text="Zaloguj się"/>
 
     <hr/>
     <asp:Label runat="server" CssClass="text-center mb-2">Nie masz jeszcze konta?</asp:Label>

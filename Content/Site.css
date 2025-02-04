@@ -19,6 +19,23 @@ html, body {
     margin-top: 0.6rem;
 }
 
+.btn {
+    --btn-height-override-height: 44px;
+    height: var(--btn-height-override-height);
+}
+
+.btn-lg {
+    --btn-height-override-height: 55px;
+}
+
+.btn:not(.disabled):hover {
+    height: calc(var(--btn-height-override-height) - 1px);
+}
+
+.btn:not(.disabled):active {
+    height: calc(var(--btn-height-override-height) - 2px);
+}
+
 .img-thumbnail, .img-fluid {
     object-fit: contain;
 }

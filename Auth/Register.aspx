@@ -54,7 +54,9 @@
         Hasła nie są takie same.
     </asp:CompareValidator>
 
-    <asp:Button runat="server" CssClass="btn btn-primary mt-4 mb-2" Text="Zarejestruj się"/>
+    <hr class="opacity-0"/>
+
+    <asp:Button runat="server" CssClass="btn btn-primary mb-2" Text="Zarejestruj się"/>
 
     <hr/>
     <asp:Label runat="server" CssClass="text-center mb-2">Masz już konto?</asp:Label>
