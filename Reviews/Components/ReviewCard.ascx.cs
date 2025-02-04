@@ -17,17 +17,6 @@ namespace BookReviews.Reviews.Components
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Render();
-        }
-
-        private void Render()
-        {
-            if (Review == null || Book == null || Author == null)
-            {
-            }
-
-            // TODO: edit and delete buttons for owner
-            // TODO: delete button for admin
         }
     }
 }

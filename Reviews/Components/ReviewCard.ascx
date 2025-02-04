@@ -3,7 +3,6 @@
 <%@ Import Namespace="Microsoft.AspNet.Identity" %>
 <%@ Register TagPrefix="comp" TagName="BookPreview" Src="~/Books/Components/BookPreview.ascx" %>
 <%@ Register TagPrefix="comp" TagName="RatingInput" Src="~/Components/RatingInput.ascx" %>
-<%@ Register TagPrefix="comp" TagName="ReviewLikes" Src="~/Reviews/Components/ReviewLikes.ascx" %>
 <%@ Register TagPrefix="auth" TagName="VisibilityControl" Src="~/Auth/Controls/VisibilityControl.ascx" %>
 
 <div class="card mb-3 overflow-hidden mh-100 w-100 p-3" style="max-width: 900px; max-height: 370px; height: 370px;">
@@ -49,14 +48,9 @@
             </Content>
         </auth:VisibilityControl>
 
-
         <div class="flex-fill"></div>
-        <comp:ReviewLikes runat="server" ID="ReviewLikes" ReviewId="<%# Review.Id %>"/>
-    </div>
 
-    <%-- <auth:VisibilityControl runat="server" Visibility="HasRole" Role="Admin"> --%>
-    <%--     <Content> --%>
-    <%--         <a class="btn btn-secondary position-absolute bottom-0 end-0 m-3" href="/books/edit?id=<%: Book.Id %>">Edytuj</a> --%>
-    <%--     </Content> --%>
-    <%-- </auth:VisibilityControl> --%>
+        <%-- For some reason ReviewLikes content does update properly when inside paginated ListView -->
+        <%-- <comp:ReviewLikes runat="server" ID="ReviewLikes" ReviewId="<%# Review.Id %>"/> --%>
+    </div>
 </div>

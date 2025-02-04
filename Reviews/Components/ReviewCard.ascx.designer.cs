@@ -31,14 +31,5 @@ namespace BookReviews.Reviews.Components
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::BookReviews.Books.Components.BookPreview BookPreview;
-
-        /// <summary>
-        /// ReviewLikes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::BookReviews.Reviews.Components.ReviewLikes ReviewLikes;
     }
 }
