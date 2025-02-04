@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Title" Language="C#" MasterPageFile="~/Main.master" CodeBehind="About.aspx.cs" Inherits="BookReviews.About" %>
+﻿<%@ Page Title="O nas" Language="C#" MasterPageFile="~/Main.master" CodeBehind="About.aspx.cs" Inherits="BookReviews.About" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <h2>O nas</h2>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Title" Language="C#" MasterPageFile="~/Main.Master" CodeBehind="Default.aspx.cs" Inherits="BookReviews.Reviews.Default" %>
+﻿<%@ Page Title="Recenzje" Language="C#" MasterPageFile="~/Main.Master" CodeBehind="Default.aspx.cs" Inherits="BookReviews.Reviews.Default" %>
 <%@ Register TagPrefix="comp" TagName="ReviewsList" Src="~/Reviews/Components/ReviewsList.ascx" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">

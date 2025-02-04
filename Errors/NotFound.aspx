@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Title" Language="C#" MasterPageFile="~/Main.master" CodeBehind="NotFound.aspx.cs" Inherits="BookReviews.Errors.NotFound" %>
+﻿<%@ Page Title="Nie znaleziono strony" Language="C#" MasterPageFile="~/Main.master" CodeBehind="NotFound.aspx.cs" Inherits="BookReviews.Errors.NotFound" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div class="d-flex flex-column align-items-center justify-content-center my-5 py-5">

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Title" Language="C#" MasterPageFile="~/Main.master" CodeBehind="BookPage.aspx.cs" Inherits="BookReviews.Books.BookPage" %>
+﻿<%@ Page Title="Książka" Language="C#" MasterPageFile="~/Main.master" CodeBehind="BookPage.aspx.cs" Inherits="BookReviews.Books.BookPage" %>
 <%@ Register TagPrefix="auth" TagName="VisibilityControl" Src="~/Auth/Controls/VisibilityControl.ascx" %>
 <%@ Register TagPrefix="comp" TagName="ReviewsList" Src="~/Reviews/Components/ReviewsList.ascx" %>
 

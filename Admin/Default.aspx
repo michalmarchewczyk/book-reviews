@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Title" Language="C#" MasterPageFile="~/Main.master" CodeBehind="Default.aspx.cs" Inherits="BookReviews.Admin.Default" %>
+﻿<%@ Page Title="Panel administracyjny" Language="C#" MasterPageFile="~/Main.master" CodeBehind="Default.aspx.cs" Inherits="BookReviews.Admin.Default" %>
 <%@ Import Namespace="BookReviews.Auth" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">

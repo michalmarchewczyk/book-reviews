@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Title" Language="C#" MasterPageFile="~/Main.master" CodeBehind="Edit.aspx.cs" Inherits="BookReviews.Books.Edit" %>
+﻿<%@ Page Title="Edytuj książkę" Language="C#" MasterPageFile="~/Main.master" CodeBehind="Edit.aspx.cs" Inherits="BookReviews.Books.Edit" %>
 <%@ Register TagPrefix="comp" TagName="AuthorSelect" Src="~/Authors/Components/AuthorSelect.ascx" %>
 <%@ Register TagPrefix="comp" Namespace="BookReviews.Components.Validators" Assembly="BookReviews" %>
 

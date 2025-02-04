@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Title" Language="C#" MasterPageFile="~/Main.master" CodeBehind="ReviewPage.aspx.cs" Inherits="BookReviews.Reviews.ReviewPage" %>
+﻿<%@ Page Title="Recenzja" Language="C#" MasterPageFile="~/Main.master" CodeBehind="ReviewPage.aspx.cs" Inherits="BookReviews.Reviews.ReviewPage" %>
 <%@ Import Namespace="BookReviews.Auth" %>
 <%@ Register TagPrefix="comp" TagName="BookPreview" Src="~/Books/Components/BookPreview.ascx" %>
 <%@ Register TagPrefix="comp" TagName="RatingInput" Src="~/Components/RatingInput.ascx" %>

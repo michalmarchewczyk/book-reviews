@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Title" Language="C#" MasterPageFile="~/Main.master" CodeBehind="Delete.aspx.cs" Inherits="BookReviews.Books.Delete" %>
+﻿<%@ Page Title="Usuń książkę" Language="C#" MasterPageFile="~/Main.master" CodeBehind="Delete.aspx.cs" Inherits="BookReviews.Books.Delete" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div class="card mx-auto">

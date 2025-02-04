@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Title" Language="C#" MasterPageFile="~/Main.Master" CodeBehind="Default.aspx.cs" Inherits="BookReviews.Books.Default" %>
+﻿<%@ Page Title="Książki" Language="C#" MasterPageFile="~/Main.Master" CodeBehind="Default.aspx.cs" Inherits="BookReviews.Books.Default" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="BookReviews.Authors" %>
 <%@ Import Namespace="BookReviews.Books" %>

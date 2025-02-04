@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Title" Language="C#" MasterPageFile="~/Main.master" CodeBehind="GenericError.aspx.cs" Inherits="BookReviews.Errors.GenericError" %>
+﻿<%@ Page Title="Błąd" Language="C#" MasterPageFile="~/Main.master" CodeBehind="GenericError.aspx.cs" Inherits="BookReviews.Errors.GenericError" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div class="d-flex flex-column align-items-center justify-content-center my-5 py-5">

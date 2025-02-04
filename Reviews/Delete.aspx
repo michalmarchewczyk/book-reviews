@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Title" Language="C#" MasterPageFile="~/Main.master" CodeBehind="Delete.aspx.cs" Inherits="BookReviews.Reviews.Delete" %>
+﻿<%@ Page Title="Usuń recenzję" Language="C#" MasterPageFile="~/Main.master" CodeBehind="Delete.aspx.cs" Inherits="BookReviews.Reviews.Delete" %>
 <%@ Import Namespace="BookReviews.Auth" %>
 <%@ Import Namespace="Microsoft.AspNet.Identity" %>
 <%@ Register TagPrefix="comp" TagName="BookPreview" Src="~/Books/Components/BookPreview.ascx" %>
