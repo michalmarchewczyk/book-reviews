@@ -5,7 +5,7 @@
     input.value = value;
     const container = el.parentElement;
     const stars = container.querySelectorAll('.comp-RatingInput-star');
-    console.log("SET RATING", input, value, stars);
+
     stars.forEach(star => {
         if (star.dataset['value'] <= value) {
             star.children[0].classList.add('bi-star-fill');
