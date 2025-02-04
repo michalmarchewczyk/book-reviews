@@ -15,7 +15,7 @@ namespace BookReviews.Auth.Controls
         [TemplateInstance(TemplateInstance.Single)]
         public ITemplate Content { get; set; }
 
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_PreRender(object sender, EventArgs e)
         {
             bool visible;
 
