@@ -54,7 +54,7 @@
         ID="ReviewsDataSource"
         runat="server"
         ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
-        SelectCommand="SELECT [Id], [UserId], [BookId], [Title], [Rating], [Content] FROM [Reviews] WHERE [Id] = @Id"
+        SelectCommand="SELECT [Id], [UserId], [BookId], [Title], [Rating], [Content], [CreatedAt] FROM [Reviews] WHERE [Id] = @Id"
         DeleteCommand="DELETE FROM [Reviews] WHERE [Id] = @Id"
     >
         <SelectParameters>

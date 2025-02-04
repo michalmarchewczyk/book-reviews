@@ -294,6 +294,7 @@
         </Compile>
         <Compile Include="Auth\AuthenticatedGuardAttribute.cs"/>
         <Compile Include="Auth\RoleGuardAttribute.cs"/>
+        <Compile Include="Auth\RolesHelper.cs"/>
         <Compile Include="Auth\Startup.cs"/>
         <Compile Include="Books\Add.aspx.cs">
             <SubType>ASPXCodeBehind</SubType>

@@ -60,7 +60,7 @@
             [Reviews] ([UserId], [BookId], [Title], [Rating], [Content])
             VALUES (@UserId, @BookId, @Title, @Rating, @Content);
             SELECT @NewId = SCOPE_IDENTITY();"
-        SelectCommand="SELECT [Id], [UserId], [BookId], [Title], [Rating], [Content] FROM [Reviews] WHERE [UserId] = @UserId AND [BookId] = @BookId"
+        SelectCommand="SELECT [Id], [UserId], [BookId], [Title], [Rating], [Content], [CreatedAt] FROM [Reviews] WHERE [UserId] = @UserId AND [BookId] = @BookId"
     >
         <SelectParameters>
             <asp:Parameter Name="UserId" Type="String" />

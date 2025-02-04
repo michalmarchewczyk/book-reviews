@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <p class="card-text flex-grow-1 overflow-hidden bottom-fade mt-2 mb-0" style="white-space: pre;"><%: Review.Content %><%= string.IsNullOrEmpty(Review.Content) ? "<span class='fst-italic'>Brak treści.</span>" : "" %></p>
+    <p class="card-text flex-grow-1 overflow-hidden bottom-fade mt-2 mb-0" style="white-space: break-spaces;"><%: Review.Content %><%= string.IsNullOrEmpty(Review.Content) ? "<span class='fst-italic'>Brak treści.</span>" : "" %></p>
 
     <hr/>
 

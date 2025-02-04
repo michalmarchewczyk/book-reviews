@@ -56,7 +56,7 @@
         ID="ReviewsDataSource"
         runat="server"
         ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
-        SelectCommand="SELECT [Id], [UserId], [BookId], [Title], [Rating], [Content] FROM [Reviews] WHERE [Id] = @Id"
+        SelectCommand="SELECT [Id], [UserId], [BookId], [Title], [Rating], [Content], [CreatedAt] FROM [Reviews] WHERE [Id] = @Id"
         UpdateCommand="UPDATE [Reviews] SET [Title] = @Title, [Rating] = @Rating, [Content] = @Content WHERE [Id] = @Id">
         <SelectParameters>
             <asp:Parameter Name="Id" Type="Int32" />
