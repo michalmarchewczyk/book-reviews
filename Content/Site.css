@@ -1,6 +1,7 @@
 ﻿body {
     overflow-y: scroll;
     overflow-x: hidden;
+    background: #faf9f5;
 }
 
 html, body {
@@ -37,6 +38,10 @@ html, body {
 
 .img-thumbnail, .img-fluid {
     object-fit: contain;
+}
+
+.dropdown-item, .dropdown-item:hover {
+    color: rgba(34, 34, 34, 0.8)
 }
 
 .bottom-fade {

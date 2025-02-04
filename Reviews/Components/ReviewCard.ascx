@@ -50,6 +50,8 @@
 
         <div class="flex-fill"></div>
 
+        <a href="/reviews/<%: Review.Id %>" class="btn btn-secondary">Przeczytaj całość</a>
+
         <%-- For some reason ReviewLikes content does update properly when inside paginated ListView -->
         <%-- <comp:ReviewLikes runat="server" ID="ReviewLikes" ReviewId="<%# Review.Id %>"/> --%>
     </div>
