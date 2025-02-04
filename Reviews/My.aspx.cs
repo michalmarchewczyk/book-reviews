@@ -1,11 +1,12 @@
 ﻿using System;
-using System.Web.UI;
 using System.Web.UI.WebControls;
+using BookReviews.Auth;
 using Microsoft.AspNet.Identity;
 
 namespace BookReviews.Reviews
 {
-    public partial class My : Page
+    [AuthenticatedGuard]
+    public partial class My : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
