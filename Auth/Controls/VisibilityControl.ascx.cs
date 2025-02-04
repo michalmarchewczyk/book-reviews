@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Web.UI;
 using Microsoft.AspNet.Identity;
 
@@ -30,7 +29,6 @@ namespace BookReviews.Auth.Controls
 
         private void CheckAndRender()
         {
-            Debug.WriteLine($"Checking visibility {Visibility} {Role} {OwnerId}");
             if (_checked ||
                 (Visibility == AuthVisibilityType.IsOwner && OwnerId == null) ||
                 (Visibility == AuthVisibilityType.HasRoleOrOwner && OwnerId == null))
@@ -59,7 +57,6 @@ namespace BookReviews.Auth.Controls
                                   (AuthRole)Enum.Parse(typeof(AuthRole), Role));
                     break;
                 case AuthVisibilityType.IsOwner:
-                    Debug.WriteLine($"Checking owner {OwnerId} == {Page.User.Identity.GetUserId()}");
                     visible = Page.User.Identity.GetUserId() == OwnerId;
                     break;
                 default:

@@ -132,6 +132,7 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Content Include="About.aspx"/>
         <Content Include="Account\Default.aspx"/>
         <Content Include="Admin\Default.aspx"/>
         <Content Include="App_Data\schema.sql"/>
@@ -224,10 +225,18 @@
         <Content Include="Scripts\WebForms\WebParts.js"/>
         <Content Include="Scripts\WebForms\WebUIValidation.js"/>
         <Content Include="Site.Master"/>
+        <Content Include="TermsOfService.aspx"/>
         <Content Include="Web.config"/>
         <Content Include="Bundle.config"/>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="About.aspx.cs">
+            <SubType>ASPXCodeBehind</SubType>
+            <DependentUpon>About.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="About.aspx.designer.cs">
+            <DependentUpon>About.aspx</DependentUpon>
+        </Compile>
         <Compile Include="Account\Default.aspx.cs">
             <SubType>ASPXCodeBehind</SubType>
             <DependentUpon>Default.aspx</DependentUpon>
@@ -513,6 +522,13 @@
         </Compile>
         <Compile Include="Site.Master.designer.cs">
             <DependentUpon>Site.Master</DependentUpon>
+        </Compile>
+        <Compile Include="TermsOfService.aspx.cs">
+            <SubType>ASPXCodeBehind</SubType>
+            <DependentUpon>TermsOfService.aspx</DependentUpon>
+        </Compile>
+        <Compile Include="TermsOfService.aspx.designer.cs">
+            <DependentUpon>TermsOfService.aspx</DependentUpon>
         </Compile>
         <Compile Include="Utils\ContentHelper.cs"/>
         <Compile Include="Utils\CustomExtensions\StringExtension.cs"/>

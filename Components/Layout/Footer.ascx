@@ -18,9 +18,8 @@
     <div class="col mb-3">
       <h5>Recenzje</h5>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="/reviews/new" class="nav-link p-0 text-body-secondary">Nowe recenzje</a></li>
-        <li class="nav-item mb-2"><a href="/reviews/popular" class="nav-link p-0 text-body-secondary">Popularne recenzje</a></li>
-        <li class="nav-item mb-2"><a href="/books/popular" class="nav-link p-0 text-body-secondary">Popularne książki</a></li>
+        <li class="nav-item mb-2"><a href="/reviews/" class="nav-link p-0 text-body-secondary">Lista recenzji</a></li>
+        <li class="nav-item mb-2"><a href="/books/" class="nav-link p-0 text-body-secondary">Lista książek</a></li>
       </ul>
     </div>
 
@@ -38,7 +37,7 @@
       <ul class="nav flex-column">
         <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-body-secondary">Strona główna</a></li>
         <li class="nav-item mb-2"><a href="/about" class="nav-link p-0 text-body-secondary">O nas</a></li>
-        <li class="nav-item mb-2"><a href="/terms-of-service" class="nav-link p-0 text-body-secondary">Regulamin</a></li>
+        <li class="nav-item mb-2"><a href="/termsofservice" class="nav-link p-0 text-body-secondary">Regulamin</a></li>
       </ul>
     </div>
   </footer>
