@@ -57,10 +57,10 @@ namespace BookReviews.Auth
                 Email = email
             };
             var result = userManager.Create(user, password);
-            Console.WriteLine(string.Join(", ", result.Errors));
 
             if (result.Succeeded)
             {
+                userManager.AddToRoles(user.Id, AuthRole.User.ToString());
                 var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
                 var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
                 authenticationManager.SignIn(new AuthenticationProperties { IsPersistent = false }, userIdentity);
