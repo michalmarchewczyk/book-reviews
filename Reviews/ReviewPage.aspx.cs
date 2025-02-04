@@ -45,9 +45,8 @@ namespace BookReviews.Reviews
             BookPreview.Author = Author;
             RatingInput.Value = Review.Rating;
             ReviewLikes.ReviewId = ReviewId;
-
-            // TODO: edit and delete buttons for owner
-            // TODO: delete button for admin
+            VisibilityControl1.OwnerId = Review.UserId;
+            VisibilityControl2.OwnerId = Review.UserId;
         }
     }
 }

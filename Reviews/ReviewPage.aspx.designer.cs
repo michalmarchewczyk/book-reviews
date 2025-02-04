@@ -24,6 +24,24 @@ namespace BookReviews.Reviews
         protected global::BookReviews.Reviews.Components.ReviewLikes ReviewLikes;
 
         /// <summary>
+        /// VisibilityControl1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::BookReviews.Auth.Controls.VisibilityControl VisibilityControl1;
+
+        /// <summary>
+        /// VisibilityControl2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::BookReviews.Auth.Controls.VisibilityControl VisibilityControl2;
+
+        /// <summary>
         /// BookPreview control.
         /// </summary>
         /// <remarks>

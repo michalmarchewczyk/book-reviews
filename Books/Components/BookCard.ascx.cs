@@ -40,8 +40,6 @@ namespace BookReviews.Books.Components
                 return;
             }
 
-            // TODO: Average rating
-
             if (!string.IsNullOrEmpty(Book.CoverPath))
             {
                 CoverImage.ImageUrl = Book.CoverPath;

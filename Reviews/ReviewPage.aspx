@@ -12,12 +12,12 @@
             <span class="text-muted">Recenzja</span> <span class="fst-italic fw-bolder"><%: Review.Title %></span>
         </h2>
         <div class="flex-fill"></div>
-        <auth:VisibilityControl runat="server" Visibility="HasRoleOrOwner" Role="Admin" OwnerId="<%# Review.UserId %>">
+        <auth:VisibilityControl runat="server" Visibility="HasRoleOrOwner" Role="Admin" ID="VisibilityControl1">
             <Content>
                 <a href="/reviews/delete?id=<%: Review.Id %>" class="btn btn-danger me-3">Usuń</a>
             </Content>
         </auth:VisibilityControl>
-        <auth:VisibilityControl runat="server" Visibility="IsOwner" OwnerId="<%# Review.UserId %>">
+        <auth:VisibilityControl runat="server" Visibility="IsOwner" ID="VisibilityControl2">
             <Content>
                 <a href="/reviews/edit?id=<%: Review.Id %>" class="btn btn-secondary">Edytuj</a>
             </Content>

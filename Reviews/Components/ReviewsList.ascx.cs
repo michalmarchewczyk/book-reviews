@@ -13,8 +13,6 @@ namespace BookReviews.Reviews.Components
 
         public int Count => ReviewsListView.Items.Count;
 
-        // public bool ShowCurrentUsersFirst { get; set; } // TODO: implement
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (BookId != null)

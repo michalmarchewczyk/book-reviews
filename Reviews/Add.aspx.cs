@@ -32,7 +32,7 @@ namespace BookReviews.Reviews
             {
                 foreach (DataRowView rowView in foundReviews)
                 {
-                    Response.Redirect($"~/reviews/{rowView["Id"]}"); // TODO: display error?
+                    Response.Redirect($"~/reviews/{rowView["Id"]}");
                 }
             }
 

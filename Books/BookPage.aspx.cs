@@ -67,8 +67,6 @@ namespace BookReviews.Books
             {
                 CoverImage.ImageUrl = Book.CoverPath;
             }
-
-            // TODO: dont show add review button if review already exists
         }
 
         protected void ReviewsListSortingChanged(object sender, EventArgs e)
